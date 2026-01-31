@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Category 3: Light Redirected - Structural Colors (Mechanisms 12-15)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2f0c5dde-781a-8110-9680-c548dd780b17" class="page sans"><header><h1 class="page-title" dir="auto">Category 3: Light Redirected - Structural Colors (Mechanisms 12-15)</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="4cb623c3-f272-4870-a077-a761cc1e1e7a" class="">Overview</h2></div><div style="display:contents" dir="auto"><p id="64d3d540-17d4-4b42-bfe9-0ad35ba483ca" class="">No pigments here — these colors emerge from the <strong>geometry</strong> of structures interacting with light waves. The color comes from physics (reflection, refraction, interference, diffraction), not chemistry.</p></div><div style="display:contents" dir="auto"><p id="a7a2b7ce-bb4e-4bd9-b96c-c6915fb4f6d4" class=""><strong>Mechanisms covered:</strong></p></div><div style="display:contents" dir="auto"><ul id="a71094ea-709e-4602-bf76-b01975e97f4d" class="bulleted-list"><li style="list-style-type:disc">Mechanism 12: Dispersive Refraction</li></ul></div><div style="display:contents" dir="auto"><ul id="eea1674b-bebc-458a-80ea-902fd369ca21" class="bulleted-list"><li style="list-style-type:disc">Mechanism 13: Scattering</li></ul></div><div style="display:contents" dir="auto"><ul id="25b02034-fb97-457c-a4f5-825ada2b6e5d" class="bulleted-list"><li style="list-style-type:disc">Mechanism 14: Interference</li></ul></div><div style="display:contents" dir="auto"><ul id="a7ee1b5a-527f-4b93-bb6c-40d5a8fa0ecf" class="bulleted-list"><li style="list-style-type:disc">Mechanism 15: Diffraction</li></ul></div><div style="display:contents" dir="auto"><p id="c51b2fec-10aa-45f9-8b02-1be4870c9cc0" class=""><strong>Key advantage:</strong> Structural colors don&#x27;t fade! Museum butterfly specimens are still vibrant after 100+ years.</p></div><div style="display:contents" dir="auto"><hr id="296a2350-1d8a-4cc9-8bb5-cc3d187edc03"/></div><div style="display:contents" dir="auto"><h2 id="18f4a1a4-65be-4c93-b1b7-f1327576fea9" class="">Mechanism 12: Dispersive Refraction</h2></div><div style="display:contents" dir="auto"><h3 id="fd07d97c-e5b6-420a-9b01-33ffa57d1101" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="0c7ac31c-3938-43da-b767-0f8e0d8ed16a" class="">Different wavelengths bend by different amounts when passing through transparent materials (dispersion). This separates white light into its component colors.</p></div><div style="display:contents" dir="auto"><h3 id="b2f3c699-7d43-4d34-a3ce-65c6541a50e3" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="a3b4e789-7606-4760-98a8-e8e8c0bc0598" class="bulleted-list"><li style="list-style-type:disc"><strong>Rainbows</strong> — Sunlight enters water droplet, reflects off back, exits. Different colors exit at different angles (red ~42°, violet ~40°). Secondary rainbow: two internal reflections, colors reversed.</li></ul></div><div style="display:contents" dir="auto"><ul id="a8be082e-1f47-4dd7-817b-f5d267f32755" class="bulleted-list"><li style="list-style-type:disc"><strong>Prisms</strong> — Newton&#x27;s famous experiment (1666). Glass disperses white light.</li></ul></div><div style="display:contents" dir="auto"><ul id="c5ecb26e-1e9f-4fe6-9c66-66c26abacf81" class="bulleted-list"><li style="list-style-type:disc"><strong>Diamond &quot;fire&quot;</strong> — Diamond has very high dispersion (0.044). Spectral flashes as light exits.</li></ul></div><div style="display:contents" dir="auto"><ul id="fea5eae2-ce9e-44d8-864a-a511d5153401" class="bulleted-list"><li style="list-style-type:disc"><strong>Cut crystal glassware</strong> — Similar effect with lead glass</li></ul></div><div style="display:contents" dir="auto"><h3 id="e2df5d79-1893-4ac5-b4fa-f790dd35d214" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="9897e69f-3beb-4f66-b4e1-357e56736afd" class="bulleted-list"><li style="list-style-type:disc"><strong>None known</strong> — No biological structures use dispersive refraction for coloration</li></ul></div><div style="display:contents" dir="auto"><ul id="80cdace3-11ec-47f3-9aa4-234915ad2b3d" class="bulleted-list"><li style="list-style-type:disc">(Eyes use refraction for focusing, but not for color production)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2479a094-61c2-441d-b674-2b5eb192b903" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="41892f21-32ef-47c3-8625-91a6b6d77691" class="">Why is there a dark band between primary and secondary rainbows? (Alexander&#x27;s dark band.) Droplets can only send light at specific angles — between the two rainbows is a &quot;dead zone.&quot;</p></div><div style="display:contents" dir="auto"><h3 id="0fc1b24a-90b2-4bf8-8218-f71d42af9422" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="7d02ba99-0e17-4232-a9bf-a52f22d852dc" class="">Dispersion is why diamonds sparkle with rainbow &quot;fire&quot; — high refractive index + high dispersion.</p></div><div style="display:contents" dir="auto"><hr id="4faf822d-9165-493c-808f-b3a00bc248ce"/></div><div style="display:contents" dir="auto"><h2 id="e6b0a362-9df1-49cf-9127-9c85863c4e1e" class="">Mechanism 13: Scattering</h2></div><div style="display:contents" dir="auto"><h3 id="46d5c227-3fc6-4d8c-9def-d66d796e88fc" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="069838fa-7527-45af-ada9-a81cbb6a71fb" class="">Particles or density fluctuations redirect light. The key is particle size relative to wavelength.</p></div><div style="display:contents" dir="auto"><p id="c226489d-db1b-469c-9e47-a6bfafa1cffc" class=""><strong>Rayleigh scattering</strong> (particles &lt;&lt; wavelength):</p></div><div style="display:contents" dir="auto"><ul id="4b1752cb-2e3a-441e-9bd3-52a97c414d9c" class="bulleted-list"><li style="list-style-type:disc">Scattering intensity ∝ 1/λ⁴ — Blue light scatters ~10× more than red</li></ul></div><div style="display:contents" dir="auto"><p id="235baf08-83ae-4da4-a79d-e14645b48e95" class=""><strong>Mie scattering</strong> (particles ~ wavelength):</p></div><div style="display:contents" dir="auto"><ul id="a90bbc84-ab35-488e-9f72-97149a971c99" class="bulleted-list"><li style="list-style-type:disc">All colors scatter similarly → white</li></ul></div><div style="display:contents" dir="auto"><h3 id="beaeef90-8e7d-4ec6-906c-737d00fa83c2" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><p id="e33fe715-129c-49e3-9aa0-70dc0e421b0f" class=""><strong>Rayleigh scattering:</strong></p></div><div style="display:contents" dir="auto"><ul id="2c9078f8-1f4c-4c4c-a09d-add4c462c884" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue sky</strong> — Nitrogen and oxygen molecules scatter blue light in all directions</li></ul></div><div style="display:contents" dir="auto"><ul id="367fc186-69a1-4627-9a32-7e2818e1547f" class="bulleted-list"><li style="list-style-type:disc"><strong>Red sunsets</strong> — Looking through more atmosphere, blue scattered away, red passes through</li></ul></div><div style="display:contents" dir="auto"><ul id="40963456-b6fa-42bb-a9f3-24b7aa82034d" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue smoke from cigarettes</strong> — Fine particles (exhaled smoke is white — larger particles)</li></ul></div><div style="display:contents" dir="auto"><p id="cdac6782-26ab-4cff-925a-50d118e13451" class=""><strong>Mie scattering:</strong></p></div><div style="display:contents" dir="auto"><ul id="38d5596f-3429-457c-813a-5b6a98a0aeb4" class="bulleted-list"><li style="list-style-type:disc"><strong>Clouds</strong> — Water droplets ~10-20 μm, scatter all colors equally → white</li></ul></div><div style="display:contents" dir="auto"><ul id="f82b8c02-93a9-4cf6-9de6-7edc52b8a043" class="bulleted-list"><li style="list-style-type:disc"><strong>Milk</strong> — Fat globules scatter all colors → white</li></ul></div><div style="display:contents" dir="auto"><ul id="f2c63e8a-382f-48c5-9852-264216303649" class="bulleted-list"><li style="list-style-type:disc"><strong>White paint</strong> — TiO₂ particles chosen for optimal scattering</li></ul></div><div style="display:contents" dir="auto"><h3 id="f0f69b29-d81a-45a1-b1ff-ea0d86f5b14e" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><p id="e437882a-1454-4430-99da-638d77d31b51" class=""><strong>Rayleigh scattering (no blue pigment!):</strong></p></div><div style="display:contents" dir="auto"><ul id="cc28b90b-22eb-4ed3-b5c5-48269655106d" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue eyes</strong> — Rayleigh scattering in the turbid stroma. Zero blue pigment!</li></ul></div><div style="display:contents" dir="auto"><ul id="2c2df42d-7117-41c5-b23c-123d1d5e5282" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue jay feathers</strong> — Structural blue from light-scattering air pockets</li></ul></div><div style="display:contents" dir="auto"><ul id="737316b6-ee6a-4abb-80bf-a4e686dac583" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue skin of mandrills</strong> — Collagen fiber arrays scatter blue light</li></ul></div><div style="display:contents" dir="auto"><ul id="30edb907-82b5-4b94-929b-9ab96468a986" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue tarantulas</strong> — Nanostructures in hair</li></ul></div><div style="display:contents" dir="auto"><ul id="fa8ce067-eed9-4116-a2e0-a377aeae2ab6" class="bulleted-list"><li style="list-style-type:disc"><strong>Many &quot;blue&quot; animals</strong> — Blue pigments are extremely rare in nature</li></ul></div><div style="display:contents" dir="auto"><p id="b4fbc949-e94f-474c-957c-ae011d846652" class=""><strong>Mie scattering:</strong></p></div><div style="display:contents" dir="auto"><ul id="878aa8a1-f7a6-4e4f-a763-4e69037e7d37" class="bulleted-list"><li style="list-style-type:disc"><strong>White feathers</strong> — Air pockets in keratin scatter all wavelengths</li></ul></div><div style="display:contents" dir="auto"><ul id="9a39e456-6d55-4638-b615-07b96afab30d" class="bulleted-list"><li style="list-style-type:disc"><strong>White fur</strong> — Air bubbles in hair shaft</li></ul></div><div style="display:contents" dir="auto"><h3 id="e5c13e7e-e738-41eb-abc8-6fa435ad93a2" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="e82d76e7-3b39-43a3-a5dc-a111bb094522" class="">Blue eyes are blue for the same reason the sky is blue — physics, not pigment. If you ground up a blue eye, you&#x27;d get brownish mush. Zero blue pigment.</p></div><div style="display:contents" dir="auto"><h3 id="dba2ab05-a8db-4075-9a1b-d752f9dccf3b" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="59ee701b-8d64-4213-8d06-013ddb44f2e2" class="">True blue pigments are rare in nature. Most &quot;blue&quot; in animals is structural scattering.</p></div><div style="display:contents" dir="auto"><hr id="ded5e9a3-4541-48d7-a971-9acd71ae0dcf"/></div><div style="display:contents" dir="auto"><h2 id="182cee4e-1cfe-4cb1-b11c-8a4be762d377" class="">Mechanism 14: Interference</h2></div><div style="display:contents" dir="auto"><h3 id="c87ffac1-bff1-44d6-b4e0-0104d6b984af" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="5bc20a63-37e1-4131-93a0-6aa6bf75b2d8" class="">Light waves reflecting from different layers (thin films or periodic structures) interfere constructively or destructively depending on wavelength and viewing angle.</p></div><div style="display:contents" dir="auto"><p id="08039d5e-95f5-47e1-8aa5-9b0e4e483bdf" class=""><strong>Thin-film interference:</strong> Single transparent layer (soap, oil)</p></div><div style="display:contents" dir="auto"><p id="aa76cfcf-f6db-49c8-9728-22f6ef25694e" class=""><strong>Multilayer interference:</strong> Multiple precisely-spaced layers (biology&#x27;s specialty)</p></div><div style="display:contents" dir="auto"><h3 id="7123345c-0089-4d71-9725-8260ffb8f9a2" class="">The Key Insight: Interference Doesn&#x27;t <em>Create</em> Wavelengths — It <em>Selects</em> Them</h3></div><div style="display:contents" dir="auto"><p id="412a7037-f96d-4962-ae7f-44d413616f34" class="">White light already contains all visible wavelengths. Interference acts as a <strong>filter</strong> — it selectively reinforces some wavelengths while canceling others.</p></div><div style="display:contents" dir="auto"><h3 id="5e4d57bf-10fc-47a0-9ba5-7fe6018e6c20" class="">How It Works (Thin Film Example)</h3></div><div style="display:contents" dir="auto"><p id="40f452e1-697e-430b-9df7-ef73e516c5c2" class="">Imagine a soap bubble with white light hitting it:</p></div><div style="display:contents" dir="auto"><p id="3bc0b277-4d4a-4bbd-910c-66d333eff984" class=""><strong>Step 1: Light hits the top surface</strong></p></div><div style="display:contents" dir="auto"><ul id="8c6486c1-6b3b-4bb4-93c8-11423c510907" class="bulleted-list"><li style="list-style-type:disc">Some light reflects immediately (Ray A)</li></ul></div><div style="display:contents" dir="auto"><ul id="131390e5-1357-42b8-8abd-76428d103987" class="bulleted-list"><li style="list-style-type:disc">Some light passes through into the film</li></ul></div><div style="display:contents" dir="auto"><p id="75a8a250-e06a-4913-8a3e-094f2e30ba4b" class=""><strong>Step 2: Light hits the bottom surface</strong></p></div><div style="display:contents" dir="auto"><ul id="02af2766-cb72-4ddf-b98d-bd3ce4dd7a0f" class="bulleted-list"><li style="list-style-type:disc">That transmitted light reflects off the bottom (Ray B)</li></ul></div><div style="display:contents" dir="auto"><ul id="0d66edc3-29ed-48a5-b3a5-5a2a7a68e6cf" class="bulleted-list"><li style="list-style-type:disc">Ray B travels back up and exits the top surface</li></ul></div><div style="display:contents" dir="auto"><p id="bf460f2f-1823-4c7a-9f89-fdae9c1493e9" class=""><strong>Step 3: The two rays meet</strong></p></div><div style="display:contents" dir="auto"><ul id="8b796f4f-44af-4a97-a683-1ca9346ffad0" class="bulleted-list"><li style="list-style-type:disc">Ray A (reflected from top) and Ray B (reflected from bottom) now travel in the same direction</li></ul></div><div style="display:contents" dir="auto"><ul id="65464c17-0172-428b-9adb-1dcb84ee8b16" class="bulleted-list"><li style="list-style-type:disc">But Ray B traveled an extra distance: down through the film and back up</li></ul></div><div style="display:contents" dir="auto"><ul id="43f6d394-8dd1-4e0a-ba1e-a4f30dc94077" class="bulleted-list"><li style="list-style-type:disc">This extra distance = 2 × film thickness</li></ul></div><div style="display:contents" dir="auto"><p id="234e1868-45f2-4952-8d59-f39c1cfd28d2" class=""><strong>Step 4: Interference happens</strong></p></div><div style="display:contents" dir="auto"><ul id="31e4bdbf-5d12-43f3-9eb1-d7042aecdb74" class="bulleted-list"><li style="list-style-type:disc">Light is a wave with peaks and troughs</li></ul></div><div style="display:contents" dir="auto"><ul id="d7ecbc93-3772-40ac-8498-b1be15e5b1c0" class="bulleted-list"><li style="list-style-type:disc">If Ray B&#x27;s extra travel = whole number of wavelengths → peaks align with peaks → <strong>constructive interference</strong> → that wavelength is BRIGHT</li></ul></div><div style="display:contents" dir="auto"><ul id="52347c6e-1efb-43f5-be42-0b9d733c714f" class="bulleted-list"><li style="list-style-type:disc">If extra travel = half-number of wavelengths → peaks align with troughs → <strong>destructive interference</strong> → that wavelength is CANCELED</li></ul></div><div style="display:contents" dir="auto"><h3 id="2321e9ea-e6c7-4b00-a364-0284b9441938" class="">The Math (Simplified)</h3></div><div style="display:contents" dir="auto"><p id="9009a374-c2bf-42a3-8018-b8a8c4534ac0" class="">For constructive interference (bright color):</p></div><div style="display:contents" dir="auto"><p id="9fd9fcf4-bb1d-4400-a904-d235ab0d02ab" class=""><code>2 × thickness × refractive index = m × wavelength</code></p></div><div style="display:contents" dir="auto"><p id="9ca278bc-8eec-4191-a24e-289888be454b" class="">Where m = 1, 2, 3... (whole numbers)</p></div><div style="display:contents" dir="auto"><p id="1a69465f-f692-4507-a439-139ec88d1c97" class=""><strong>Different wavelengths have different conditions for constructive interference.</strong></p></div><div style="display:contents" dir="auto"><p id="b9831cca-fb6d-4dec-a513-87b42f00f120" class="">So for a film of a specific thickness:</p></div><div style="display:contents" dir="auto"><ul id="85fcb52c-cc88-4ab5-b7fb-6c17496c5fd3" class="bulleted-list"><li style="list-style-type:disc">Maybe 500nm light (blue-green) gets constructive interference → amplified</li></ul></div><div style="display:contents" dir="auto"><ul id="4cb3c7e9-efeb-4bb5-82a0-211aa2c10f4e" class="bulleted-list"><li style="list-style-type:disc">Maybe 600nm light (orange) gets destructive interference → canceled</li></ul></div><div style="display:contents" dir="auto"><ul id="b5625871-98d6-4524-8732-7cc60a09cd46" class="bulleted-list"><li style="list-style-type:disc">You see the wavelengths that &quot;win&quot; the interference lottery</li></ul></div><div style="display:contents" dir="auto"><h3 id="58596741-b9de-4535-a223-b6acee881ba7" class="">Why You See Color, Not Just Bright/Dark</h3></div><div style="display:contents" dir="auto"><p id="ac6db0e3-6765-43e5-a26d-9d3bbeba8afc" class="">White light contains ALL wavelengths simultaneously. Each wavelength independently either:</p></div><div style="display:contents" dir="auto"><ul id="277e4287-c1f4-40e9-b42d-e5424efe6c06" class="bulleted-list"><li style="list-style-type:disc">Constructively interferes (survives, appears bright)</li></ul></div><div style="display:contents" dir="auto"><ul id="62218b7a-a10d-4d59-a1e5-19c479e517e8" class="bulleted-list"><li style="list-style-type:disc">Destructively interferes (cancels, disappears)</li></ul></div><div style="display:contents" dir="auto"><ul id="82465d75-e536-4515-9229-73ff1e6cf4e7" class="bulleted-list"><li style="list-style-type:disc">Partially interferes (dimmed but present)</li></ul></div><div style="display:contents" dir="auto"><p id="dc6bab9a-6af8-4a85-9341-8fea215e8248" class="">The color you see is <strong>what&#x27;s left after the cancellations</strong> — the wavelengths that happened to match the constructive interference condition for that particular film thickness.</p></div><div style="display:contents" dir="auto"><h3 id="59f1eacd-22e5-4019-9dc7-8deb63b60ff4" class="">Why Soap Bubbles Have Swirling Colors</h3></div><div style="display:contents" dir="auto"><p id="a143d1cc-07a5-41e5-ba0e-0205817d8db2" class="">The film thickness varies across the bubble:</p></div><div style="display:contents" dir="auto"><ul id="ac0b6e96-ddae-4140-8ac9-3578004166bb" class="bulleted-list"><li style="list-style-type:disc">Thin region → short wavelengths (blue) constructively interfere</li></ul></div><div style="display:contents" dir="auto"><ul id="ef3003d1-7d44-477e-a24f-b1bb3a3140c2" class="bulleted-list"><li style="list-style-type:disc">Thick region → longer wavelengths (red) constructively interfere</li></ul></div><div style="display:contents" dir="auto"><ul id="93f8ba35-aae1-46f0-9114-5bef7df126ff" class="bulleted-list"><li style="list-style-type:disc">As the bubble thins (draining), the color bands shift</li></ul></div><div style="display:contents" dir="auto"><ul id="4deb2b9e-ddf1-4e32-b1b1-45e6ec149259" class="bulleted-list"><li style="list-style-type:disc">Black spots = film so thin that waves cancel for ALL visible wavelengths</li></ul></div><div style="display:contents" dir="auto"><h3 id="044b387b-2f27-473d-8a9c-a6ddaaad23b6" class="">Multilayer Interference (Morpho Butterfly)</h3></div><div style="display:contents" dir="auto"><p id="6e206ef8-830f-47ab-9aba-16e503679005" class="">Same principle, but with MANY layers:</p></div><div style="display:contents" dir="auto"><ul id="441fa713-987c-4f5a-a635-b923cd96f64f" class="bulleted-list"><li style="list-style-type:disc">Each layer interface reflects some light</li></ul></div><div style="display:contents" dir="auto"><ul id="cb3813f9-1f9e-4e74-aecc-b263bc950dcf" class="bulleted-list"><li style="list-style-type:disc">With 10+ precisely-spaced layers, the constructive interference becomes very selective</li></ul></div><div style="display:contents" dir="auto"><ul id="3a4439ae-df3b-4cc3-b1fa-e9399c3825bb" class="bulleted-list"><li style="list-style-type:disc">Only a narrow band of wavelengths survives → intense, saturated color</li></ul></div><div style="display:contents" dir="auto"><ul id="c2a0f1ff-82eb-40dc-b76e-6f7eaba3e353" class="bulleted-list"><li style="list-style-type:disc">More layers = sharper wavelength selection = more vivid color</li></ul></div><div style="display:contents" dir="auto"><p id="d111df64-2388-4ece-844f-ebff4e703ea9" class="">Think of it like:</p></div><div style="display:contents" dir="auto"><ul id="4a59c3a4-2030-4789-8b15-ffd4d0488bb6" class="bulleted-list"><li style="list-style-type:disc">Single thin film = one vote for which wavelengths win</li></ul></div><div style="display:contents" dir="auto"><ul id="b44cbba2-389f-4ebd-81fc-958ef80ff8ae" class="bulleted-list"><li style="list-style-type:disc">Multilayer = many votes all agreeing = landslide victory for one specific color</li></ul></div><div style="display:contents" dir="auto"><h3 id="48e84ff0-2452-4742-9ff9-dd0cbf0dcf94" class="">Analogy: Acoustic Interference</h3></div><div style="display:contents" dir="auto"><p id="72760dcd-4345-4ae6-a3c5-b94d610e64e5" class="">It&#x27;s like noise-canceling headphones:</p></div><div style="display:contents" dir="auto"><ul id="354548d5-322c-4d0d-af7a-52ac0a255eea" class="bulleted-list"><li style="list-style-type:disc">The headphones don&#x27;t create silence</li></ul></div><div style="display:contents" dir="auto"><ul id="1398f484-4962-44f8-9ecf-7cd4832c9a6b" class="bulleted-list"><li style="list-style-type:disc">They create an anti-wave that cancels the noise wave</li></ul></div><div style="display:contents" dir="auto"><ul id="06392b04-7fa7-4196-b21f-d8354962b017" class="bulleted-list"><li style="list-style-type:disc">What you hear is what survives the cancellation</li></ul></div><div style="display:contents" dir="auto"><p id="ae3cc212-2ca3-4392-a9d4-30fdee6bffbf" class="">Or like a room with weird acoustics:</p></div><div style="display:contents" dir="auto"><ul id="40033905-146a-48bc-abd6-0fea7f1826b3" class="bulleted-list"><li style="list-style-type:disc">Certain frequencies resonate (constructive) → loud</li></ul></div><div style="display:contents" dir="auto"><ul id="25a92fea-8eef-4adc-a30d-ad8cf55da61e" class="bulleted-list"><li style="list-style-type:disc">Certain frequencies cancel (destructive) → quiet</li></ul></div><div style="display:contents" dir="auto"><ul id="1359340d-2c7b-4e4a-b5ff-79483e588e0f" class="bulleted-list"><li style="list-style-type:disc">The room &quot;selects&quot; which frequencies you hear clearly</li></ul></div><div style="display:contents" dir="auto"><h3 id="6fba8c0b-773a-4760-bdc1-3d9d342a4b45" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><p id="7aa3b331-4924-47d5-b929-663bbc2c8687" class=""><strong>Thin-film:</strong></p></div><div style="display:contents" dir="auto"><ul id="7efd4f27-5ea7-4742-a25c-3971d89319a1" class="bulleted-list"><li style="list-style-type:disc"><strong>Soap bubbles</strong> — Film thickness varies → swirling colors</li></ul></div><div style="display:contents" dir="auto"><ul id="b62c2f71-ff77-40c8-aa56-efefbf92a720" class="bulleted-list"><li style="list-style-type:disc"><strong>Oil on water</strong> — Thickness varies with spreading</li></ul></div><div style="display:contents" dir="auto"><ul id="e4964987-6bcd-48f8-bbc8-4252dd2389ab" class="bulleted-list"><li style="list-style-type:disc"><strong>Anti-reflective coatings</strong> — Engineered destructive interference for unwanted reflections</li></ul></div><div style="display:contents" dir="auto"><p id="47e93f46-c2a2-4dd8-bfea-92f60c869775" class=""><strong>Multilayer:</strong></p></div><div style="display:contents" dir="auto"><ul id="0c86d9ce-af1e-4399-9674-e4fe419cb7b6" class="bulleted-list"><li style="list-style-type:disc"><strong>Mother of pearl / nacre</strong> — Aragonite platelets ~500nm with organic layers</li></ul></div><div style="display:contents" dir="auto"><h3 id="ff3b073b-df02-4b22-bb76-153b72c40cb1" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><p id="ccfc8808-2516-4467-8155-54165efb8af0" class=""><strong>The richest category for biology:</strong></p></div><div style="display:contents" dir="auto"><ul id="9bf3cb1f-9cff-42b3-b9ff-20cc7ee6762b" class="bulleted-list"><li style="list-style-type:disc"><strong>Morpho butterfly</strong> — Christmas tree-shaped nanostructures, ~200nm layer spacing. Intense blue, no pigment (wing material is brown). 100+ year old specimens still vibrant!</li></ul></div><div style="display:contents" dir="auto"><ul id="8434d2c3-d222-488b-ac3b-007729c5e75e" class="bulleted-list"><li style="list-style-type:disc"><strong>Peacock feathers</strong> — Melanin rods in precise lattice. Different spacings = different colors in the &quot;eye.&quot;</li></ul></div><div style="display:contents" dir="auto"><ul id="7e90dc1d-3943-4932-9909-58499ee69c21" class="bulleted-list"><li style="list-style-type:disc"><strong>Hummingbird gorgets</strong> — Iridescent throat patches, angle-dependent</li></ul></div><div style="display:contents" dir="auto"><ul id="12fdc538-083a-4a69-9dd1-77d6f1aea43f" class="bulleted-list"><li style="list-style-type:disc"><strong>Jewel beetles</strong> — Multilayer cuticle structures</li></ul></div><div style="display:contents" dir="auto"><ul id="f7bfa699-e7d7-4447-ae28-fcbd0457bb1e" class="bulleted-list"><li style="list-style-type:disc"><strong>Beetle shells (many species)</strong> — Cholesteric liquid crystal structures, can be circularly polarized!</li></ul></div><div style="display:contents" dir="auto"><ul id="6f4886b6-3a9e-4474-b73c-31e9ac0ae96a" class="bulleted-list"><li style="list-style-type:disc"><strong>Fish scales (many species)</strong> — Guanine crystal platelets create silvery/iridescent appearance</li></ul></div><div style="display:contents" dir="auto"><ul id="e2d5f6d5-678d-4965-9d8d-f35e5098aa1a" class="bulleted-list"><li style="list-style-type:disc"><strong>Squid/cuttlefish iridophores</strong> — Tunable interference for camouflage</li></ul></div><div style="display:contents" dir="auto"><h3 id="e33e8152-cd36-404c-a6de-2be2c914c91c" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="3af757d6-f047-4e3e-bf49-9473ed001a16" class="">Morpho butterflies are being studied for display technology. Unlike pigments that fade, structural colors last forever. Qualcomm developed &quot;Mirasol&quot; displays based on interference.</p></div><div style="display:contents" dir="auto"><h3 id="3549dbda-bd53-47ba-8e9f-0f17584725d5" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="64dcdc0c-16da-44dc-91cb-41149a450e51" class="">Iridescence (color changes with angle) = interference. The spacing determines which wavelength wins; the angle changes the effective path length, shifting which wavelength matches the constructive condition.</p></div><div style="display:contents" dir="auto"><hr id="2c89ae11-3fb1-4e53-b7f7-2b3a4b054323"/></div><div style="display:contents" dir="auto"><h2 id="c523c346-3325-49b0-a4fc-71cb55519a98" class="">Mechanism 15: Diffraction</h2></div><div style="display:contents" dir="auto"><h3 id="52f8b7c1-b02a-46be-899a-6c326bba1b3f" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="e3590f5c-23ef-4ae8-bdc2-d7af45dedb40" class="">Light bends around obstacles or through periodic structures with spacing comparable to wavelength. Regular arrays act as diffraction gratings, sending different wavelengths in different directions.</p></div><div style="display:contents" dir="auto"><h3 id="55a06a46-67a0-42b9-abe6-6e353bfdb63f" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="db62940e-ec1f-47b7-bd62-9df7b77f9cc2" class="bulleted-list"><li style="list-style-type:disc"><strong>Opals</strong> — Silica spheres (150-400nm) in regular arrays. Precious opal = long-range order; common opal = random packing (milky).</li></ul></div><div style="display:contents" dir="auto"><ul id="3d63d44a-2f3b-49ba-99c2-42ab1306432c" class="bulleted-list"><li style="list-style-type:disc"><strong>CDs and DVDs</strong> — Groove spacing acts as diffraction grating (~1.6μm CD, ~0.74μm DVD, ~0.32μm Blu-ray)</li></ul></div><div style="display:contents" dir="auto"><ul id="e5cc44d0-33f7-4762-8394-71f8094aef5d" class="bulleted-list"><li style="list-style-type:disc"><strong>Diffraction gratings</strong> — Precision-ruled for spectroscopy</li></ul></div><div style="display:contents" dir="auto"><ul id="c4287001-f342-4be0-b249-bf213738b8f2" class="bulleted-list"><li style="list-style-type:disc"><strong>Holographic materials</strong> — Recorded interference patterns</li></ul></div><div style="display:contents" dir="auto"><h3 id="b5433bc1-d401-47bd-adda-4415eabbdaa9" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="3f41ed3c-b079-44b2-a3f7-591d0f250d6d" class="bulleted-list"><li style="list-style-type:disc"><strong>Peacock spider</strong> — Diffraction gratings on abdomen scales create rainbow display</li></ul></div><div style="display:contents" dir="auto"><ul id="0c762e7b-b93c-46b0-846a-42a1af48f7d5" class="bulleted-list"><li style="list-style-type:disc"><strong>Some beetle shells</strong> — Chitin ridges act as gratings (in addition to interference)</li></ul></div><div style="display:contents" dir="auto"><ul id="8e150697-ba32-4a6e-b76c-3fdb944aed33" class="bulleted-list"><li style="list-style-type:disc"><strong>Sea mouse bristles</strong> — Remarkable iridescence from natural diffraction grating</li></ul></div><div style="display:contents" dir="auto"><ul id="c77c6fe1-93f7-4f77-bcf4-40ce8d5284a2" class="bulleted-list"><li style="list-style-type:disc"><strong>Some bird feathers</strong> — Barbule gratings in hummingbirds and birds of paradise</li></ul></div><div style="display:contents" dir="auto"><ul id="f6d91df8-3a18-41e8-9785-82f2b77f5c5a" class="bulleted-list"><li style="list-style-type:disc"><strong>Spider webs</strong> — Rainbow colors at certain angles from silk fiber diameter</li></ul></div><div style="display:contents" dir="auto"><h3 id="ae0d31db-69fe-4955-90b6-c2028c2d5d85" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="c4a2ef70-336e-4225-a501-b263312cd47f" class="">You can roughly estimate data density with a CD rainbow. The color pattern shifts based on groove spacing — Blu-ray looks different from DVD. You&#x27;re literally seeing data density!</p></div><div style="display:contents" dir="auto"><h3 id="24a47607-dbb4-4bec-b360-db672c8eaa9a" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="78f1ff6b-368d-4137-8fd8-22ebf207692e" class="">Diffraction requires periodic structures at the scale of light wavelengths (~400-700nm). Nature builds these with remarkable precision.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

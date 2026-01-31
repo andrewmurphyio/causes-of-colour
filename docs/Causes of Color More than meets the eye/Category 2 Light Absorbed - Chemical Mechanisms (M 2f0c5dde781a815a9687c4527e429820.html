@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Category 2: Light Absorbed - Chemical Mechanisms (Mechanisms 4-11)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2f0c5dde-781a-815a-9687-c4527e429820" class="page sans"><header><h1 class="page-title" dir="auto">Category 2: Light Absorbed - Chemical Mechanisms (Mechanisms 4-11)</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="520be864-88fa-464c-8866-29bb696581c4" class="">Overview</h2></div><div style="display:contents" dir="auto"><p id="7d59492b-2db4-4c21-8e35-3a0c60118947" class="">Colors created when electrons in materials <strong>absorb specific wavelengths</strong> and we see what&#x27;s left. This is the largest category — 8 distinct mechanisms.</p></div><div style="display:contents" dir="auto"><p id="d67dd06d-41e8-4d1a-999b-79c0abcc40f0" class=""><strong>Mechanisms covered:</strong></p></div><div style="display:contents" dir="auto"><ul id="598ca3b0-63cb-4268-963d-d077e664ca11" class="bulleted-list"><li style="list-style-type:disc">Mechanism 4: Transition Metal Compounds</li></ul></div><div style="display:contents" dir="auto"><ul id="34f4eb5b-47fb-4127-b70a-b628f137f9f5" class="bulleted-list"><li style="list-style-type:disc">Mechanism 5: Transition Metal Impurities</li></ul></div><div style="display:contents" dir="auto"><ul id="cad5ffb2-aaf1-419a-b55b-bd2d6bd78f07" class="bulleted-list"><li style="list-style-type:disc">Mechanism 6: Organic Compounds</li></ul></div><div style="display:contents" dir="auto"><ul id="5861b1bd-6c11-4f49-8c4e-8cd13b6e5e78" class="bulleted-list"><li style="list-style-type:disc">Mechanism 7: Charge Transfer</li></ul></div><div style="display:contents" dir="auto"><ul id="091a3f86-745d-42d5-bbdd-c3b086d5471f" class="bulleted-list"><li style="list-style-type:disc">Mechanism 8: Metals</li></ul></div><div style="display:contents" dir="auto"><ul id="b4e47293-5b5d-41f2-b11f-eddb9f3ae157" class="bulleted-list"><li style="list-style-type:disc">Mechanism 9: Pure Semiconductors</li></ul></div><div style="display:contents" dir="auto"><ul id="dd07f4c4-0c55-4fb5-95e6-9ef2f024c564" class="bulleted-list"><li style="list-style-type:disc">Mechanism 10: Doped Semiconductors</li></ul></div><div style="display:contents" dir="auto"><ul id="5dbc944e-62fd-4dbf-be3e-ea4a311112c2" class="bulleted-list"><li style="list-style-type:disc">Mechanism 11: Color Centers</li></ul></div><div style="display:contents" dir="auto"><hr id="33c26c90-81d6-45e2-8a4a-d2c1bb9dafab"/></div><div style="display:contents" dir="auto"><h2 id="3c5c0cdb-f49d-4919-8bb3-c0d8d516bec4" class="">Mechanism 4: Transition Metal Compounds</h2></div><div style="display:contents" dir="auto"><h3 id="1526e58b-5f9d-4478-895c-8a229aa1e9b2" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="a8e9e5df-971f-4b74-8b4d-6e80927d3e2b" class="">Transition metals have partially filled d-orbitals. When surrounded by other atoms (ligands), these orbitals split into different energy levels. Light absorption causes d-d transitions.</p></div><div style="display:contents" dir="auto"><p id="9e195529-fc25-4844-91a6-e0bc91094e2e" class=""><strong>Key insight:</strong> The <em>same</em> metal ion produces <em>different</em> colors depending on its chemical environment.</p></div><div style="display:contents" dir="auto"><h3 id="e746e351-f042-420e-a04a-21b5c3a66db7" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="ce035b97-ab94-43d4-983c-39dad9757bb2" class="bulleted-list"><li style="list-style-type:disc"><strong>Copper compounds:</strong><div style="display:contents" dir="auto"><ul id="4e9ed472-031b-44b0-a81a-6912639d1992" class="bulleted-list"><li style="list-style-type:circle">Copper sulfate (CuSO₄·5H₂O) — Blue</li></ul></div><div style="display:contents" dir="auto"><ul id="8f5f3c84-914b-423d-8321-c1336f95acb5" class="bulleted-list"><li style="list-style-type:circle">Malachite Cu₂CO₃(OH)₂ — Green</li></ul></div><div style="display:contents" dir="auto"><ul id="71d33444-e222-4ce3-b598-805334fd098f" class="bulleted-list"><li style="list-style-type:circle">Turquoise CuAl₆(PO₄)₄(OH)₈·4H₂O — Blue-green</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="9ee8a896-b94e-45e8-b84d-473242a9a7c6" class="bulleted-list"><li style="list-style-type:disc"><strong>Chromium compounds:</strong><div style="display:contents" dir="auto"><ul id="ea84a8e7-f842-4826-a112-7dfbc2e5c63e" class="bulleted-list"><li style="list-style-type:circle">Potassium dichromate — Orange</li></ul></div><div style="display:contents" dir="auto"><ul id="939c276d-87f4-42ee-a5c0-d5b0b8aae5b6" class="bulleted-list"><li style="list-style-type:circle">Chromium oxide — Green</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="1d7cc32c-f7b0-453f-a203-86716ce04ffd" class="bulleted-list"><li style="list-style-type:disc"><strong>Cobalt compounds:</strong><div style="display:contents" dir="auto"><ul id="ff2d7c0e-be57-469b-b4a7-a5af37728aca" class="bulleted-list"><li style="list-style-type:circle">Cobalt chloride — Blue (dry) / Pink (hydrated)</li></ul></div><div style="display:contents" dir="auto"><ul id="d2959454-c125-4784-a093-01ef46eb3588" class="bulleted-list"><li style="list-style-type:circle">Cobalt aluminate — &quot;Cobalt blue&quot; pigment</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="9b3a3d85-0ce8-4c95-b968-da616cd0105f" class="bulleted-list"><li style="list-style-type:disc"><strong>Iron compounds:</strong><div style="display:contents" dir="auto"><ul id="351b17a8-62f5-4bd8-a4ae-e4b329f62707" class="bulleted-list"><li style="list-style-type:circle">Rust (Fe₂O₃) — Red-brown</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="e486db3f-fc71-4194-bcbf-38583ab260cd" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="14c45bcd-e318-4744-a364-745f08ab43db" class="bulleted-list"><li style="list-style-type:disc"><strong>Hemocyanin</strong> — Copper-based oxygen carrier in octopi, squid, crustaceans, spiders → <strong>blue blood</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="189c8f3d-11ff-420d-8856-e9e04198cf64" class="bulleted-list"><li style="list-style-type:disc"><strong>Tunichromes</strong> in sea squirts — Vanadium compounds (green)</li></ul></div><div style="display:contents" dir="auto"><ul id="97ad43db-999d-4b73-8f05-040fba71f954" class="bulleted-list"><li style="list-style-type:disc"><strong>Chlorocruorin</strong> — Green blood in some marine worms (iron-based but different structure)</li></ul></div><div style="display:contents" dir="auto"><h3 id="1456d15e-dccd-47a3-ba1f-285ad8096c85" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="c7dfa194-aece-45af-8dd8-5f8f88140dbe" class="">Those silica gel packets with blue/pink beads? Cobalt chloride. Blue = dry, pink = absorbed moisture. Chemistry you can see!</p></div><div style="display:contents" dir="auto"><h3 id="93c040e0-3825-45bf-a07a-6aa909a9f334" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="b9484670-d002-4084-9ec9-c0b9ef3ebf62" class="">Same metal, different chemical partners = completely different colors.</p></div><div style="display:contents" dir="auto"><hr id="36a9df03-22a3-48c9-ad0b-51219781416e"/></div><div style="display:contents" dir="auto"><h2 id="0b26774b-a798-4e87-93c3-13626fffc7a0" class="">Mechanism 5: Transition Metal Impurities</h2></div><div style="display:contents" dir="auto"><h3 id="664ca5f3-2147-456e-bc9f-931d7918c5c3" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="6fef0c9a-8899-48be-ad7a-8b17b25d9f45" class="">Trace amounts of transition metal ions substituting into a crystal structure that would otherwise be colorless. The host crystal&#x27;s geometry determines the exact color.</p></div><div style="display:contents" dir="auto"><p id="7817b4bf-d977-4a8e-9fbf-2204d4ec291f" class=""><strong>The magic:</strong> The <em>same</em> impurity ion creates <em>completely different</em> colors in different host crystals.</p></div><div style="display:contents" dir="auto"><h3 id="a2558303-0a0f-4d8e-9113-cbe2bd471864" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><p id="fa2442a4-723e-4fcc-a313-9bf3dd5dbba0" class=""><strong>Chromium (Cr³⁺) in different hosts:</strong></p></div><div style="display:contents" dir="auto"><ul id="3414f9fe-01e2-40f6-8b3f-3c791d55f147" class="bulleted-list"><li style="list-style-type:disc"><strong>Ruby</strong> — Cr³⁺ in aluminum oxide (Al₂O₃) → <strong>RED</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="54ea7d95-ab4a-4ae4-8c28-c169724fab8f" class="bulleted-list"><li style="list-style-type:disc"><strong>Emerald</strong> — Cr³⁺ in beryllium aluminum silicate → <strong>GREEN</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="98041def-7557-45fe-9dae-96acb0e582ec" class="bulleted-list"><li style="list-style-type:disc"><strong>Alexandrite</strong> — Cr³⁺ in chrysoberyl → <strong>Red in incandescent, green in daylight</strong></li></ul></div><div style="display:contents" dir="auto"><p id="e770af88-6d44-4003-8d37-a26d43eb047b" class=""><strong>Other impurity examples:</strong></p></div><div style="display:contents" dir="auto"><ul id="8db11941-d5cb-4ba4-b3fd-57519d45843a" class="bulleted-list"><li style="list-style-type:disc">Yellow sapphire — Fe³⁺ in Al₂O₃</li></ul></div><div style="display:contents" dir="auto"><ul id="972af17e-a429-4f59-a627-238621255b7a" class="bulleted-list"><li style="list-style-type:disc">Peridot — Fe²⁺ in olivine → Yellow-green</li></ul></div><div style="display:contents" dir="auto"><ul id="30c55ffd-6b3c-4355-89c3-cdbbbd9d5431" class="bulleted-list"><li style="list-style-type:disc">Aquamarine — Fe²⁺ in beryl → Blue</li></ul></div><div style="display:contents" dir="auto"><h3 id="9534ee76-5a1b-4a11-935a-64b72b75c113" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="5b11e994-0eb5-485f-8883-728c3943f60c" class="bulleted-list"><li style="list-style-type:disc"><strong>None</strong> — This is purely a geological/mineralogical mechanism. Organisms don&#x27;t grow mineral crystals with controlled impurities.</li></ul></div><div style="display:contents" dir="auto"><h3 id="68668439-d397-4310-9383-22d8a00db460" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="51142ba7-172c-4f5d-a45d-a6b157b7301a" class="">Ruby and emerald are both colored by chromium! A jeweler selling &quot;green rubies&quot; or &quot;red emeralds&quot; would technically be describing the chemistry more accurately.</p></div><div style="display:contents" dir="auto"><h3 id="3e3a3d71-7706-4aa0-acc3-74f6851c3f97" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="b9f6266e-4d80-4ad4-bc1c-8478cafe9c1c" class="">Same impurity atom + different crystal host = opposite colors (ruby red vs emerald green).</p></div><div style="display:contents" dir="auto"><hr id="bceb48cf-a6f9-4a9b-acb5-44dc0c797e25"/></div><div style="display:contents" dir="auto"><h2 id="c2600d81-3c11-4eb0-a609-5be4a2b9a67f" class="">Mechanism 6: Organic Compounds</h2></div><div style="display:contents" dir="auto"><h3 id="e3f0e20f-86f6-4de6-9520-6fec7b2231b3" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="139aa914-28a0-48e1-baa8-f67fa274d174" class="">Large conjugated molecules (alternating single and double bonds) have delocalized π-electrons that can absorb visible light. </p></div><div style="display:contents" dir="auto"><p id="8825d86e-5d16-426b-b1d5-095755ebc505" class=""><strong>The rule:</strong> More conjugated double bonds → absorbs longer wavelengths → appears as complementary color.</p></div><div style="display:contents" dir="auto"><h3 id="b3cb2d66-78a5-4231-a5fa-c2b8153a6026" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="460b07ab-7abb-4912-bdf6-6692205df621" class="bulleted-list"><li style="list-style-type:disc"><strong>Indigo</strong> — The blue of blue jeans. One of the oldest known dyes.</li></ul></div><div style="display:contents" dir="auto"><ul id="a8206cb8-d8e3-441d-8837-fe39e94b45d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Alizarin</strong> — Red dye from madder root</li></ul></div><div style="display:contents" dir="auto"><ul id="e89a0fd7-269f-4264-a071-ff2f7b58b1fe" class="bulleted-list"><li style="list-style-type:disc"><strong>Synthetic food dyes</strong> — Engineered conjugation lengths</li></ul></div><div style="display:contents" dir="auto"><ul id="4bbe63cb-4dba-4718-b341-2c5d57487d75" class="bulleted-list"><li style="list-style-type:disc"><strong>Mauveine</strong> — First synthetic dye (1856), launched the chemical industry</li></ul></div><div style="display:contents" dir="auto"><h3 id="3684b6fe-a237-40db-a5d8-e99d20d0b03a" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="c82e6f87-f523-45bd-aea0-c0729245ccb0" class="bulleted-list"><li style="list-style-type:disc"><strong>Chlorophyll</strong> — Absorbs red and blue, reflects green. Porphyrin ring + magnesium.</li></ul></div><div style="display:contents" dir="auto"><ul id="2e265620-b7a6-4c73-8b78-2c93d042b39f" class="bulleted-list"><li style="list-style-type:disc"><strong>Hemoglobin</strong> — Porphyrin ring + iron. Oxygenated = bright red, deoxygenated = darker red (not blue!)</li></ul></div><div style="display:contents" dir="auto"><ul id="3494a8d4-f60f-4764-a58f-41b1ca8a4a92" class="bulleted-list"><li style="list-style-type:disc"><strong>Carotenoids:</strong><div style="display:contents" dir="auto"><ul id="ca82181b-2576-46d4-912f-7312e042cfee" class="bulleted-list"><li style="list-style-type:circle">β-carotene — Orange (carrots, sweet potatoes)</li></ul></div><div style="display:contents" dir="auto"><ul id="f00ab082-55b4-4c45-a5cf-2f4fc377bf6e" class="bulleted-list"><li style="list-style-type:circle">Lycopene — Red (tomatoes, watermelon)</li></ul></div><div style="display:contents" dir="auto"><ul id="19c5d3f3-d0e9-4bde-9ada-a08abeb273f5" class="bulleted-list"><li style="list-style-type:circle">Xanthophylls — Yellow (egg yolks, autumn leaves)</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="56b0780b-12aa-4358-a5dd-3b3e2e04fa59" class="bulleted-list"><li style="list-style-type:disc"><strong>Melanin</strong> — Brown/black in skin, hair, eyes, feathers</li></ul></div><div style="display:contents" dir="auto"><ul id="c695c4f1-6c74-4b0b-b688-391a30950e73" class="bulleted-list"><li style="list-style-type:disc"><strong>Anthocyanins</strong> — Red/purple/blue in flowers, berries. pH sensitive!</li></ul></div><div style="display:contents" dir="auto"><ul id="cc271469-9a1a-494e-95cc-d280bfad6495" class="bulleted-list"><li style="list-style-type:disc"><strong>Bilirubin</strong> — Yellow in bruises and jaundice</li></ul></div><div style="display:contents" dir="auto"><ul id="2ef7631f-a242-40a2-8a67-44ad716ed424" class="bulleted-list"><li style="list-style-type:disc"><strong>Psittacofulvins</strong> — Red/yellow pigments unique to parrots</li></ul></div><div style="display:contents" dir="auto"><h3 id="82199985-3611-4bf5-a97a-4fd2d686b7bb" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="83228842-d648-4582-98e2-cf4bba0053f5" class="">Flamingos are born grey! They turn pink from carotenoids in shrimp and algae they eat. Zoo flamingos on carotenoid-free diets fade to white. You literally are what you eat.</p></div><div style="display:contents" dir="auto"><h3 id="9934cad9-48aa-4d75-b6e2-2c18dfefa496" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="f46c0dca-de23-4ff6-9cd5-416652a71125" class="">Autumn leaves: Chlorophyll breaks down → reveals yellow carotenoids that were there all along → some trees synthesize red anthocyanins.</p></div><div style="display:contents" dir="auto"><hr id="e5c42f77-dcc6-4d8f-b3de-e1374733296a"/></div><div style="display:contents" dir="auto"><h2 id="383524fc-665b-4270-98e7-a97122e214b9" class="">Mechanism 7: Charge Transfer</h2></div><div style="display:contents" dir="auto"><h3 id="1b3b7a07-4402-45bb-970d-24ef2ec1b3d6" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="f0722586-85e7-4823-af5d-0479c5976707" class="">An electron transfers between two different atoms/ions, typically from a donor to an acceptor. This requires much more energy than d-d transitions, producing <strong>very intense colors</strong>.</p></div><div style="display:contents" dir="auto"><p id="b2573552-00d8-4d67-8435-c1ceef3f7e68" class=""><strong>Key difference from mechanism 5:</strong> Electron moves <em>between</em> atoms, not within one atom&#x27;s orbitals.</p></div><div style="display:contents" dir="auto"><h3 id="d13a31bf-1c69-4dc4-b70d-863c9bf97a44" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="ff0231a0-db2d-41d8-93e8-50b6ef6a559d" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue sapphire</strong> — Fe²⁺ + Ti⁴⁺ impurities in Al₂O₃. Electron transfers: Fe²⁺ → Ti⁴⁺, absorbs yellow/orange. Neither iron nor titanium alone produces blue!</li></ul></div><div style="display:contents" dir="auto"><ul id="019468ef-c6e2-4881-bd38-06dd645fbae9" class="bulleted-list"><li style="list-style-type:disc"><strong>Lapis lazuli / Ultramarine</strong> — S₃⁻ radical ions trapped in silicate cage</li></ul></div><div style="display:contents" dir="auto"><ul id="ca7b03f6-3f46-4e93-88ac-aaf240144b3f" class="bulleted-list"><li style="list-style-type:disc"><strong>Prussian blue</strong> — Fe²⁺ → Fe³⁺ through cyanide bridges. First modern synthetic pigment (1704).</li></ul></div><div style="display:contents" dir="auto"><ul id="a13c2aed-40ef-4a42-9bf8-23acd50bb4d5" class="bulleted-list"><li style="list-style-type:disc"><strong>Crocoite</strong> (lead chromate) — O → Cr charge transfer, intense orange</li></ul></div><div style="display:contents" dir="auto"><h3 id="8fe26cec-ae16-49d9-9758-d985c0ae302f" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="45d59e6f-e022-43a6-bb0d-29977d1473db" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue copper proteins</strong> — Plastocyanin, azurin (electron transport)</li></ul></div><div style="display:contents" dir="auto"><ul id="224109d1-2775-4adf-ba3c-9a43c3575475" class="bulleted-list"><li style="list-style-type:disc"><strong>Iron-sulfur proteins</strong> — Brown color from charge transfer</li></ul></div><div style="display:contents" dir="auto"><ul id="16ba0944-4777-4999-8b2c-2fbc430f393c" class="bulleted-list"><li style="list-style-type:disc"><strong>Phycocyanin</strong> in cyanobacteria — Charge transfer contributes to intense blue</li></ul></div><div style="display:contents" dir="auto"><h3 id="09285e4c-1578-4de0-b28b-30f82581500f" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="c3db56d9-3f9c-49ae-b2fa-5a30ab372f53" class="">Blue sapphire requires <em>two</em> specific impurities sitting next to each other — iron AND titanium. Remove either one, colorless. It&#x27;s a two-person chemical act.</p></div><div style="display:contents" dir="auto"><h3 id="fcb7125c-b707-4d71-ad2e-d69c72a75595" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="7f8d2171-f201-47ea-bb74-55ce772f69ab" class="">Charge transfer colors are intensely vivid because the transition is &quot;allowed&quot; quantum mechanically.</p></div><div style="display:contents" dir="auto"><hr id="24647bf1-b9a5-4646-955a-c9cad83cfcf8"/></div><div style="display:contents" dir="auto"><h2 id="75049cf0-7bd1-4d01-a5b7-339edd049feb" class="">Mechanism 8: Metals</h2></div><div style="display:contents" dir="auto"><h3 id="cc29d04f-4541-462c-b785-4871745e088a" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="9639ae67-5fb0-4d62-b35a-ed9bd85f2bb9" class="">Metals have &quot;free&quot; electrons in a conduction band. Most metals reflect all visible wavelengths equally = silver/grey. But some have <strong>interband transitions</strong> where electrons jump to higher bands, absorbing specific wavelengths.</p></div><div style="display:contents" dir="auto"><h3 id="b4ed4724-6981-4607-b053-7d2879424167" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="9963a03c-ca40-4169-afe2-91dce6b67a50" class="bulleted-list"><li style="list-style-type:disc"><strong>Gold</strong> — Absorbs blue/violet light, reflects yellow/red. Relativistic effects make gold golden!</li></ul></div><div style="display:contents" dir="auto"><ul id="4cb65e52-9991-47c7-b80e-9f78648b64de" class="bulleted-list"><li style="list-style-type:disc"><strong>Copper</strong> — Absorbs into green, reflects orange-red</li></ul></div><div style="display:contents" dir="auto"><ul id="2cdca090-858c-4a6d-a0a4-feffab5a493a" class="bulleted-list"><li style="list-style-type:disc"><strong>Silver, aluminum, platinum, steel</strong> — No interband transitions in visible range → silvery-grey</li></ul></div><div style="display:contents" dir="auto"><ul id="221676f0-a456-4740-b784-d30fea8b483f" class="bulleted-list"><li style="list-style-type:disc"><strong>Gold nanoparticles</strong> — Appear red (plasmon resonance, different physics)</li></ul></div><div style="display:contents" dir="auto"><h3 id="4260a7ce-5645-43d2-a85c-cf9234c1b63c" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="780d8d42-9919-493d-b479-3be3773986f0" class="bulleted-list"><li style="list-style-type:disc"><strong>None</strong> — Organisms don&#x27;t produce metallic materials with these properties</li></ul></div><div style="display:contents" dir="auto"><ul id="853444fd-667e-40cb-a0e3-7c2ed7fb31de" class="bulleted-list"><li style="list-style-type:disc">Note: Beetles with metallic appearance use structural color (mechanism 14), not metal physics</li></ul></div><div style="display:contents" dir="auto"><h3 id="abdc616d-340f-4092-af2e-4a69c394903a" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="e5e3edef-b738-475a-bad0-f38c78bb6bcd" class="">Gold is golden because of relativity! Gold&#x27;s 79 protons accelerate electrons to relativistic speeds, shifting absorption into visible range. Without relativity, gold would be silver-colored.</p></div><div style="display:contents" dir="auto"><h3 id="37b619c6-c1e3-4e87-b6f2-0a9d03fda59b" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="2bf8f426-dc72-4081-8138-d398b9175303" class="">Only gold, copper, and a few alloys are naturally &quot;colored&quot; metals — everything else is silver/grey.</p></div><div style="display:contents" dir="auto"><hr id="d122e445-2648-4a26-9799-fbd520269dc3"/></div><div style="display:contents" dir="auto"><h2 id="a8adafd4-034f-4df7-82ca-6bdbcdbf0b3d" class="">Mechanism 9: Pure Semiconductors</h2></div><div style="display:contents" dir="auto"><h3 id="a58128ed-9c77-4465-8ad5-0190171703c2" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="19760041-2c69-472c-89e3-02903b395afa" class="">Electrons jump from valence band to conduction band. The &quot;band gap&quot; energy determines which wavelengths are absorbed.</p></div><div style="display:contents" dir="auto"><h3 id="8d6596c6-c37b-4341-96ae-05cc8cceb99b" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="610aff38-7481-4414-9e36-a97a86ba064b" class="bulleted-list"><li style="list-style-type:disc"><strong>Cinnabar (HgS)</strong> — Band gap ~2 eV, absorbs blue/green → vermillion red</li></ul></div><div style="display:contents" dir="auto"><ul id="961d7198-2d70-4519-b316-df6a8295fc98" class="bulleted-list"><li style="list-style-type:disc"><strong>Cadmium sulfide (CdS)</strong> — Band gap ~2.4 eV → &quot;Cadmium yellow&quot;</li></ul></div><div style="display:contents" dir="auto"><ul id="7ba48e8a-6502-46a3-8565-c39f0c5bde18" class="bulleted-list"><li style="list-style-type:disc"><strong>Cadmium selenide (CdSe)</strong> — Smaller band gap → &quot;Cadmium red&quot;</li></ul></div><div style="display:contents" dir="auto"><ul id="177e2f26-691b-442f-bcb9-b3311ebe31b3" class="bulleted-list"><li style="list-style-type:disc"><strong>Silicon</strong> — Band gap 1.1 eV (infrared), absorbs ALL visible → grey/metallic</li></ul></div><div style="display:contents" dir="auto"><ul id="19e4fd2f-313a-4caa-bf2f-97b0a807b785" class="bulleted-list"><li style="list-style-type:disc"><strong>Diamond</strong> — Band gap 5.5 eV (deep UV), absorbs nothing visible → colorless</li></ul></div><div style="display:contents" dir="auto"><h3 id="95d63298-f9ab-4828-9bd6-46643da670db" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="ba73d83a-f012-42ea-a6dd-980c6899a9ea" class="bulleted-list"><li style="list-style-type:disc"><strong>None</strong> — Semiconductor physics doesn&#x27;t occur in biological systems</li></ul></div><div style="display:contents" dir="auto"><h3 id="30d1b739-2761-4776-ae29-86f0024533e5" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="69fd506d-a8d1-4d45-a59b-f05a0cfd7ada" class="">Vermillion (cinnabar) was so prized in ancient Rome that its price was fixed by law. Worth more than some metals — just mercury sulfide!</p></div><div style="display:contents" dir="auto"><h3 id="3cbcf8b1-5fac-41a1-a85f-66c5278a8273" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="5102ea39-1f54-4cbd-9820-eb94a9d9ba19" class="">Band gap size directly determines color: small gap = absorbs everything = black/grey; large gap = absorbs nothing = colorless.</p></div><div style="display:contents" dir="auto"><hr id="99849120-ea0a-4b4a-8786-133956b413aa"/></div><div style="display:contents" dir="auto"><h2 id="4c813689-9e6a-4190-8224-9a6ad4fb77bf" class="">Mechanism 10: Doped Semiconductors</h2></div><div style="display:contents" dir="auto"><h3 id="f7441ffe-4178-4ded-87cb-da42ca514a68" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="31ab05e8-ee99-442d-b7d5-dfef8b5120ed" class="">Impurities create additional energy levels within the band gap, enabling new absorptions.</p></div><div style="display:contents" dir="auto"><h3 id="c657f5bb-af4b-4929-9a61-993b87597670" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="6bb62707-b4e8-4a89-89c2-619fe19336e2" class="bulleted-list"><li style="list-style-type:disc"><strong>Yellow diamond</strong> — Nitrogen impurities (most common diamond impurity)</li></ul></div><div style="display:contents" dir="auto"><ul id="609b0b76-f9cc-48aa-86e4-91bd3d3fa995" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue diamond</strong> — Boron impurities (Hope Diamond). Incredibly rare!</li></ul></div><div style="display:contents" dir="auto"><ul id="3394d464-f9bf-4773-80ae-e1a9a6301df2" class="bulleted-list"><li style="list-style-type:disc"><strong>LEDs — the modern revolution:</strong><div style="display:contents" dir="auto"><ul id="22431393-3d6f-453a-8bba-b53165c22364" class="bulleted-list"><li style="list-style-type:circle">Red LED: Gallium arsenide phosphide (GaAsP)</li></ul></div><div style="display:contents" dir="auto"><ul id="c773e763-9a5a-4272-81d6-648591db9aff" class="bulleted-list"><li style="list-style-type:circle">Yellow/Green: GaP with nitrogen doping</li></ul></div><div style="display:contents" dir="auto"><ul id="de26559d-78d3-4ace-bd67-5e470fba269e" class="bulleted-list"><li style="list-style-type:circle">Blue: Gallium nitride (GaN) — <strong>2014 Nobel Prize</strong></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="91a5ad65-9bcf-4164-81cb-10bbb24abc24" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="a886688b-021c-4af9-835f-f94544e8624f" class="bulleted-list"><li style="list-style-type:disc"><strong>None</strong> — Semiconductor doping is solid-state physics, not biology</li></ul></div><div style="display:contents" dir="auto"><h3 id="dbfadb60-09b6-4df4-9b37-dda2c14aca44" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="0495e4b9-06db-4d85-9afc-87a166d81991" class="">The blue LED took decades longer than red/green. Once cracked in the 1990s, suddenly: white LEDs (blue + phosphor), full-color screens, Blu-ray. One missing color held up a technological revolution.</p></div><div style="display:contents" dir="auto"><h3 id="ee60b014-4f5b-487d-944f-96d95baabe4e" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="fdc7326d-cca4-4499-81b2-f1c822b1cf02" class="">Controlled impurities in semiconductors gave us the entire LED lighting and display revolution.</p></div><div style="display:contents" dir="auto"><hr id="20125a3d-bcb4-48aa-a087-d530a2bfa313"/></div><div style="display:contents" dir="auto"><h2 id="2d30d3c7-bf63-4448-a729-19d6546905aa" class="">Mechanism 11: Color Centers</h2></div><div style="display:contents" dir="auto"><h3 id="78186a82-2def-452d-8e41-481ca2e351da" class="">The Physics</h3></div><div style="display:contents" dir="auto"><p id="2abf052d-d307-4b6c-a756-7a27b8c6073b" class="">Crystal defects — missing atoms, extra atoms, trapped electrons — create localized energy states that absorb specific wavelengths. Often caused by natural radiation over geological time.</p></div><div style="display:contents" dir="auto"><h3 id="bab73ecc-231c-4392-857b-b11c37dbe11c" class="">Non-Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="1d084353-fdec-4ecf-86f2-45271a43d003" class="bulleted-list"><li style="list-style-type:disc"><strong>Amethyst</strong> — Iron impurity + radiation creates Fe⁴⁺ color center. Heat it → citrine (yellow)!</li></ul></div><div style="display:contents" dir="auto"><ul id="a80a7506-7625-4030-ba7d-2dd05ccab54c" class="bulleted-list"><li style="list-style-type:disc"><strong>Smoky quartz</strong> — Radiation creates [AlO₄]⁴⁻ centers with trapped holes</li></ul></div><div style="display:contents" dir="auto"><ul id="3627379d-27b4-41d4-91b1-04f409c08fb0" class="bulleted-list"><li style="list-style-type:disc"><strong>Fluorite</strong> — Nearly every color depending on impurities and radiation</li></ul></div><div style="display:contents" dir="auto"><ul id="74ca33f4-201d-4aa7-b98a-e0764f50fc1e" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue halite (salt)</strong> — Radiation creates F-centers (electron in chlorine vacancy)</li></ul></div><div style="display:contents" dir="auto"><h3 id="79e254b0-f129-437f-a494-6487c02a67d5" class="">Biological Examples</h3></div><div style="display:contents" dir="auto"><ul id="0b4f3eb6-1801-4d44-aa9e-d85c85e35f26" class="bulleted-list"><li style="list-style-type:disc"><strong>None</strong> — Color centers require crystal lattices and often geological radiation exposure</li></ul></div><div style="display:contents" dir="auto"><h3 id="1e5870cf-8128-408e-a770-f238ef41b1d3" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="c5bbed2f-171a-40bf-b0ea-37ec78398545" class="">Most commercial citrine is heat-treated amethyst! You&#x27;re literally undoing millions of years of natural irradiation with a kiln. Same crystal, same iron, different temperature = different color center state.</p></div><div style="display:contents" dir="auto"><h3 id="4e5d8b30-4876-478d-8dc7-5e276e7b4071" class="">Key Insight</h3></div><div style="display:contents" dir="auto"><p id="e729c8f8-68c7-457b-829e-6b36c8956118" class="">Radiation damage + time can create beautiful gemstone colors.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

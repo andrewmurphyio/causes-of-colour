@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Causes of Color: More than meets the eye</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2f0c5dde-781a-8057-affc-daf08196f84e" class="page sans"><header><h1 class="page-title" dir="auto">Causes of Color: More than meets the eye</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="2c7a8cbe-2021-4f85-8ce6-8cacda13e896" class="">Opening Hook: The Eye Color Question</h2></div><div style="display:contents" dir="auto"><p id="49bb584b-c92d-479b-85e8-a44770fa5963" class=""><strong>Start the talk by asking the audience:</strong> &quot;Why are brown eyes brown, and blue eyes blue?&quot;</p></div><div style="display:contents" dir="auto"><p id="0bbd501a-9404-4973-ac5d-3d97ede909dd" class="">Most people assume it&#x27;s the same answer — pigment. But it&#x27;s not.</p></div><div style="display:contents" dir="auto"><ul id="6f65de33-40b9-424d-b60e-e355495893c6" class="bulleted-list"><li style="list-style-type:disc"><strong>Brown eyes:</strong> Melanin pigment absorbs blue light → chemistry</li></ul></div><div style="display:contents" dir="auto"><ul id="6cee01bb-5d20-4cef-b888-d33712ac3e80" class="bulleted-list"><li style="list-style-type:disc"><strong>Blue eyes:</strong> Zero blue pigment. Light scatters off collagen fibers in the stroma → physics</li></ul></div><div style="display:contents" dir="auto"><p id="0837716b-9476-4b9b-85fa-54d93a20e1c6" class="">Same organ. Completely different mechanisms. Grind up a blue iris and you get brownish mush — there&#x27;s no blue pigment to extract.</p></div><div style="display:contents" dir="auto"><p id="9f069fdb-7cd6-4de9-88e4-0aec3a7acda7" class="">This is the central insight of the talk: <strong>We perceive color as a single sensation, but it emerges from radically different physical processes.</strong></p></div><div style="display:contents" dir="auto"><hr id="ededf97a-c010-4901-a647-56b869a7a414"/></div><div style="display:contents" dir="auto"><h2 id="597756d1-3128-4cc7-8165-7049987b6d5e" class="">The Tentpole: Nature&#x27;s Color Champion</h2></div><div style="display:contents" dir="auto"><p id="b670e442-034a-4a32-8e26-4e73d3d09059" class=""><strong>The common cuttlefish (</strong><em><strong>Sepia officinalis</strong></em><strong>) deploys more simultaneous color-production mechanisms than any other documented animal.</strong></p></div><div style="display:contents" dir="auto"><p id="70e581ab-01ed-4706-9e13-c77a6f081ae2" class="">This single creature uses at least <strong>4 of Nassau&#x27;s 15 mechanisms</strong> working in concert — a living demonstration of nearly everything we&#x27;ll cover in this talk.</p></div><div style="display:contents" dir="auto"><h3 id="727d0ec8-a51c-473e-a428-d5b41e631973" class="">The Cuttlefish Color Stack (From Top to Bottom)</h3></div><div style="display:contents" dir="ltr"><table id="e9fce4a0-bffd-4c48-ab1f-09cf5c8fe41d" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="66110e49-a03e-4641-9639-fc7e5df592c9"><th id="sf@K" class="simple-table-header-color simple-table-header">Layer</th><th id="`QmM" class="simple-table-header-color simple-table-header">Structure</th><th id="FN{c" class="simple-table-header-color simple-table-header">Mechanism</th><th id="P\Q=" class="simple-table-header-color simple-table-header">Nassau #</th><th id="`xg\" class="simple-table-header-color simple-table-header">Category</th><th id="^Q}F" class="simple-table-header-color simple-table-header">What It Does</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="21ed8d26-b788-4df1-92e6-24209f228b8d"><td id="sf@K" class="">1 (top)</td><td id="`QmM" class="">Chromatophores (yellow)</td><td id="FN{c" class="">Organic compounds</td><td id="P\Q=" class="">6</td><td id="`xg\" class="">Chemical</td><td id="^Q}F" class="">Ommochrome pigments absorb blue/green</td></tr></div><div style="display:contents" dir="ltr"><tr id="f98444c0-69fa-414a-a20d-a68c2b396954"><td id="sf@K" class="">2</td><td id="`QmM" class="">Chromatophores (red)</td><td id="FN{c" class="">Organic compounds</td><td id="P\Q=" class="">6</td><td id="`xg\" class="">Chemical</td><td id="^Q}F" class="">Different ommochromes absorb different wavelengths</td></tr></div><div style="display:contents" dir="ltr"><tr id="f49e120b-2408-4bf8-9fb4-093a9bb4b904"><td id="sf@K" class="">3</td><td id="`QmM" class="">Chromatophores (brown/black)</td><td id="FN{c" class="">Organic compounds</td><td id="P\Q=" class="">6</td><td id="`xg\" class="">Chemical</td><td id="^Q}F" class="">Broad absorption for dark patterns</td></tr></div><div style="display:contents" dir="ltr"><tr id="42757dcb-0d40-46be-8a34-d9648b3b4482"><td id="sf@K" class="">—</td><td id="`QmM" class="">Chromatophore granules</td><td id="FN{c" class="">Fluorescence</td><td id="P\Q=" class="">2</td><td id="`xg\" class="">Light Made</td><td id="^Q}F" class="">Nanostructured proteins emit light (see citation below)</td></tr></div><div style="display:contents" dir="ltr"><tr id="4e1210eb-7159-476c-b170-3e2ba538ca82"><td id="sf@K" class="">4</td><td id="`QmM" class="">Iridophores</td><td id="FN{c" class="">Thin-film interference</td><td id="P\Q=" class="">14</td><td id="`xg\" class="">Structural</td><td id="^Q}F" class="">Reflectin protein stacks produce metallic blues/greens</td></tr></div><div style="display:contents" dir="ltr"><tr id="c8f1704c-f83a-4ac0-9059-6b7cae2320be"><td id="sf@K" class="">5 (bottom)</td><td id="`QmM" class="">Leucophores</td><td id="FN{c" class="">Scattering</td><td id="P\Q=" class="">13</td><td id="`xg\" class="">Structural</td><td id="^Q}F" class="">Mucoprotein spheres scatter all wavelengths → brilliant white</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="611f1d00-5277-40cf-bc25-63986625fd40" class=""><strong>Fluorescence citation:</strong> A 2014 study by researchers at Harvard and the Marine Biological Laboratory discovered that chromatophore pigment granules contain nanostructured proteins (including ω-crystallin) that interface with pigment molecules to produce fluorescent emission — an additional optical channel beyond pigmentary absorption.</p></div><div style="display:contents" dir="auto"><blockquote id="09508adc-7b86-470e-b82f-923789bd06ae" class="">DeSantis et al. (2014) &quot;Dynamic pigmentary and structural coloration within cephalopod chromatophore organs&quot; <em>Nature Communications</em></blockquote></div><div style="display:contents" dir="auto"><h3 id="a6e45751-b29f-4cad-b022-76d0cd8ee381" class="">How It Works Together</h3></div><div style="display:contents" dir="auto"><p id="f48ac94c-1468-4cfa-9768-980bcaf0d1df" class=""><strong>The chromatophores are the magic trick.</strong> Each one has 10-30 radial muscle fibers that can expand or contract in milliseconds. When expanded, the pigment spreads thin and filters light passing through. When contracted, it&#x27;s nearly invisible.</p></div><div style="display:contents" dir="auto"><p id="9390e75b-8062-403d-954a-4c0298896bc5" class=""><strong>Think of it as a biological pixel display:</strong></p></div><div style="display:contents" dir="auto"><ul id="44502aba-a284-4f2e-a8c1-dc38b758a3d3" class="bulleted-list"><li style="list-style-type:disc">Chromatophores = RGB subpixels (absorptive filters)</li></ul></div><div style="display:contents" dir="auto"><ul id="a316b4a8-b68d-4d7c-9656-f8477a5be3b0" class="bulleted-list"><li style="list-style-type:disc">Iridophores = metallic/iridescent layer (adds shimmer)</li></ul></div><div style="display:contents" dir="auto"><ul id="3b2967ca-62dc-404f-b052-b699b9ca4b66" class="bulleted-list"><li style="list-style-type:disc">Leucophores = white backlight (reflects ambient light)</li></ul></div><div style="display:contents" dir="auto"><p id="16eb0d8d-a12c-4f39-bf59-a187c6cb62a6" class="">By selectively expanding different chromatophore combinations over different structural layers, the cuttlefish can produce virtually any color or pattern — <strong>and change it in 200 milliseconds</strong>.</p></div><div style="display:contents" dir="auto"><h3 id="60462ddc-5b0f-4628-8ae5-6d70c388b652" class="">Why This Matters for the Talk</h3></div><div style="display:contents" dir="auto"><p id="fde8a949-8631-4d02-bc19-3836189b233b" class="">The cuttlefish shows that these aren&#x27;t just academic categories. Evolution has discovered that <strong>layering mechanisms creates possibilities no single mechanism can achieve</strong>:</p></div><div style="display:contents" dir="auto"><ul id="804995e6-eba8-4ff7-9b05-f25245718aa7" class="bulleted-list"><li style="list-style-type:disc">Pigments alone: limited palette, no iridescence</li></ul></div><div style="display:contents" dir="auto"><ul id="45691594-158a-4ecd-a8ff-4d7d838132bc" class="bulleted-list"><li style="list-style-type:disc">Interference alone: angle-dependent, washed out without absorption</li></ul></div><div style="display:contents" dir="auto"><ul id="41b03769-0199-466a-b0e0-f5ff05877370" class="bulleted-list"><li style="list-style-type:disc">Scattering alone: just white</li></ul></div><div style="display:contents" dir="auto"><ul id="b7055026-4b4f-463e-80ec-7b1684fa43d9" class="bulleted-list"><li style="list-style-type:disc"><strong>Combined: dynamic camouflage, communication, and display</strong></li></ul></div><div style="display:contents" dir="auto"><h3 id="754e82a9-1b16-46e3-8e4f-d25efa85c361" class="">The Numbers</h3></div><div style="display:contents" dir="auto"><ul id="4ea59ba0-3762-4ece-b7cb-9db5b1a78c56" class="bulleted-list"><li style="list-style-type:disc"><strong>4 distinct Nassau mechanisms</strong> (#6 Pigments, #2 Fluorescence, #14 Interference, #13 Scattering)</li></ul></div><div style="display:contents" dir="auto"><ul id="8072e5c1-5c24-479c-9a58-8b057be3543c" class="bulleted-list"><li style="list-style-type:disc"><strong>200+ chromatophores per mm²</strong> of skin</li></ul></div><div style="display:contents" dir="auto"><ul id="9dc4d19c-a788-4195-a44d-18c04c43ad65" class="bulleted-list"><li style="list-style-type:disc"><strong>3 pigment classes</strong> (yellow, red, brown/black ommochromes)</li></ul></div><div style="display:contents" dir="auto"><ul id="e3700922-9e79-42b8-8187-0dba62272218" class="bulleted-list"><li style="list-style-type:disc"><strong>70-130nm thick</strong> reflectin platelets in iridophores</li></ul></div><div style="display:contents" dir="auto"><ul id="0bd02f5b-4c8c-46b3-9e46-8f04a9896e89" class="bulleted-list"><li style="list-style-type:disc"><strong>250-1250nm diameter</strong> leucosomes in leucophores</li></ul></div><div style="display:contents" dir="auto"><ul id="c55cbd0e-cebb-43d3-822a-dd4fdc06c954" class="bulleted-list"><li style="list-style-type:disc"><strong>~70% reflectance</strong> from leucophores across 300-900nm</li></ul></div><div style="display:contents" dir="auto"><h3 id="2906109a-984c-4225-a3a3-fb9f152fac99" class="">Talk Hook</h3></div><div style="display:contents" dir="auto"><p id="5bde4e1d-ccf7-4c61-a938-633b3d310849" class="">&quot;This animal has solved problems that our best display engineers are still working on. It&#x27;s a living demonstration of almost every color mechanism we&#x27;ll discuss today — and it can switch between them faster than you can blink.&quot;</p></div><div style="display:contents" dir="auto"><hr id="f9241a13-0d17-48b4-96a5-67efa0f62f09"/></div><div style="display:contents" dir="auto"><h2 id="0ab770ab-8e06-4f47-80f4-86d399edcee1" class="">Talk Overview</h2></div><div style="display:contents" dir="auto"><p id="ffed2d1a-bb9b-4e4b-a7e1-38a14ef4d2a1" class=""><strong>Working Title:</strong> More than meets the eye: The science of how colors are created</p></div><div style="display:contents" dir="auto"><p id="164a7bb1-c33c-4003-9427-37a8dc70cdb0" class=""><strong>Core Framework:</strong> Kurt Nassau&#x27;s 15 mechanisms organized into 5 categories</p></div><div style="display:contents" dir="auto"><p id="33702edc-a01b-4532-b9c0-31046681c87d" class=""><strong>Key Insight:</strong> The same color can arise from completely different physics — quantum electron transitions vs wave-interference patterns vs molecular vibrations.</p></div><div style="display:contents" dir="auto"><p id="9e8a2876-1abe-4ee5-9860-06b740b0ef14" class=""><strong>Primary Source:</strong> Kurt Nassau, &quot;The Physics and Chemistry of Color: The Fifteen Causes of Color&quot; (Wiley, 2nd ed. 2001)</p></div><div style="display:contents" dir="auto"><hr id="aeb9dd28-7eca-44c0-b1de-de4defba46f7"/></div><div style="display:contents" dir="auto"><h2 id="dc929a6f-98d9-4019-9198-8e30bed6d8ff" class="">The 5 Categories (Talk Structure)</h2></div><div style="display:contents" dir="auto"><ol type="1" id="652616ca-65f2-4a3a-8eb3-8c6de5590fb7" class="numbered-list" start="1"><li><strong>Light Made</strong> — Incandescence and luminescence (mechanisms 1-2)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="4bf9eeb0-7f4c-4ffb-9f93-c9fadabe44fb" class="numbered-list" start="2"><li><strong>Light Absorbed</strong> — Electronic transitions / chemical mechanisms (mechanisms 3-11)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="e38b3f89-37ae-483e-af3e-e44baf496ec3" class="numbered-list" start="3"><li><strong>Light Redirected</strong> — Structural colors / physical optics (mechanisms 12-15)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="52924fd6-4d7c-47e5-be1a-fec0ac580066" class="numbered-list" start="4"><li><strong>The Vibration Exception</strong> — Water&#x27;s blue as the only non-electronic mechanism (mechanism 3)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="f2a21cb7-caf8-4055-ba3d-cf096181ca04" class="numbered-list" start="5"><li><strong>Combined Mechanisms</strong> — How nature layers multiple approaches</li></ol></div><div style="display:contents" dir="auto"><hr id="82283ab3-33a6-4759-86af-53bd3ff00493"/></div><div style="display:contents" dir="auto"><h2 id="29ad775a-388d-48f7-96ab-986fe95e6b71" class="">Summary Table</h2></div><div style="display:contents" dir="ltr"><table id="b0227bca-e48b-4ee5-9917-44903558fc75" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="cd384552-5875-42ff-afd9-796d24e1e862"><th id="M^?g" class="simple-table-header-color simple-table-header">Category</th><th id="[&gt;UN" class="simple-table-header-color simple-table-header">#</th><th id="J|&lt;e" class="simple-table-header-color simple-table-header">Mechanism</th><th id=";eJK" class="simple-table-header-color simple-table-header">Key Insight</th><th id="BeXp" class="simple-table-header-color simple-table-header">Biological Example</th><th id="UooO" class="simple-table-header-color simple-table-header">Non-Biological Example</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="17ec0d1a-f53a-49e1-8bbf-cd38f6522f3a"><td id="M^?g" class="">Light Made</td><td id="[&gt;UN" class="">1</td><td id="J|&lt;e" class="">Incandescence</td><td id=";eJK" class="">Temperature determines color</td><td id="BeXp" class="">—</td><td id="UooO" class="">Molten lava, stars, candle flames</td></tr></div><div style="display:contents" dir="ltr"><tr id="47ac03ee-1096-4ca4-ad5f-9bbb1f087489"><td id="M^?g" class="">Light Made</td><td id="[&gt;UN" class="">2</td><td id="J|&lt;e" class="">Luminescence</td><td id=";eJK" class="">Discrete wavelengths from electron jumps</td><td id="BeXp" class="">Fireflies, anglerfish, 76% of deep-sea life</td><td id="UooO" class="">Neon signs, auroras, fireworks</td></tr></div><div style="display:contents" dir="ltr"><tr id="99d48769-a4fc-44a2-989c-1718c6d30d5e"><td id="M^?g" class="">Vibration</td><td id="[&gt;UN" class="">3</td><td id="J|&lt;e" class="">Molecular Vibrations</td><td id=";eJK" class="">The ONLY non-electronic mechanism</td><td id="BeXp" class="">—</td><td id="UooO" class="">Water&#x27;s blue, glacier ice</td></tr></div><div style="display:contents" dir="ltr"><tr id="870dce09-1fcc-4c52-a631-8a7cba2141b4"><td id="M^?g" class="">Chemical</td><td id="[&gt;UN" class="">4</td><td id="J|&lt;e" class="">Transition Metal Compounds</td><td id=";eJK" class="">Same element, different compounds = different colors</td><td id="BeXp" class="">Hemocyanin (blue blood in octopi)</td><td id="UooO" class="">Turquoise, malachite, copper sulfate</td></tr></div><div style="display:contents" dir="ltr"><tr id="441003f7-1bc1-432c-9555-3e26b5dd5e9d"><td id="M^?g" class="">Chemical</td><td id="[&gt;UN" class="">5</td><td id="J|&lt;e" class="">Transition Metal Impurities</td><td id=";eJK" class="">Same impurity, different hosts = different colors</td><td id="BeXp" class="">—</td><td id="UooO" class="">Ruby &amp; Emerald — both Cr³⁺</td></tr></div><div style="display:contents" dir="ltr"><tr id="a4878c99-46f9-438b-b3bf-b0d402e12255"><td id="M^?g" class="">Chemical</td><td id="[&gt;UN" class="">6</td><td id="J|&lt;e" class="">Organic Compounds</td><td id=";eJK" class="">Conjugation length determines color</td><td id="BeXp" class="">Chlorophyll, hemoglobin, melanin, carotenoids</td><td id="UooO" class="">Indigo dye, synthetic dyes</td></tr></div><div style="display:contents" dir="ltr"><tr id="0ec13248-7dbe-4350-b22c-6d1d923f9c84"><td id="M^?g" class="">Chemical</td><td id="[&gt;UN" class="">7</td><td id="J|&lt;e" class="">Charge Transfer</td><td id=";eJK" class="">Electron moves between atoms</td><td id="BeXp" class="">Blue copper proteins</td><td id="UooO" class="">Blue sapphire (Fe²⁺→Ti⁴⁺), lapis lazuli</td></tr></div><div style="display:contents" dir="ltr"><tr id="ed52915a-1cfa-486f-85e6-9e01c14ffa7e"><td id="M^?g" class="">Chemical</td><td id="[&gt;UN" class="">8</td><td id="J|&lt;e" class="">Metals</td><td id=";eJK" class="">Interband transitions (relativistic for gold)</td><td id="BeXp" class="">—</td><td id="UooO" class="">Gold, copper</td></tr></div><div style="display:contents" dir="ltr"><tr id="71cde225-90e8-4cce-be32-ea28d35bb05f"><td id="M^?g" class="">Chemical</td><td id="[&gt;UN" class="">9</td><td id="J|&lt;e" class="">Pure Semiconductors</td><td id=";eJK" class="">Band gap determines absorption</td><td id="BeXp" class="">—</td><td id="UooO" class="">Cinnabar, cadmium yellow</td></tr></div><div style="display:contents" dir="ltr"><tr id="e7c06c2c-b14d-459b-91d6-72c37a4ff358"><td id="M^?g" class="">Chemical</td><td id="[&gt;UN" class="">10</td><td id="J|&lt;e" class="">Doped Semiconductors</td><td id=";eJK" class="">Impurities create new energy levels</td><td id="BeXp" class="">—</td><td id="UooO" class="">Blue/yellow diamonds, LEDs</td></tr></div><div style="display:contents" dir="ltr"><tr id="4ad8ee20-e895-4594-857d-a3ea29045174"><td id="M^?g" class="">Chemical</td><td id="[&gt;UN" class="">11</td><td id="J|&lt;e" class="">Color Centers</td><td id=";eJK" class="">Radiation damage creates color</td><td id="BeXp" class="">—</td><td id="UooO" class="">Amethyst, smoky quartz</td></tr></div><div style="display:contents" dir="ltr"><tr id="4fe0e961-4cb8-4bb0-a2f0-a1fb8285b7c2"><td id="M^?g" class="">Structural</td><td id="[&gt;UN" class="">12</td><td id="J|&lt;e" class="">Dispersive Refraction</td><td id=";eJK" class="">Dispersion separates white light</td><td id="BeXp" class="">—</td><td id="UooO" class="">Rainbows, prisms, diamond fire</td></tr></div><div style="display:contents" dir="ltr"><tr id="654543c2-bc2b-4a48-b07f-8933d099c64d"><td id="M^?g" class="">Structural</td><td id="[&gt;UN" class="">13</td><td id="J|&lt;e" class="">Scattering</td><td id=";eJK" class="">Particle size relative to wavelength</td><td id="BeXp" class="">Blue eyes, blue jay feathers</td><td id="UooO" class="">Blue sky, milk white</td></tr></div><div style="display:contents" dir="ltr"><tr id="df7fa8ff-83f8-484d-9e0c-35747dad0cb3"><td id="M^?g" class="">Structural</td><td id="[&gt;UN" class="">14</td><td id="J|&lt;e" class="">Interference</td><td id=";eJK" class="">Precise nanoscale layer spacing</td><td id="BeXp" class="">Morpho butterflies, peacock feathers</td><td id="UooO" class="">Soap bubbles, oil films</td></tr></div><div style="display:contents" dir="ltr"><tr id="90dcb5e9-7285-45b0-9181-b93d4a66f5fb"><td id="M^?g" class="">Structural</td><td id="[&gt;UN" class="">15</td><td id="J|&lt;e" class="">Diffraction</td><td id=";eJK" class="">Periodic gratings separate wavelengths</td><td id="BeXp" class="">Peacock spider, some beetles</td><td id="UooO" class="">Opals, CDs/DVDs</td></tr></div><div style="display:contents" dir="ltr"><tr id="a3d14773-682b-41e7-bbcf-c2e433f132b4"><td id="M^?g" class="">Combined</td><td id="[&gt;UN" class="">—</td><td id="J|&lt;e" class="">Multiple mechanisms</td><td id=";eJK" class="">Nature layers approaches</td><td id="BeXp" class="">Cuttlefish, green parrots, human eye color</td><td id="UooO" class="">Labradorite, tiger&#x27;s eye</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="cb7fdb22-2133-45ec-92be-df28a8bc1c27"/></div><div style="display:contents" dir="auto"><h2 id="6f4443d5-6b1b-4b21-a758-22590a519f9a" class="">Category Subpages</h2></div><div style="display:contents" dir="auto"><p id="a64e3e19-f0f7-45db-b404-302a907bb5ad" class="">👇 Detailed breakdowns for each category below</p></div><div style="display:contents" dir="ltr"><figure id="2f0c5dde-781a-81ca-a2f8-e70a4d261e45" class="link-to-page"><a href="Causes%20of%20Color%20More%20than%20meets%20the%20eye/Category%201%20Light%20Made%20(Mechanisms%201-2)%202f0c5dde781a81caa2f8e70a4d261e45.html">Category 1: Light Made (Mechanisms 1-2)</a></figure></div><div style="display:contents" dir="ltr"><figure id="2f0c5dde-781a-815a-9687-c4527e429820" class="link-to-page"><a href="Causes%20of%20Color%20More%20than%20meets%20the%20eye/Category%202%20Light%20Absorbed%20-%20Chemical%20Mechanisms%20(M%202f0c5dde781a815a9687c4527e429820.html">Category 2: Light Absorbed - Chemical Mechanisms (Mechanisms 4-11)</a></figure></div><div style="display:contents" dir="ltr"><figure id="2f0c5dde-781a-8110-9680-c548dd780b17" class="link-to-page"><a href="Causes%20of%20Color%20More%20than%20meets%20the%20eye/Category%203%20Light%20Redirected%20-%20Structural%20Colors%20(M%202f0c5dde781a81109680c548dd780b17.html">Category 3: Light Redirected - Structural Colors (Mechanisms 12-15)</a></figure></div><div style="display:contents" dir="ltr"><figure id="2f0c5dde-781a-815d-8d20-d44116618cf9" class="link-to-page"><a href="Causes%20of%20Color%20More%20than%20meets%20the%20eye/Category%204%20The%20Vibration%20Exception%20(Mechanism%203)%202f0c5dde781a815d8d20d44116618cf9.html">Category 4: The Vibration Exception (Mechanism 3)</a></figure></div><div style="display:contents" dir="ltr"><figure id="2f0c5dde-781a-819b-bf3b-c65dd63e952e" class="link-to-page"><a href="Causes%20of%20Color%20More%20than%20meets%20the%20eye/Category%205%20Combined%20Mechanisms%202f0c5dde781a819bbf3bc65dd63e952e.html">Category 5: Combined Mechanisms</a></figure></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
