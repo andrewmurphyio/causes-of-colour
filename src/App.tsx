@@ -12,8 +12,21 @@ function getSlideFromHash(): number {
   return 0;
 }
 
+// Get max build index for a slide (based on number of images or overlays)
+function getMaxBuild(slideIndex: number): number {
+  const slide = slides[slideIndex];
+  if (slide?.images && slide.images.length > 1) {
+    return slide.images.length - 1;
+  }
+  if (slide?.overlayImages && slide.overlayImages.length > 0) {
+    return slide.overlayImages.length;
+  }
+  return 0;
+}
+
 function App() {
   const [currentSlide, setCurrentSlide] = useState(getSlideFromHash);
+  const [currentBuild, setCurrentBuild] = useState(0);
 
   // Update URL when slide changes
   useEffect(() => {
@@ -27,6 +40,7 @@ function App() {
   useEffect(() => {
     const handlePopState = () => {
       setCurrentSlide(getSlideFromHash());
+      setCurrentBuild(0); // Reset build when navigating via browser
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -34,15 +48,35 @@ function App() {
   }, []);
 
   const goToNext = useCallback(() => {
-    setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1));
-  }, []);
+    const maxBuild = getMaxBuild(currentSlide);
+    if (currentBuild < maxBuild) {
+      // Advance to next build on same slide
+      setCurrentBuild(currentBuild + 1);
+    } else {
+      // Move to next slide, reset build
+      if (currentSlide < slides.length - 1) {
+        setCurrentSlide(currentSlide + 1);
+        setCurrentBuild(0);
+      }
+    }
+  }, [currentSlide, currentBuild]);
 
   const goToPrevious = useCallback(() => {
-    setCurrentSlide((prev) => Math.max(prev - 1, 0));
-  }, []);
+    if (currentBuild > 0) {
+      // Go back a build on same slide
+      setCurrentBuild(currentBuild - 1);
+    } else if (currentSlide > 0) {
+      // Go to previous slide at its final build
+      const prevSlide = currentSlide - 1;
+      setCurrentSlide(prevSlide);
+      setCurrentBuild(getMaxBuild(prevSlide));
+    }
+  }, [currentSlide, currentBuild]);
 
   const goToSlide = useCallback((index: number) => {
-    setCurrentSlide(Math.max(0, Math.min(index, slides.length - 1)));
+    const clampedIndex = Math.max(0, Math.min(index, slides.length - 1));
+    setCurrentSlide(clampedIndex);
+    setCurrentBuild(0); // Reset to first build when jumping to slide
   }, []);
 
   useEffect(() => {
@@ -113,7 +147,7 @@ function App() {
         key={slide.id}
         className="animate-fade-in"
       >
-        <SlideRenderer slide={slide} />
+        <SlideRenderer slide={slide} build={currentBuild} />
       </div>
       <Navigation
         currentSlide={currentSlide}

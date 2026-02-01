@@ -233,12 +233,21 @@ export const slides: Slide[] = [
       '"Red hot" is actually cooler than "white hot"',
     ],
     background: 'dark',
-    image: {
-      url: '/images/incandescent-bulb.jpg',
-      alt: 'Glowing incandescent light bulb in a dark room',
-      position: 'right',
-      credit: 'Aditya Sethia / Unsplash',
-    },
+    images: [
+      {
+        url: '/images/incandescent-bulb.jpg',
+        alt: 'Glowing incandescent light bulb in a dark room',
+        position: 'right',
+        credit: 'Aditya Sethia / Unsplash',
+      },
+      {
+        url: '/images/spectrum.png',
+        alt: 'Black body radiation spectrum showing temperature vs colour',
+        position: 'right',
+        credit: 'Physics Stack Exchange',
+        bgColor: 'white',
+      },
+    ],
   },
   {
     id: 'incandescence-hook',
@@ -248,8 +257,8 @@ export const slides: Slide[] = [
     background: 'dark',
     image: {
       url: '/images/heat-colors.jpg',
-      alt: 'Steel showing temper colours from heat treatment',
-      credit: 'Zaereth / Wikimedia Commons',
+      alt: 'Glowing wrought iron showing heat colours during forging',
+      credit: 'Wrought Works',
     },
   },
   {
@@ -265,12 +274,21 @@ export const slides: Slide[] = [
       'LEDs - semiconductor band gaps determine colour (why they replaced hot bulbs)',
     ],
     background: 'dark',
-    image: {
-      url: '/images/aurora.jpg',
-      alt: 'Aurora borealis over Iceland',
-      position: 'right',
-      credit: 'v2osk / Unsplash',
-    },
+    images: [
+      {
+        url: '/images/aurora.jpg',
+        alt: 'Aurora borealis over Iceland',
+        position: 'right',
+        credit: 'v2osk / Unsplash',
+      },
+      {
+        url: '/images/luminescence.png',
+        alt: 'Schematic of photoluminescence energy levels',
+        position: 'right',
+        credit: 'ResearchGate',
+        bgColor: 'white',
+      },
+    ],
   },
   {
     id: 'bioluminescence',
@@ -343,12 +361,20 @@ export const slides: Slide[] = [
       'What remains (reflects back) is the colour you see',
     ],
     background: 'dark',
-    image: {
-      url: '/images/energy-levels.jpg',
-      alt: 'Electron energy level diagram',
-      position: 'right',
-      credit: 'animatedphysics.com',
-    },
+    images: [
+      {
+        url: '/images/assorted-transition-metals.jpg',
+        alt: 'Assorted colourful transition metal samples',
+        position: 'right',
+        credit: 'Science Photo Library',
+      },
+      {
+        url: '/images/energy-levels.jpg',
+        alt: 'Electron energy level diagram',
+        position: 'right',
+        credit: 'animatedphysics.com',
+      },
+    ],
   },
   {
     id: 'transition-metals',
@@ -477,6 +503,13 @@ export const slides: Slide[] = [
       position: 'background',
       credit: 'Cristian Palmer / Unsplash',
     },
+    overlayImages: [
+      {
+        url: '/images/waterstretchingbonds.gif',
+        alt: 'Water molecule O-H bond stretching vibration',
+        credit: 'Dynamic Science',
+      },
+    ],
   },
   {
     id: 'water-insight',
@@ -526,12 +559,21 @@ export const slides: Slide[] = [
       'All Rayleigh scattering: intensity ∝ 1/λ⁴',
     ],
     background: 'dark',
-    image: {
-      url: '/images/mandrill.jpg',
-      alt: 'Mandrill face showing structural blue colouring',
-      position: 'right',
-      credit: 'Michael Jerrard / Unsplash',
-    },
+    images: [
+      {
+        url: '/images/mandrill.jpg',
+        alt: 'Mandrill face showing structural blue colouring',
+        position: 'right',
+        credit: 'Michael Jerrard / Unsplash',
+      },
+      {
+        url: '/images/scattering.png',
+        alt: 'Diagram showing Rayleigh scattering physics',
+        position: 'right',
+        credit: 'FX Solver',
+        bgColor: 'white',
+      },
+    ],
   },
   {
     id: 'interference',
@@ -546,13 +588,21 @@ export const slides: Slide[] = [
       '→ Key: 2 surfaces, thickness matters',
     ],
     background: 'dark',
-    image: {
-      url: '/images/interference.png',
-      alt: 'Diagram showing thin-film interference physics',
-      position: 'right',
-      credit: 'Wikimedia Commons',
-      bgColor: 'white',
-    },
+    images: [
+      {
+        url: '/images/soap-bubbles.jpg',
+        alt: 'Iridescent soap bubbles showing thin-film interference',
+        position: 'right',
+        credit: 'Unsplash',
+      },
+      {
+        url: '/images/interference.png',
+        alt: 'Diagram showing thin-film interference physics',
+        position: 'right',
+        credit: 'Wikimedia Commons',
+        bgColor: 'white',
+      },
+    ],
   },
   {
     id: 'morpho',
@@ -586,13 +636,21 @@ export const slides: Slide[] = [
       '→ Key: many repeating structures, spacing matters',
     ],
     background: 'dark',
-    image: {
-      url: '/images/diffraction.png',
-      alt: 'Comparison of refraction and diffraction spectra',
-      position: 'right',
-      credit: 'Wikimedia Commons',
-      bgColor: 'white',
-    },
+    images: [
+      {
+        url: '/images/spider.jpg',
+        alt: 'Peacock spider showing iridescent diffraction colours',
+        position: 'right',
+        credit: 'Maria Fernanda Cardoso / This Is Colossal',
+      },
+      {
+        url: '/images/diffraction.png',
+        alt: 'Comparison of refraction and diffraction spectra',
+        position: 'right',
+        credit: 'Wikimedia Commons',
+        bgColor: 'white',
+      },
+    ],
   },
 
   // CATEGORY 5: COMBINED

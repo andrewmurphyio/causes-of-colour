@@ -34,4 +34,8 @@ export interface Slide {
   accentColor?: string;
   contact?: string;
   image?: SlideImage;
+  // Multiple images: cycle through on each build (replaces single image)
+  images?: SlideImage[];
+  // Overlay images: shown on top of background image on subsequent builds
+  overlayImages?: SlideImage[];
 }
