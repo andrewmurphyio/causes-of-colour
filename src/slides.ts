@@ -5,7 +5,7 @@ export const slides: Slide[] = [
   {
     id: 'title',
     type: 'title',
-    title: 'Causes of Color',
+    title: 'Causes of Colour',
     subtitle: 'More than meets the eye',
     contact: 'andrew@andrewmurphy.io',
     background: 'gradient',
@@ -18,11 +18,17 @@ export const slides: Slide[] = [
     title: 'A Question',
     content: 'Why are brown eyes brown, and blue eyes blue?',
     background: 'dark',
+    image: {
+      url: '/images/heterochromia-eye.jpg',
+      alt: 'Close-up of human eye with central heterochromia showing green and brown colours',
+      position: 'right',
+      credit: 'Nirmal Rajendharkumar / Unsplash',
+    },
   },
   {
     id: 'hook-assumption',
     type: 'content',
-    title: 'The Assumption',
+    title: 'The Easy (but wrong) Answer',
     content: 'Most people assume the answer is the same — different pigments.',
     bullets: ["But it's not."],
     background: 'dark',
@@ -30,22 +36,34 @@ export const slides: Slide[] = [
   {
     id: 'hook-reveal',
     type: 'comparison',
-    title: 'Same Organ. Different Physics.',
+    title: 'Same Organ. Different Cause.',
     leftColumn: {
       title: 'Brown Eyes',
       items: [
         'Melanin pigment absorbs blue light',
-        'Chemistry does the work',
         'What reflects back is brown',
+        'Chemistry does the work',
       ],
+      image: {
+        url: '/images/brown-eye.jpg',
+        alt: 'Close-up of a brown human eye',
+        credit: 'Tony Litvyak / Unsplash',
+        objectPosition: 'center 51%',
+      },
     },
     rightColumn: {
       title: 'Blue Eyes',
       items: [
         'Zero blue pigment',
-        'Light scatters off collagen fibers',
+        'Light scatters off collagen fibres',
         'Physics does the work',
       ],
+      image: {
+        url: '/images/blue-eye.jpg',
+        alt: 'Close-up of a blue human eye',
+        credit: 'Tony Litvyak / Unsplash',
+        objectPosition: 'center 44%',
+      },
     },
     background: 'dark',
   },
@@ -72,16 +90,22 @@ export const slides: Slide[] = [
       'Rayleigh scattering — short wavelengths bounce, long wavelengths pass through',
       'Blue light scatters ~10× more than red (intensity ∝ 1/λ⁴)',
       'Sky: nitrogen & oxygen molecules scatter sunlight',
-      'Eyes: collagen fibers in the iris scatter light',
+      'Eyes: collagen fibres in the iris scatter light',
     ],
     background: 'dark',
+    image: {
+      url: '/images/sunset-sky.jpg',
+      alt: 'Blue sky transitioning to sunset colours',
+      position: 'right',
+      credit: 'FTiare / iStock',
+    },
   },
   {
     id: 'hook-insight',
     type: 'content',
     title: 'The Central Insight',
     content:
-      'We perceive color as a single sensation, but it emerges from radically different physical processes.',
+      'We perceive colour as a single sensation, but it emerges from radically different physical processes.',
     background: 'gradient',
   },
 
@@ -90,7 +114,7 @@ export const slides: Slide[] = [
     id: 'framework',
     type: 'section',
     title: 'The Framework',
-    subtitle: "Kurt Nassau's 15 Mechanisms of Color",
+    subtitle: "Kurt Nassau's 15 Mechanisms of Colour",
     background: 'dark',
   },
   {
@@ -101,7 +125,7 @@ export const slides: Slide[] = [
       '1. Light Made — Incandescence & luminescence',
       '2. Light Absorbed — Chemical/electronic mechanisms',
       '3. Molecular Vibrations — Water\'s blue',
-      '4. Light Redirected — Structural colors',
+      '4. Light Redirected — Structural colours',
       '5. Combined Mechanisms — Nature\'s layered approach',
     ],
     background: 'dark',
@@ -111,29 +135,41 @@ export const slides: Slide[] = [
   {
     id: 'cuttlefish-intro',
     type: 'section',
-    title: "Nature's Color Champion",
+    title: "Nature's Colour Champion",
     subtitle: 'The Common Cuttlefish',
     background: 'gradient',
     accentColor: 'purple',
+    image: {
+      url: '/images/cuttlefish.jpg',
+      alt: 'Colourful cuttlefish displaying chromatophores',
+      credit: 'Peter Boshra / Unsplash',
+      objectPosition: '30% center',
+    },
   },
   {
     id: 'cuttlefish-claim',
     type: 'content',
     title: 'Sepia officinalis',
     content:
-      'Deploys more simultaneous color-production mechanisms than any other documented animal.',
+      'Deploys more simultaneous colour-production mechanisms than any other documented animal.',
     bullets: [
       "At least 4 of Nassau's 15 mechanisms working in concert",
       'Dynamic neural control',
-      'Color changes in 200 milliseconds',
+      'Colour changes in 200 milliseconds',
       'Fun fact: "sepia" tone comes from cuttlefish ink — used in 19th century photography',
     ],
     background: 'dark',
+    image: {
+      url: '/images/cuttlefish-2.jpg',
+      alt: 'Cuttlefish displaying colour-changing abilities',
+      position: 'right',
+      credit: 'Heidi Bruce / Unsplash',
+    },
   },
   {
     id: 'cuttlefish-layers',
     type: 'table',
-    title: 'The Color Stack',
+    title: 'The Colour Stack',
     tableHeaders: ['Layer', 'Structure', 'Mechanism', 'Function'],
     tableRows: [
       ['1 (top)', 'Yellow chromatophores', 'Pigments', 'Absorb blue/green'],
@@ -144,6 +180,11 @@ export const slides: Slide[] = [
       ['5 (bottom)', 'Leucophores', 'Scattering', 'Brilliant white backlight'],
     ],
     background: 'dark',
+    image: {
+      url: '/images/cuttlefish-layers.jpg',
+      alt: 'Cross-section diagram showing cuttlefish skin layers',
+      credit: 'Nature Communications',
+    },
   },
   {
     id: 'cuttlefish-display',
@@ -156,12 +197,18 @@ export const slides: Slide[] = [
     ],
     content: '200+ chromatophores per mm² of skin',
     background: 'dark',
+    image: {
+      url: '/images/chromatophore.jpg',
+      alt: 'Close-up of cuttlefish chromatophores',
+      position: 'right',
+      credit: 'Nature Communications',
+    },
   },
   {
     id: 'cuttlefish-hook',
     type: 'quote',
     quote:
-      "This animal has solved problems our best display engineers are still working on. It's a living demonstration of almost every color mechanism we'll discuss — and it can switch between them faster than you can blink.",
+      "This animal has solved problems our best display engineers are still working on. It's a living demonstration of almost every colour mechanism we'll discuss — and it can switch between them faster than you can blink.",
     background: 'gradient',
   },
 
@@ -178,7 +225,7 @@ export const slides: Slide[] = [
     id: 'incandescence',
     type: 'content',
     title: 'Mechanism 1: Incandescence',
-    content: 'Thermal radiation from hot objects. Temperature determines color.',
+    content: 'Thermal radiation from hot objects. Temperature determines colour.',
     bullets: [
       'Candle flame (~1,800K) — yellow-orange',
       'Old incandescent bulbs (~2,700K) — warm white from glowing tungsten wire',
@@ -187,13 +234,24 @@ export const slides: Slide[] = [
       '"Red hot" is actually cooler than "white hot"',
     ],
     background: 'dark',
+    image: {
+      url: '/images/incandescent-bulb.jpg',
+      alt: 'Glowing incandescent light bulb in a dark room',
+      position: 'right',
+      credit: 'Aditya Sethia / Unsplash',
+    },
   },
   {
     id: 'incandescence-hook',
     type: 'quote',
     quote:
-      'Blacksmiths have used "heat colors" for centuries — cherry red, bright red, orange, yellow, white. They were doing materials science by eye.',
+      'Blacksmiths have used "heat colours" for centuries — cherry red, bright red, orange, yellow, white. They were doing materials science by eye.',
     background: 'dark',
+    image: {
+      url: '/images/heat-colors.jpg',
+      alt: 'Steel showing temper colours from heat treatment',
+      credit: 'Zaereth / Wikimedia Commons',
+    },
   },
   {
     id: 'luminescence',
@@ -202,12 +260,18 @@ export const slides: Slide[] = [
     content:
       'Electrons jump to higher energy levels, then emit specific wavelengths falling back down.',
     bullets: [
-      'Neon signs — each gas has its signature color',
+      'Neon signs — each gas has its signature colour',
       'Auroras — oxygen green, nitrogen purple',
       'Fireworks — strontium red, barium green, copper blue',
-      'LEDs — semiconductor band gaps determine color (why they replaced hot bulbs)',
+      'LEDs — semiconductor band gaps determine colour (why they replaced hot bulbs)',
     ],
     background: 'dark',
+    image: {
+      url: '/images/aurora.jpg',
+      alt: 'Aurora borealis over Iceland',
+      position: 'right',
+      credit: 'v2osk / Unsplash',
+    },
   },
   {
     id: 'bioluminescence',
@@ -220,12 +284,18 @@ export const slides: Slide[] = [
       'Dinoflagellates — glowing ocean waves',
     ],
     background: 'dark',
+    image: {
+      url: '/images/bioluminescence.jpg',
+      alt: 'Bioluminescent deep sea creature',
+      position: 'right',
+      credit: 'Patrick Fore / Unsplash',
+    },
   },
   {
     id: 'gfp',
     type: 'content',
     title: 'Green Fluorescent Protein (GFP)',
-    content: 'A jellyfish protein that revolutionized biology — 2008 Nobel Prize in Chemistry.',
+    content: 'A jellyfish protein that changed biology forever — 2008 Nobel Prize in Chemistry.',
     bullets: [
       'From Aequorea victoria jellyfish',
       'Glows green under UV light without any added chemicals',
@@ -233,13 +303,25 @@ export const slides: Slide[] = [
       'Made the invisible visible — we can now watch proteins move in real time',
     ],
     background: 'dark',
+    image: {
+      url: '/images/gfp.gif',
+      alt: 'Green fluorescent protein glowing in cells',
+      position: 'right',
+      credit: 'Tristan Henderson / Wikimedia Commons',
+    },
   },
   {
     id: 'fireworks-hook',
     type: 'quote',
     quote:
-      "Fireworks engineers call copper blue the 'holy grail' — it requires precise temperature control. Too hot and the copper compounds decompose. Blue fireworks are genuinely harder to make than any other color.",
+      "Fireworks engineers call copper blue the 'holy grail' — it requires precise temperature control. Too hot and the copper compounds decompose. Blue fireworks are genuinely harder to make than any other colour.",
     background: 'dark',
+    image: {
+      url: '/images/fireworks.jpg',
+      alt: 'Fireworks display in the night sky',
+      position: 'background',
+      credit: 'Ashwin Tanjore / Unsplash',
+    },
   },
 
   // CATEGORY 2: LIGHT ABSORBED
@@ -258,23 +340,35 @@ export const slides: Slide[] = [
     content: 'These elements have partially-filled electron shells that can absorb visible light.',
     bullets: [
       'When light hits, electrons jump between energy levels',
-      'The energy gap determines which colors get absorbed',
-      'What remains (reflects back) is the color you see',
+      'The energy gap determines which colours get absorbed',
+      'What remains (reflects back) is the colour you see',
     ],
     background: 'dark',
+    image: {
+      url: '/images/energy-levels.jpg',
+      alt: 'Electron energy level diagram',
+      position: 'right',
+      credit: 'animatedphysics.com',
+    },
   },
   {
     id: 'transition-metals',
     type: 'content',
-    title: 'The Twist: Neighbors Change Everything',
-    content: 'The same metal produces different colors depending on what atoms surround it.',
+    title: 'The Twist: Neighbours Change Everything',
+    content: 'The same metal produces different colours depending on what atoms surround it.',
     bullets: [
       'Copper: turquoise, malachite green, blue vitriol — all copper!',
       'Iron: rust red, pyrite gold, magnetite black — all iron!',
       'The surrounding atoms stretch or squeeze electron orbitals',
-      'Different orbital shapes = different energy gaps = different colors',
+      'Different orbital shapes = different energy gaps = different colours',
     ],
     background: 'dark',
+    image: {
+      url: '/images/minerals.jpg',
+      alt: 'Colourful mineral collection showing different metal compounds',
+      position: 'right',
+      credit: 'Odysseas Chloridis / Unsplash',
+    },
   },
   {
     id: 'ruby-emerald',
@@ -283,34 +377,46 @@ export const slides: Slide[] = [
     leftColumn: {
       title: 'Ruby (Red)',
       items: [
-        'Base: aluminum oxide (colorless)',
+        'Base: aluminium oxide (colourless)',
         'Add ~1% chromium impurity',
         'Tight crystal squeezes Cr electrons',
         'Absorbs green/blue → reflects red',
       ],
+      image: {
+        url: '/images/ruby.jpg',
+        alt: 'Red ruby gemstone',
+        credit: 'Jason D / Unsplash',
+        objectPosition: 'center 5%',
+      },
     },
     rightColumn: {
       title: 'Emerald (Green)',
       items: [
-        'Base: beryl (also colorless)',
+        'Base: beryl (also colourless)',
         'Add same ~1% chromium',
         'Looser crystal stretches Cr electrons',
         'Absorbs red → reflects green',
       ],
+      image: {
+        url: '/images/emerald.jpg',
+        alt: 'Green emerald gemstone',
+        credit: 'USGS / Unsplash',
+        objectPosition: 'center 40%',
+      },
     },
     background: 'dark',
   },
   {
     id: 'ruby-emerald-insight',
     type: 'quote',
-    quote: 'Same impurity atom. Completely opposite colors. The host crystal changes everything.',
+    quote: 'Same impurity atom. Completely opposite colours. The host crystal changes everything.',
     background: 'dark',
   },
   {
     id: 'organic-compounds',
     type: 'content',
     title: 'Organic Compounds',
-    content: 'Conjugation length determines color — longer chains absorb longer wavelengths.',
+    content: 'Conjugation length determines colour — longer chains absorb longer wavelengths.',
     bullets: [
       'Chlorophyll — absorbs red & blue, reflects green',
       'Hemoglobin — absorbs green, reflects red',
@@ -318,6 +424,12 @@ export const slides: Slide[] = [
       'Carotenoids — carrots, flamingos, autumn leaves',
     ],
     background: 'dark',
+    image: {
+      url: '/images/autumn-leaves.jpg',
+      alt: 'Colourful autumn leaves showing carotenoid pigments',
+      position: 'right',
+      credit: 'Omid Armin / Unsplash',
+    },
   },
   {
     id: 'gold-special',
@@ -331,6 +443,12 @@ export const slides: Slide[] = [
       'This is why gold has been treasured across cultures',
     ],
     background: 'dark',
+    image: {
+      url: '/images/gold.jpg',
+      alt: 'Shiny gold bars',
+      position: 'right',
+      credit: 'Marko Ivanov / Unsplash',
+    },
   },
 
   // CATEGORY 3: MOLECULAR VIBRATIONS
@@ -346,7 +464,7 @@ export const slides: Slide[] = [
     id: 'water-blue',
     type: 'content',
     title: "Why Water is Blue",
-    content: 'The ONLY non-electronic mechanism for color.',
+    content: 'The ONLY non-electronic mechanism for colour.',
     bullets: [
       'O-H bonds vibrate at specific frequencies',
       'Overtones absorb red light',
@@ -354,6 +472,12 @@ export const slides: Slide[] = [
       'Need ~10+ meters depth to see it clearly',
     ],
     background: 'dark',
+    image: {
+      url: '/images/blue-water.jpg',
+      alt: 'Deep blue ocean water',
+      position: 'background',
+      credit: 'Cristian Palmer / Unsplash',
+    },
   },
   {
     id: 'water-insight',
@@ -368,7 +492,7 @@ export const slides: Slide[] = [
     id: 'cat4-title',
     type: 'section',
     title: 'Category 4 — 4 Mechanisms',
-    subtitle: 'Light Redirected — Structural Colors',
+    subtitle: 'Light Redirected — Structural Colours',
     background: 'gradient',
     accentColor: 'blue',
   },
@@ -376,13 +500,19 @@ export const slides: Slide[] = [
     id: 'structural-intro',
     type: 'content',
     title: 'No Pigment Required',
-    content: 'Structure alone creates color through physical optics.',
+    content: 'Structure alone creates colour through physical optics.',
     bullets: [
-      'Colors that never fade',
+      'Colours that never fade',
       'Often iridescent (angle-dependent)',
       'Nanoscale precision — natural engineering',
     ],
     background: 'dark',
+    image: {
+      url: '/images/morpho.jpg',
+      alt: 'Blue morpho butterfly showing structural colour',
+      position: 'right',
+      credit: 'Nora Jane Long / Unsplash',
+    },
   },
   {
     id: 'scattering',
@@ -391,12 +521,18 @@ export const slides: Slide[] = [
     content: 'Remember blue eyes? Same physics everywhere in nature.',
     bullets: [
       'Blue sky — nitrogen/oxygen molecules',
-      'Blue eyes — collagen fibers (our opening question!)',
+      'Blue eyes — collagen fibres (our opening question!)',
       'Blue jay feathers — zero blue pigment',
       'Mandrill faces — structural blue, not chemical',
       'All Rayleigh scattering: intensity ∝ 1/λ⁴',
     ],
     background: 'dark',
+    image: {
+      url: '/images/mandrill.jpg',
+      alt: 'Mandrill face showing structural blue colouring',
+      position: 'right',
+      credit: 'Michael Jerrard / Unsplash',
+    },
   },
   {
     id: 'interference',
@@ -404,12 +540,20 @@ export const slides: Slide[] = [
     title: 'Mechanism 14: Thin-Film Interference',
     content: 'Light waves reflecting from layered surfaces interfere constructively or destructively.',
     bullets: [
-      'Soap bubbles — thickness determines color',
+      'Soap bubbles — thickness determines colour',
       'Oil slicks — rainbow patterns',
       'Morpho butterflies — Christmas-tree nanostructures',
       'Peacock feathers — melanin rod lattice',
+      '→ Key: 2 surfaces, thickness matters',
     ],
     background: 'dark',
+    image: {
+      url: '/images/interference.png',
+      alt: 'Diagram showing thin-film interference physics',
+      position: 'right',
+      credit: 'Wikimedia Commons',
+      bgColor: 'white',
+    },
   },
   {
     id: 'morpho',
@@ -423,6 +567,12 @@ export const slides: Slide[] = [
       'Underside is brown for camouflage',
     ],
     background: 'dark',
+    image: {
+      url: '/images/morpho-scales.jpg',
+      alt: 'Scanning electron microscope image of morpho butterfly wing microribs',
+      position: 'right',
+      credit: 'NISE Network',
+    },
   },
   {
     id: 'diffraction',
@@ -434,8 +584,16 @@ export const slides: Slide[] = [
       'Opals — silica sphere lattice',
       'Peacock spider — 3D nanogratings',
       'Sea mouse spines — photonic crystals',
+      '→ Key: many repeating structures, spacing matters',
     ],
     background: 'dark',
+    image: {
+      url: '/images/diffraction.png',
+      alt: 'Comparison of refraction and diffraction spectra',
+      position: 'right',
+      credit: 'Wikimedia Commons',
+      bgColor: 'white',
+    },
   },
 
   // CATEGORY 5: COMBINED
@@ -451,7 +609,7 @@ export const slides: Slide[] = [
     id: 'combined-intro',
     type: 'content',
     title: 'Layering Creates Possibilities',
-    content: 'Evolution discovered that combining mechanisms creates effects no single mechanism can achieve.',
+    content: 'Stack the mechanisms and you get effects none of them can produce alone.',
     bullets: [
       'Pigments alone: limited palette, no iridescence',
       'Interference alone: angle-dependent, washed out',
@@ -464,28 +622,39 @@ export const slides: Slide[] = [
     id: 'green-parrots',
     type: 'content',
     title: 'Green Parrots',
-    content: 'Yellow pigment + Blue structural color = Green',
+    content: 'Yellow pigment + Blue structural colour = Green',
     bullets: [
       'True green pigments are rare in feathers',
       'Dissolve the pigments → feathers become blue',
       'Destroy the structure → feathers become yellow-brown',
-      'Sick parrots can lose half their color system',
+      'Sick parrots can lose half their colour system',
     ],
     background: 'dark',
+    image: {
+      url: '/images/green-parrot.jpg',
+      alt: 'Vibrant green parrot',
+      position: 'right',
+      credit: 'David Clode / Unsplash',
+    },
   },
   {
     id: 'eye-color-table',
     type: 'table',
-    title: 'Human Eye Color Spectrum',
-    tableHeaders: ['Eye Color', 'Mechanism(s)', "What's Happening"],
+    title: 'Human Eye Colour Spectrum',
+    tableHeaders: ['Eye Colour', 'Mechanism(s)', "What's Happening"],
     tableRows: [
       ['Dark brown', 'Pigment', 'High melanin absorbs most light'],
       ['Light brown/hazel', 'Pigment + Scattering', 'Moderate melanin + some structural blue'],
       ['Green', 'Pigment + Scattering', 'Low melanin (yellowish) + blue scattering'],
-      ['Blue', 'Scattering', 'Minimal melanin, pure structural color'],
+      ['Blue', 'Scattering', 'Minimal melanin, pure structural colour'],
       ['Grey', 'Scattering', 'Even less melanin, diffuse scattering'],
     ],
     background: 'dark',
+    image: {
+      url: '/images/eye-colors.jpg',
+      alt: 'Spectrum of human eye colours',
+      credit: 'Vision Source',
+    },
   },
 
   // SUMMARY
@@ -507,13 +676,19 @@ export const slides: Slide[] = [
     id: 'takeaway',
     type: 'content',
     title: 'The Takeaway',
-    content: 'Color is not one phenomenon — it\'s fifteen.',
+    content: 'Colour is not one phenomenon — it\'s fifteen.',
     bullets: [
-      'Same color can arise from completely different physics',
+      'Same colour can arise from completely different physics',
       'Quantum electron transitions vs wave interference vs molecular vibrations',
       'Nature layers mechanisms for effects we\'re still learning to replicate',
     ],
     background: 'gradient',
+    image: {
+      url: '/images/spectrum.jpg',
+      alt: 'Light dispersion through a prism showing visible spectrum',
+      position: 'right',
+      credit: 'Wikimedia Commons',
+    },
   },
 
   // CLOSING
