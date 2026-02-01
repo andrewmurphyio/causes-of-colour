@@ -154,87 +154,6 @@ export const slides: Slide[] = [
     background: 'dark',
   },
 
-  // TENTPOLE: CUTTLEFISH
-  {
-    id: 'cuttlefish-intro',
-    type: 'section',
-    title: "Nature's Colour Champion",
-    subtitle: 'The Common Cuttlefish',
-    background: 'gradient',
-    accentColor: 'purple',
-    image: {
-      url: '/images/cuttlefish.jpg',
-      alt: 'Colourful cuttlefish displaying chromatophores',
-      credit: 'Peter Boshra / Unsplash',
-      objectPosition: '30% center',
-    },
-  },
-  {
-    id: 'cuttlefish-claim',
-    type: 'content',
-    title: 'Sepia officinalis',
-    content:
-      'Deploys more simultaneous colour-production mechanisms than any other documented animal.',
-    bullets: [
-      "At least 4 of Nassau's 15 mechanisms working in concert",
-      'Dynamic neural control',
-      'Colour changes in 200 milliseconds',
-      'Fun fact: "sepia" tone comes from cuttlefish ink - used in 19th century photography',
-    ],
-    background: 'dark',
-    image: {
-      url: '/images/cuttlefish-2.jpg',
-      alt: 'Cuttlefish displaying colour-changing abilities',
-      position: 'right',
-      credit: 'Heidi Bruce / Unsplash',
-    },
-  },
-  {
-    id: 'cuttlefish-layers',
-    type: 'table',
-    title: 'The Colour Stack',
-    tableHeaders: ['Layer', 'Structure', 'Mechanism', 'Function'],
-    tableRows: [
-      ['1 (top)', 'Yellow chromatophores', 'Pigments', 'Absorb blue/green'],
-      ['2', 'Red chromatophores', 'Pigments', 'Absorb other wavelengths'],
-      ['3', 'Brown/black chromatophores', 'Pigments', 'Dark patterns'],
-      ['—', 'Granule proteins', 'Fluorescence', 'Emit light'],
-      ['4', 'Iridophores', 'Interference', 'Metallic blues/greens'],
-      ['5 (bottom)', 'Leucophores', 'Scattering', 'Brilliant white backlight'],
-    ],
-    background: 'dark',
-    image: {
-      url: '/images/cuttlefish-layers.jpg',
-      alt: 'Cross-section diagram showing cuttlefish skin layers',
-      credit: 'Nature Communications',
-    },
-  },
-  {
-    id: 'cuttlefish-display',
-    type: 'content',
-    title: 'A Biological Pixel Display',
-    bullets: [
-      'Chromatophores = RGB subpixels (absorptive filters)',
-      'Iridophores = metallic/iridescent layer (shimmer)',
-      'Leucophores = white backlight',
-    ],
-    content: '200+ chromatophores per mm² of skin',
-    background: 'dark',
-    image: {
-      url: '/images/chromatophore.jpg',
-      alt: 'Close-up of cuttlefish chromatophores',
-      position: 'right',
-      credit: 'Nature Communications',
-    },
-  },
-  {
-    id: 'cuttlefish-hook',
-    type: 'quote',
-    quote:
-      "This animal has solved problems our best display engineers are still working on. It's a living demonstration of almost every colour mechanism we'll discuss - and it can switch between them faster than you can blink.",
-    background: 'gradient',
-  },
-
   // CATEGORY 1: LIGHT MADE
   {
     id: 'cat1-title',
@@ -718,6 +637,89 @@ export const slides: Slide[] = [
       credit: 'David Clode / Unsplash',
     },
   },
+
+  // TENTPOLE: CUTTLEFISH
+  {
+    id: 'cuttlefish-intro',
+    type: 'section',
+    title: "Nature's Colour Champion",
+    subtitle: 'The Common Cuttlefish',
+    background: 'gradient',
+    accentColor: 'purple',
+    image: {
+      url: '/images/cuttlefish.jpg',
+      alt: 'Colourful cuttlefish displaying chromatophores',
+      credit: 'Peter Boshra / Unsplash',
+      objectPosition: '30% center',
+    },
+  },
+  {
+    id: 'cuttlefish-claim',
+    type: 'content',
+    title: 'Sepia officinalis',
+    content:
+      'Deploys more simultaneous colour-production mechanisms than any other documented animal.',
+    bullets: [
+      "At least 4 of Nassau's 15 mechanisms working in concert",
+      'Dynamic neural control',
+      'Colour changes in 200 milliseconds',
+      'Fun fact: "sepia" tone comes from cuttlefish ink - used in 19th century photography',
+    ],
+    background: 'dark',
+    image: {
+      url: '/images/cuttlefish-2.jpg',
+      alt: 'Cuttlefish displaying colour-changing abilities',
+      position: 'right',
+      credit: 'Heidi Bruce / Unsplash',
+    },
+  },
+  {
+    id: 'cuttlefish-layers',
+    type: 'table',
+    title: 'The Colour Stack',
+    tableHeaders: ['Layer', 'Structure', 'Mechanism', 'Function'],
+    tableRows: [
+      ['1 (top)', 'Yellow chromatophores', 'Pigments', 'Absorb blue/green'],
+      ['2', 'Red chromatophores', 'Pigments', 'Absorb other wavelengths'],
+      ['3', 'Brown/black chromatophores', 'Pigments', 'Dark patterns'],
+      ['—', 'Granule proteins', 'Fluorescence', 'Emit light'],
+      ['4', 'Iridophores', 'Interference', 'Metallic blues/greens'],
+      ['5 (bottom)', 'Leucophores', 'Scattering', 'Brilliant white backlight'],
+    ],
+    background: 'dark',
+    image: {
+      url: '/images/cuttlefish-layers.jpg',
+      alt: 'Cross-section diagram showing cuttlefish skin layers',
+      credit: 'Nature Communications',
+    },
+  },
+  {
+    id: 'cuttlefish-display',
+    type: 'content',
+    title: 'A Biological Pixel Display',
+    bullets: [
+      'Chromatophores = RGB subpixels (absorptive filters)',
+      'Iridophores = metallic/iridescent layer (shimmer)',
+      'Leucophores = white backlight',
+    ],
+    content: '200+ chromatophores per mm² of skin',
+    background: 'dark',
+    image: {
+      url: '/images/chromatophore.jpg',
+      alt: 'Close-up of cuttlefish chromatophores',
+      position: 'right',
+      credit: 'Nature Communications',
+    },
+  },
+  {
+    id: 'cuttlefish-hook',
+    type: 'quote',
+    quote:
+      "This animal has solved problems our best display engineers are still working on. It's a living demonstration of almost every colour mechanism we'll discuss - and it can switch between them faster than you can blink.",
+    background: 'gradient',
+  },
+
+  // BACK TO HUMAN EYES
   {
     id: 'eye-color-table',
     type: 'table',

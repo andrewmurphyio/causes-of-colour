@@ -1,5 +1,6 @@
 import type { Slide } from '../types';
 import { SlideWrapper } from './SlideWrapper';
+import { assetUrl } from '../utils';
 
 interface TableSlideProps {
   slide: Slide;
@@ -59,7 +60,7 @@ export function TableSlide({ slide }: TableSlideProps) {
           {hasImage && (
             <div className="lg:w-80 relative flex-shrink-0 h-full">
               <img
-                src={slide.image!.url}
+                src={assetUrl(slide.image!.url)}
                 alt={slide.image!.alt}
                 className="rounded-lg shadow-2xl w-full h-full object-cover object-center"
                 style={slide.image!.objectPosition ? { objectPosition: slide.image!.objectPosition } : undefined}
