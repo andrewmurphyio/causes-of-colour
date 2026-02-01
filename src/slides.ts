@@ -589,12 +589,19 @@ export const slides: Slide[] = [
       'Underside is brown for camouflage',
     ],
     background: 'dark',
-    image: {
-      url: '/images/morpho-scales.jpg',
-      alt: 'Scanning electron microscope image of morpho butterfly wing microribs',
-      position: 'right',
-      credit: 'NISE Network',
-    },
+    images: [
+      {
+        url: '/images/morpho.jpg',
+        alt: 'Blue morpho butterfly',
+        position: 'right',
+      },
+      {
+        url: '/images/morpho-scales.jpg',
+        alt: 'Scanning electron microscope image of morpho butterfly wing microribs',
+        position: 'right',
+        credit: 'NISE Network',
+      },
+    ],
   },
 
   // CATEGORY 5: COMBINED
