@@ -82,6 +82,18 @@ export const slides: Slide[] = [
     background: 'dark',
   },
   {
+    id: 'light-primer',
+    type: 'content',
+    title: 'A Quick Primer on Light',
+    content: 'Light is an electromagnetic wave. Different frequencies appear as different colours.',
+    bullets: [
+      'Red light has a long wavelength (~700nm), violet has a short one (~400nm)',
+      'White light is a mixture of all visible wavelengths',
+      'When we see colour, something has changed the mix that reaches our eyes',
+    ],
+    background: 'dark',
+  },
+  {
     id: 'hook-sky-connection',
     type: 'content',
     title: 'The Same Physics as the Sky',
