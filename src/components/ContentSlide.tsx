@@ -126,7 +126,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
             />
             {currentImage?.caption && (
               <p className="text-sm text-slate-400 mt-2 text-center italic">
-                {slide.image.caption}
+                {currentImage.caption}
               </p>
             )}
             <ImageCredit credit={currentImage?.credit} />
@@ -174,7 +174,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
             />
             {currentImage?.caption && (
               <p className="absolute -bottom-6 left-0 right-0 text-sm text-slate-400 text-center italic">
-                {slide.image.caption}
+                {currentImage.caption}
               </p>
             )}
             <ImageCredit credit={currentImage?.credit} />
