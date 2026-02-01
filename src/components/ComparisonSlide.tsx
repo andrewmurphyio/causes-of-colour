@@ -39,7 +39,7 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
                 {slide.leftColumn.items.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-3 text-base md:text-lg text-slate-300"
+                    className="flex items-baseline gap-3 text-base md:text-lg text-slate-300"
                   >
                     <span className="text-amber-400">→</span>
                     <span>{item}</span>
@@ -72,7 +72,7 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
                 {slide.rightColumn.items.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-3 text-base md:text-lg text-slate-300"
+                    className="flex items-baseline gap-3 text-base md:text-lg text-slate-300"
                   >
                     <span className="text-cyan-400">→</span>
                     <span>{item}</span>

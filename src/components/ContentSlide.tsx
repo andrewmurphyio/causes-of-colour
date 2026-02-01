@@ -44,7 +44,7 @@ export function ContentSlide({ slide }: ContentSlideProps) {
               {slide.bullets.map((bullet, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-4 text-lg md:text-xl text-slate-300"
+                  className="flex items-baseline gap-4 text-lg md:text-xl text-slate-300"
                 >
                   <span className="text-cyan-400 text-sm">●</span>
                   <span>{bullet}</span>
@@ -82,7 +82,7 @@ export function ContentSlide({ slide }: ContentSlideProps) {
                 {slide.bullets.map((bullet, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-3 text-base md:text-lg lg:text-xl text-slate-300"
+                    className="flex items-baseline gap-3 text-base md:text-lg lg:text-xl text-slate-300"
                   >
                     <span className="text-cyan-400 text-sm">●</span>
                     <span>{bullet}</span>
@@ -131,7 +131,7 @@ export function ContentSlide({ slide }: ContentSlideProps) {
                 {slide.bullets.map((bullet, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-3 text-base md:text-lg text-slate-300"
+                    className="flex items-baseline gap-3 text-base md:text-lg text-slate-300"
                   >
                     <span className="text-cyan-400 text-sm">●</span>
                     <span>{bullet}</span>
@@ -177,7 +177,7 @@ export function ContentSlide({ slide }: ContentSlideProps) {
             {slide.bullets.map((bullet, index) => (
               <li
                 key={index}
-                className="flex items-center gap-4 text-lg md:text-xl text-slate-300"
+                className="flex items-baseline gap-4 text-lg md:text-xl text-slate-300"
               >
                 <span className="text-cyan-400 text-sm">●</span>
                 <span>{bullet}</span>

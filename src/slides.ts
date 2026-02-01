@@ -29,7 +29,7 @@ export const slides: Slide[] = [
     id: 'hook-assumption',
     type: 'content',
     title: 'The Easy (but wrong) Answer',
-    content: 'Most people assume the answer is the same — different pigments.',
+    content: 'Most people assume the answer is the same - different pigments.',
     bullets: ["But it's not."],
     background: 'dark',
   },
@@ -78,7 +78,7 @@ export const slides: Slide[] = [
     id: 'hook-proof',
     type: 'quote',
     quote:
-      'Grind up a blue iris and you get brownish mush — there\'s no blue pigment to extract.',
+      'Grind up a blue iris and you get brownish mush - there\'s no blue pigment to extract.',
     background: 'dark',
   },
   {
@@ -87,7 +87,7 @@ export const slides: Slide[] = [
     title: 'The Same Physics as the Sky',
     content: 'Blue eyes are blue for the exact same reason the sky is blue.',
     bullets: [
-      'Rayleigh scattering — short wavelengths bounce, long wavelengths pass through',
+      'Rayleigh scattering - short wavelengths bounce, long wavelengths pass through',
       'Blue light scatters ~10× more than red (intensity ∝ 1/λ⁴)',
       'Sky: nitrogen & oxygen molecules scatter sunlight',
       'Eyes: collagen fibres in the iris scatter light',
@@ -102,9 +102,8 @@ export const slides: Slide[] = [
   },
   {
     id: 'hook-insight',
-    type: 'content',
-    title: 'The Central Insight',
-    content:
+    type: 'quote',
+    quote:
       'We perceive colour as a single sensation, but it emerges from radically different physical processes.',
     background: 'gradient',
   },
@@ -122,11 +121,11 @@ export const slides: Slide[] = [
     type: 'content',
     title: '5 Categories',
     bullets: [
-      '1. Light Made — Incandescence & luminescence',
-      '2. Light Absorbed — Chemical/electronic mechanisms',
-      '3. Molecular Vibrations — Water\'s blue',
-      '4. Light Redirected — Structural colours',
-      '5. Combined Mechanisms — Nature\'s layered approach',
+      '1. Light Made - Incandescence & luminescence',
+      '2. Light Absorbed - Chemical/electronic mechanisms',
+      '3. Molecular Vibrations - Water\'s blue',
+      '4. Light Redirected - Structural colours',
+      '5. Combined Mechanisms - Nature\'s layered approach',
     ],
     background: 'dark',
   },
@@ -156,7 +155,7 @@ export const slides: Slide[] = [
       "At least 4 of Nassau's 15 mechanisms working in concert",
       'Dynamic neural control',
       'Colour changes in 200 milliseconds',
-      'Fun fact: "sepia" tone comes from cuttlefish ink — used in 19th century photography',
+      'Fun fact: "sepia" tone comes from cuttlefish ink - used in 19th century photography',
     ],
     background: 'dark',
     image: {
@@ -208,7 +207,7 @@ export const slides: Slide[] = [
     id: 'cuttlefish-hook',
     type: 'quote',
     quote:
-      "This animal has solved problems our best display engineers are still working on. It's a living demonstration of almost every colour mechanism we'll discuss — and it can switch between them faster than you can blink.",
+      "This animal has solved problems our best display engineers are still working on. It's a living demonstration of almost every colour mechanism we'll discuss - and it can switch between them faster than you can blink.",
     background: 'gradient',
   },
 
@@ -216,7 +215,7 @@ export const slides: Slide[] = [
   {
     id: 'cat1-title',
     type: 'section',
-    title: 'Category 1 — 2 Mechanisms',
+    title: 'Category 1 - 2 Mechanisms',
     subtitle: 'Light Made',
     background: 'gradient',
     accentColor: 'orange',
@@ -227,9 +226,9 @@ export const slides: Slide[] = [
     title: 'Mechanism 1: Incandescence',
     content: 'Thermal radiation from hot objects. Temperature determines colour.',
     bullets: [
-      'Candle flame (~1,800K) — yellow-orange',
-      'Old incandescent bulbs (~2,700K) — warm white from glowing tungsten wire',
-      'Sun\'s surface (5,778K) — white',
+      'Candle flame (~1,800K) - yellow-orange',
+      'Old incandescent bulbs (~2,700K) - warm white from glowing tungsten wire',
+      'Sun\'s surface (5,778K) - white',
       'Blue-white stars (10,000-30,000K)',
       '"Red hot" is actually cooler than "white hot"',
     ],
@@ -245,7 +244,7 @@ export const slides: Slide[] = [
     id: 'incandescence-hook',
     type: 'quote',
     quote:
-      'Blacksmiths have used "heat colours" for centuries — cherry red, bright red, orange, yellow, white. They were doing materials science by eye.',
+      'Blacksmiths have used "heat colours" for centuries - cherry red, bright red, orange, yellow, white. They were doing materials science by eye.',
     background: 'dark',
     image: {
       url: '/images/heat-colors.jpg',
@@ -260,10 +259,10 @@ export const slides: Slide[] = [
     content:
       'Electrons jump to higher energy levels, then emit specific wavelengths falling back down.',
     bullets: [
-      'Neon signs — each gas has its signature colour',
-      'Auroras — oxygen green, nitrogen purple',
-      'Fireworks — strontium red, barium green, copper blue',
-      'LEDs — semiconductor band gaps determine colour (why they replaced hot bulbs)',
+      'Neon signs - each gas has its signature colour',
+      'Auroras - oxygen green, nitrogen purple',
+      'Fireworks - strontium red, barium green, copper blue',
+      'LEDs - semiconductor band gaps determine colour (why they replaced hot bulbs)',
     ],
     background: 'dark',
     image: {
@@ -279,9 +278,9 @@ export const slides: Slide[] = [
     title: 'Bioluminescence',
     content: '76% of deep-sea creatures produce their own light.',
     bullets: [
-      'Fireflies — luciferin + luciferase enzyme',
-      'Anglerfish — symbiotic glowing bacteria',
-      'Dinoflagellates — glowing ocean waves',
+      'Fireflies - luciferin + luciferase enzyme',
+      'Anglerfish - symbiotic glowing bacteria',
+      'Dinoflagellates - glowing ocean waves',
     ],
     background: 'dark',
     image: {
@@ -295,12 +294,12 @@ export const slides: Slide[] = [
     id: 'gfp',
     type: 'content',
     title: 'Green Fluorescent Protein (GFP)',
-    content: 'A jellyfish protein that changed biology forever — 2008 Nobel Prize in Chemistry.',
+    content: 'A jellyfish protein that changed biology forever - 2008 Nobel Prize in Chemistry.',
     bullets: [
       'From Aequorea victoria jellyfish',
       'Glows green under UV light without any added chemicals',
       'Scientists attach it to other proteins to track them in living cells',
-      'Made the invisible visible — we can now watch proteins move in real time',
+      'Made the invisible visible - we can now watch proteins move in real time',
     ],
     background: 'dark',
     image: {
@@ -314,7 +313,7 @@ export const slides: Slide[] = [
     id: 'fireworks-hook',
     type: 'quote',
     quote:
-      "Fireworks engineers call copper blue the 'holy grail' — it requires precise temperature control. Too hot and the copper compounds decompose. Blue fireworks are genuinely harder to make than any other colour.",
+      "Fireworks engineers call copper blue the 'holy grail' - it requires precise temperature control. Too hot and the copper compounds decompose. Blue fireworks are genuinely harder to make than any other colour.",
     background: 'dark',
     image: {
       url: '/images/fireworks.jpg',
@@ -328,15 +327,15 @@ export const slides: Slide[] = [
   {
     id: 'cat2-title',
     type: 'section',
-    title: 'Category 2 — 8 Mechanisms',
-    subtitle: 'Light Absorbed — Chemical Mechanisms',
+    title: 'Category 2 - 8 Mechanisms',
+    subtitle: 'Light Absorbed - Chemical Mechanisms',
     background: 'gradient',
     accentColor: 'green',
   },
   {
     id: 'transition-metals-intro',
     type: 'content',
-    title: 'Transition Metals — The Basics',
+    title: 'Transition Metals - The Basics',
     content: 'These elements have partially-filled electron shells that can absorb visible light.',
     bullets: [
       'When light hits, electrons jump between energy levels',
@@ -357,8 +356,8 @@ export const slides: Slide[] = [
     title: 'The Twist: Neighbours Change Everything',
     content: 'The same metal produces different colours depending on what atoms surround it.',
     bullets: [
-      'Copper: turquoise, malachite green, blue vitriol — all copper!',
-      'Iron: rust red, pyrite gold, magnetite black — all iron!',
+      'Copper: turquoise, malachite green, blue vitriol - all copper!',
+      'Iron: rust red, pyrite gold, magnetite black - all iron!',
       'The surrounding atoms stretch or squeeze electron orbitals',
       'Different orbital shapes = different energy gaps = different colours',
     ],
@@ -416,12 +415,12 @@ export const slides: Slide[] = [
     id: 'organic-compounds',
     type: 'content',
     title: 'Organic Compounds',
-    content: 'Conjugation length determines colour — longer chains absorb longer wavelengths.',
+    content: 'Conjugation length determines colour - longer chains absorb longer wavelengths.',
     bullets: [
-      'Chlorophyll — absorbs red & blue, reflects green',
-      'Hemoglobin — absorbs green, reflects red',
-      'Melanin — broad absorption, brown to black',
-      'Carotenoids — carrots, flamingos, autumn leaves',
+      'Chlorophyll - absorbs red & blue, reflects green',
+      'Hemoglobin - absorbs green, reflects red',
+      'Melanin - broad absorption, brown to black',
+      'Carotenoids - carrots, flamingos, autumn leaves',
     ],
     background: 'dark',
     image: {
@@ -455,7 +454,7 @@ export const slides: Slide[] = [
   {
     id: 'cat3-title',
     type: 'section',
-    title: 'Category 3 — 1 Mechanism',
+    title: 'Category 3 - 1 Mechanism',
     subtitle: 'Molecular Vibrations',
     background: 'gradient',
     accentColor: 'cyan',
@@ -483,7 +482,7 @@ export const slides: Slide[] = [
     id: 'water-insight',
     type: 'quote',
     quote:
-      "Water's blue is unique — it's not from electrons jumping between orbitals, but from atoms physically vibrating. No animal has evolved to use this mechanism.",
+      "Water's blue is unique - it's not from electrons jumping between orbitals, but from atoms physically vibrating. No animal has evolved to use this mechanism.",
     background: 'dark',
   },
 
@@ -491,8 +490,8 @@ export const slides: Slide[] = [
   {
     id: 'cat4-title',
     type: 'section',
-    title: 'Category 4 — 4 Mechanisms',
-    subtitle: 'Light Redirected — Structural Colours',
+    title: 'Category 4 - 4 Mechanisms',
+    subtitle: 'Light Redirected - Structural Colours',
     background: 'gradient',
     accentColor: 'blue',
   },
@@ -504,7 +503,7 @@ export const slides: Slide[] = [
     bullets: [
       'Colours that never fade',
       'Often iridescent (angle-dependent)',
-      'Nanoscale precision — natural engineering',
+      'Nanoscale precision - natural engineering',
     ],
     background: 'dark',
     image: {
@@ -520,10 +519,10 @@ export const slides: Slide[] = [
     title: 'Mechanism 13: Scattering',
     content: 'Remember blue eyes? Same physics everywhere in nature.',
     bullets: [
-      'Blue sky — nitrogen/oxygen molecules',
-      'Blue eyes — collagen fibres (our opening question!)',
-      'Blue jay feathers — zero blue pigment',
-      'Mandrill faces — structural blue, not chemical',
+      'Blue sky - nitrogen/oxygen molecules',
+      'Blue eyes - collagen fibres (our opening question!)',
+      'Blue jay feathers - zero blue pigment',
+      'Mandrill faces - structural blue, not chemical',
       'All Rayleigh scattering: intensity ∝ 1/λ⁴',
     ],
     background: 'dark',
@@ -540,10 +539,10 @@ export const slides: Slide[] = [
     title: 'Mechanism 14: Thin-Film Interference',
     content: 'Light waves reflecting from layered surfaces interfere constructively or destructively.',
     bullets: [
-      'Soap bubbles — thickness determines colour',
-      'Oil slicks — rainbow patterns',
-      'Morpho butterflies — Christmas-tree nanostructures',
-      'Peacock feathers — melanin rod lattice',
+      'Soap bubbles - thickness determines colour',
+      'Oil slicks - rainbow patterns',
+      'Morpho butterflies - Christmas-tree nanostructures',
+      'Peacock feathers - melanin rod lattice',
       '→ Key: 2 surfaces, thickness matters',
     ],
     background: 'dark',
@@ -580,10 +579,10 @@ export const slides: Slide[] = [
     title: 'Mechanism 15: Diffraction',
     content: 'Periodic gratings separate wavelengths like a prism.',
     bullets: [
-      'CDs and DVDs — rainbow reflections',
-      'Opals — silica sphere lattice',
-      'Peacock spider — 3D nanogratings',
-      'Sea mouse spines — photonic crystals',
+      'CDs and DVDs - rainbow reflections',
+      'Opals - silica sphere lattice',
+      'Peacock spider - 3D nanogratings',
+      'Sea mouse spines - photonic crystals',
       '→ Key: many repeating structures, spacing matters',
     ],
     background: 'dark',
@@ -600,7 +599,7 @@ export const slides: Slide[] = [
   {
     id: 'cat5-title',
     type: 'section',
-    title: 'Category 5 — Layered',
+    title: 'Category 5 - Layered',
     subtitle: 'Combined Mechanisms',
     background: 'gradient',
     accentColor: 'purple',
@@ -676,7 +675,7 @@ export const slides: Slide[] = [
     id: 'takeaway',
     type: 'content',
     title: 'The Takeaway',
-    content: 'Colour is not one phenomenon — it\'s fifteen.',
+    content: 'Colour is not one phenomenon - it\'s fifteen.',
     bullets: [
       'Same colour can arise from completely different physics',
       'Quantum electron transitions vs wave interference vs molecular vibrations',
