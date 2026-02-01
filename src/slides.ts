@@ -621,7 +621,7 @@ export const slides: Slide[] = [
     bullets: [
       'Pigments alone: limited palette, no iridescence',
       'Interference alone: angle-dependent, washed out',
-      'Scattering alone: just white',
+      'Scattering - limited palette or white',
       'Combined: dynamic camouflage, vivid displays',
     ],
     background: 'dark',
@@ -646,6 +646,27 @@ export const slides: Slide[] = [
     },
   },
 
+  // HUMAN EYES - Combined mechanisms example
+  {
+    id: 'eye-color-table',
+    type: 'table',
+    title: 'Human Eye Colour Spectrum',
+    tableHeaders: ['Eye Colour', 'Mechanism(s)', "What's Happening"],
+    tableRows: [
+      ['Dark brown', 'Pigment', 'High melanin absorbs most light'],
+      ['Light brown/hazel', 'Pigment + Scattering', 'Moderate melanin + some structural blue'],
+      ['Green', 'Pigment + Scattering', 'Low melanin (yellowish) + blue scattering'],
+      ['Blue', 'Scattering', 'Minimal melanin, pure structural colour'],
+      ['Grey', 'Scattering', 'Even less melanin, diffuse scattering'],
+    ],
+    background: 'dark',
+    image: {
+      url: '/images/eye-colors.jpg',
+      alt: 'Spectrum of human eye colours',
+      credit: 'Vision Source',
+    },
+  },
+
   // TENTPOLE: CUTTLEFISH
   {
     id: 'cuttlefish-intro',
@@ -654,11 +675,12 @@ export const slides: Slide[] = [
     subtitle: 'The Common Cuttlefish',
     background: 'gradient',
     accentColor: 'purple',
+    textReveal: true,
     image: {
       url: '/images/cuttlefish.jpg',
       alt: 'Colourful cuttlefish displaying chromatophores',
       credit: 'Peter Boshra / Unsplash',
-      objectPosition: '30% center',
+      objectPosition: '10% center',
     },
   },
   {
@@ -720,32 +742,10 @@ export const slides: Slide[] = [
     },
   },
   {
-    id: 'cuttlefish-hook',
-    type: 'quote',
-    quote:
-      "This animal has solved problems our best display engineers are still working on. It's a living demonstration of almost every colour mechanism we'll discuss - and it can switch between them faster than you can blink.",
-    background: 'gradient',
-  },
-
-  // BACK TO HUMAN EYES
-  {
-    id: 'eye-color-table',
-    type: 'table',
-    title: 'Human Eye Colour Spectrum',
-    tableHeaders: ['Eye Colour', 'Mechanism(s)', "What's Happening"],
-    tableRows: [
-      ['Dark brown', 'Pigment', 'High melanin absorbs most light'],
-      ['Light brown/hazel', 'Pigment + Scattering', 'Moderate melanin + some structural blue'],
-      ['Green', 'Pigment + Scattering', 'Low melanin (yellowish) + blue scattering'],
-      ['Blue', 'Scattering', 'Minimal melanin, pure structural colour'],
-      ['Grey', 'Scattering', 'Even less melanin, diffuse scattering'],
-    ],
-    background: 'dark',
-    image: {
-      url: '/images/eye-colors.jpg',
-      alt: 'Spectrum of human eye colours',
-      credit: 'Vision Source',
-    },
+    id: 'cuttlefish-video',
+    type: 'video',
+    title: 'Cuttlefish in Action',
+    videoId: 'pgDE2DOICuc',
   },
 
   // SUMMARY
@@ -759,7 +759,7 @@ export const slides: Slide[] = [
       ['2. Chemical', '4-11: Metals, pigments, charge transfer', 'Ruby, chlorophyll, gold'],
       ['3. Vibration', '3: Molecular vibrations', "Water's blue"],
       ['4. Structural', '12-15: Refraction, scattering, interference', 'Blue sky, morpho, blue eyes'],
-      ['5. Combined', 'Multiple mechanisms', 'Cuttlefish, green parrots'],
+      ['5. Combined', 'Multiple mechanisms', 'Cuttlefish, parrots, human eyes'],
     ],
     background: 'dark',
   },

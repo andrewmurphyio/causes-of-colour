@@ -5,6 +5,7 @@ import { ContentSlide } from './ContentSlide';
 import { ComparisonSlide } from './ComparisonSlide';
 import { TableSlide } from './TableSlide';
 import { QuoteSlide } from './QuoteSlide';
+import { VideoSlide } from './VideoSlide';
 
 interface SlideRendererProps {
   slide: Slide;
@@ -16,7 +17,7 @@ export function SlideRenderer({ slide, build = 0 }: SlideRendererProps) {
     case 'title':
       return <TitleSlide slide={slide} />;
     case 'section':
-      return <SectionSlide slide={slide} />;
+      return <SectionSlide slide={slide} build={build} />;
     case 'content':
       return <ContentSlide slide={slide} build={build} />;
     case 'comparison':
@@ -25,6 +26,8 @@ export function SlideRenderer({ slide, build = 0 }: SlideRendererProps) {
       return <TableSlide slide={slide} />;
     case 'quote':
       return <QuoteSlide slide={slide} />;
+    case 'video':
+      return <VideoSlide slide={slide} build={build} />;
     default:
       return <ContentSlide slide={slide} build={build} />;
   }

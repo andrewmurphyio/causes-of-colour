@@ -12,7 +12,7 @@ function getSlideFromHash(): number {
   return 0;
 }
 
-// Get max build index for a slide (based on number of images or overlays)
+// Get max build index for a slide (based on number of images, overlays, or text reveals)
 function getMaxBuild(slideIndex: number): number {
   const slide = slides[slideIndex];
   if (slide?.images && slide.images.length > 1) {
@@ -20,6 +20,14 @@ function getMaxBuild(slideIndex: number): number {
   }
   if (slide?.overlayImages && slide.overlayImages.length > 0) {
     return slide.overlayImages.length;
+  }
+  // Text reveal: 1 build for all text at once
+  if (slide?.textReveal) {
+    return 1;
+  }
+  // Video: 1 build (thumbnail -> playing)
+  if (slide?.type === 'video') {
+    return 1;
   }
   return 0;
 }

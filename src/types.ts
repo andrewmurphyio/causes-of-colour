@@ -5,7 +5,8 @@ export type SlideType =
   | 'comparison'
   | 'table'
   | 'quote'
-  | 'image-focus';
+  | 'image-focus'
+  | 'video';
 
 export interface SlideImage {
   url: string;
@@ -39,4 +40,8 @@ export interface Slide {
   images?: SlideImage[];
   // Overlay images: shown on top of background image on subsequent builds
   overlayImages?: SlideImage[];
+  // Text reveal: show title/subtitle progressively on builds
+  textReveal?: boolean;
+  // YouTube video ID for video slides
+  videoId?: string;
 }
