@@ -1,5 +1,6 @@
 import type { Slide } from '../types';
 import { SlideWrapper } from './SlideWrapper';
+import { assetUrl } from '../utils';
 
 interface ComparisonSlideProps {
   slide: Slide;
@@ -20,7 +21,7 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
               {slide.leftColumn.image && (
                 <div className="mb-4 relative">
                   <img
-                    src={slide.leftColumn.image.url}
+                    src={assetUrl(slide.leftColumn.image.url)}
                     alt={slide.leftColumn.image.alt}
                     className="w-full h-32 md:h-40 object-cover rounded-lg"
                     style={slide.leftColumn.image.objectPosition ? { objectPosition: slide.leftColumn.image.objectPosition } : undefined}
@@ -53,7 +54,7 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
               {slide.rightColumn.image && (
                 <div className="mb-4 relative">
                   <img
-                    src={slide.rightColumn.image.url}
+                    src={assetUrl(slide.rightColumn.image.url)}
                     alt={slide.rightColumn.image.alt}
                     className="w-full h-32 md:h-40 object-cover rounded-lg"
                     style={slide.rightColumn.image.objectPosition ? { objectPosition: slide.rightColumn.image.objectPosition } : undefined}
