@@ -15,6 +15,7 @@ export interface SlideImage {
   credit?: string;
   objectPosition?: string; // e.g. 'center 60%' to shift image down
   bgColor?: string; // e.g. 'white' for transparent images
+  overlayOpacity?: number; // 0-1, default 0.6 for background images
 }
 
 export interface Slide {

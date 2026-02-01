@@ -21,7 +21,10 @@ export function QuoteSlide({ slide }: QuoteSlideProps) {
             backgroundPosition: slide.image!.objectPosition || 'center',
           }}
         >
-          <div className="absolute inset-0 bg-black/60" />
+          <div
+            className="absolute inset-0 bg-black"
+            style={{ opacity: slide.image!.overlayOpacity ?? 0.6 }}
+          />
         </div>
         <div className="relative z-10 text-center">
           <div className="text-5xl md:text-6xl text-cyan-500/30 font-serif mb-2">"</div>

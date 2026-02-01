@@ -281,6 +281,7 @@ export const slides: Slide[] = [
       alt: 'Fireworks display in the night sky',
       position: 'background',
       credit: 'Ashwin Tanjore / Unsplash',
+      overlayOpacity: 0.5,
     },
   },
 
