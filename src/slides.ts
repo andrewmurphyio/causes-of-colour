@@ -92,6 +92,18 @@ export const slides: Slide[] = [
       'When we see colour, something has changed the mix that reaches our eyes',
     ],
     background: 'dark',
+    images: [
+      {
+        url: '/images/spectrum.png',
+        alt: 'Electromagnetic spectrum showing visible light wavelengths',
+        position: 'right',
+      },
+      {
+        url: '/images/spectrum.jpg',
+        alt: 'Visible light spectrum with wavelength labels',
+        position: 'right',
+      },
+    ],
   },
   {
     id: 'hook-sky-connection',
