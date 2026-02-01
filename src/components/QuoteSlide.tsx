@@ -1,5 +1,6 @@
 import type { Slide } from '../types';
 import { SlideWrapper } from './SlideWrapper';
+import { assetUrl } from '../utils';
 
 interface QuoteSlideProps {
   slide: Slide;
@@ -16,7 +17,7 @@ export function QuoteSlide({ slide }: QuoteSlideProps) {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${slide.image!.url})`,
+            backgroundImage: `url(${assetUrl(slide.image!.url)})`,
             backgroundPosition: slide.image!.objectPosition || 'center',
           }}
         >
@@ -58,7 +59,7 @@ export function QuoteSlide({ slide }: QuoteSlideProps) {
         {hasImage && (
           <div className="flex-1 relative">
             <img
-              src={slide.image!.url}
+              src={assetUrl(slide.image!.url)}
               alt={slide.image!.alt}
               className="rounded-lg shadow-2xl max-h-[50vh] w-auto mx-auto object-contain"
               style={slide.image!.objectPosition ? { objectPosition: slide.image!.objectPosition } : undefined}

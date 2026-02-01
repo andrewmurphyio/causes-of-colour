@@ -1,5 +1,6 @@
 import type { Slide } from '../types';
 import { SlideWrapper } from './SlideWrapper';
+import { assetUrl } from '../utils';
 
 interface ContentSlideProps {
   slide: Slide;
@@ -35,7 +36,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
       <SlideWrapper slide={slide}>
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${currentImage!.url})` }}
+          style={{ backgroundImage: `url(${assetUrl(currentImage!.url)})` }}
         >
           <div className="absolute inset-0 bg-black/20" />
         </div>
@@ -69,7 +70,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
             {overlayImage && (
               <div className="relative inline-block">
                 <img
-                  src={overlayImage.url}
+                  src={assetUrl(overlayImage.url)}
                   alt={overlayImage.alt}
                   className="rounded-lg shadow-2xl max-h-[50vh] w-auto object-contain"
                   style={{ backgroundColor: overlayImage.bgColor || 'white' }}
@@ -119,7 +120,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
           </div>
           <div className={`flex-1 ${imageOrder} relative`}>
             <img
-              src={currentImage!.url}
+              src={assetUrl(currentImage!.url)}
               alt={currentImage!.alt}
               className="rounded-lg shadow-2xl max-h-[60vh] w-full object-cover"
               style={{ backgroundColor: currentImage!.bgColor || 'transparent' }}
@@ -168,7 +169,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
           </div>
           <div className="relative flex-1 flex items-center justify-center">
             <img
-              src={currentImage!.url}
+              src={assetUrl(currentImage!.url)}
               alt={currentImage!.alt}
               className="rounded-lg shadow-2xl max-h-[40vh] w-auto object-contain"
             />

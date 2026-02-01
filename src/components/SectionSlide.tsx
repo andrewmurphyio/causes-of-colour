@@ -1,5 +1,6 @@
 import type { Slide } from '../types';
 import { SlideWrapper } from './SlideWrapper';
+import { assetUrl } from '../utils';
 
 interface SectionSlideProps {
   slide: Slide;
@@ -27,7 +28,7 @@ export function SectionSlide({ slide }: SectionSlideProps) {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url(${slide.image!.url})`,
+              backgroundImage: `url(${assetUrl(slide.image!.url)})`,
               backgroundPosition: slide.image!.objectPosition || 'center',
             }}
           />
