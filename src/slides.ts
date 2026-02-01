@@ -527,7 +527,6 @@ export const slides: Slide[] = [
     bullets: [
       'Soap bubbles - thickness determines colour',
       'Oil slicks - rainbow patterns',
-      'Morpho butterflies - Christmas-tree nanostructures',
       'Peacock feathers - melanin rod lattice',
       '→ Key: 2 surfaces, thickness matters',
     ],
@@ -549,25 +548,6 @@ export const slides: Slide[] = [
     ],
   },
   {
-    id: 'morpho',
-    type: 'content',
-    title: 'The Morpho Butterfly',
-    content: "100-year-old museum specimens are still brilliantly blue.",
-    bullets: [
-      'Christmas-tree shaped ridges on each scale',
-      'Multilayer interference creates blue',
-      'Brown melanin base absorbs stray wavelengths',
-      'Underside is brown for camouflage',
-    ],
-    background: 'dark',
-    image: {
-      url: '/images/morpho-scales.jpg',
-      alt: 'Scanning electron microscope image of morpho butterfly wing microribs',
-      position: 'right',
-      credit: 'NISE Network',
-    },
-  },
-  {
     id: 'diffraction',
     type: 'content',
     title: 'Mechanism 15: Diffraction',
@@ -575,6 +555,7 @@ export const slides: Slide[] = [
     bullets: [
       'CDs and DVDs - rainbow reflections',
       'Opals - silica sphere lattice',
+      'Morpho butterflies - Christmas-tree nanostructures',
       'Peacock spider - 3D nanogratings',
       'Sea mouse spines - photonic crystals',
       '→ Key: many repeating structures, spacing matters',
@@ -595,6 +576,25 @@ export const slides: Slide[] = [
         bgColor: 'white',
       },
     ],
+  },
+  {
+    id: 'morpho',
+    type: 'content',
+    title: 'The Morpho Butterfly',
+    content: "100-year-old museum specimens are still brilliantly blue.",
+    bullets: [
+      'Christmas-tree shaped ridges on each scale',
+      'Multilayer diffraction creates blue',
+      'Brown melanin base absorbs stray wavelengths',
+      'Underside is brown for camouflage',
+    ],
+    background: 'dark',
+    image: {
+      url: '/images/morpho-scales.jpg',
+      alt: 'Scanning electron microscope image of morpho butterfly wing microribs',
+      position: 'right',
+      credit: 'NISE Network',
+    },
   },
 
   // CATEGORY 5: COMBINED
