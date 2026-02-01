@@ -84,7 +84,7 @@ export const slides: Slide[] = [
   {
     id: 'light-primer',
     type: 'content',
-    title: 'A Quick Primer on Light',
+    title: 'A Quick Reminder on Light',
     content: 'Light is an electromagnetic wave. Different frequencies appear as different colours.',
     bullets: [
       'Red light has a long wavelength (~700nm), violet has a short one (~400nm)',
