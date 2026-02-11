@@ -2942,29 +2942,6 @@ function DiffractionAnimation({ build }: { build: number }) {
               );
             })}
 
-            {/* Explanation text */}
-            <text
-              x={gx + 80} y={mid - 55} fill="#e2e8f0" fontSize="12"
-              fontFamily="var(--font-sans)"
-              className="label-appear" style={{ animationDelay: '0.5s' }}
-            >
-              Each groove emits a new wave
-            </text>
-            <text
-              x={gx + 80} y={mid - 38} fill="#e2e8f0" fontSize="12"
-              fontFamily="var(--font-sans)"
-              className="label-appear" style={{ animationDelay: '0.6s' }}
-            >
-              Path difference between grooves
-            </text>
-            <text
-              x={gx + 80} y={mid - 21} fill="#e2e8f0" fontSize="12"
-              fontFamily="var(--font-sans)"
-              className="label-appear" style={{ animationDelay: '0.7s' }}
-            >
-              {'depends on angle: '}
-              <tspan fontWeight="bold">{'d \u00B7 sin \u03B8'}</tspan>
-            </text>
           </g>
         )}
 
@@ -3016,6 +2993,34 @@ function DiffractionAnimation({ build }: { build: number }) {
               className="label-appear" style={{ animationDelay: '0.8s' }}
             >
               {'Different \u03BB \u2192 constructive interference at different \u03B8'}
+            </text>
+          </g>
+        )}
+
+        {/* Explanation text — rendered last so it draws on top of rays */}
+        {showWavefronts && (
+          <g>
+            <text
+              x={gx + 80} y={mid - 130} fill="#e2e8f0" fontSize="12"
+              fontFamily="var(--font-sans)"
+              className="label-appear" style={{ animationDelay: '0.5s' }}
+            >
+              Each groove emits a new wave
+            </text>
+            <text
+              x={gx + 80} y={mid - 113} fill="#e2e8f0" fontSize="12"
+              fontFamily="var(--font-sans)"
+              className="label-appear" style={{ animationDelay: '0.6s' }}
+            >
+              Path difference between grooves
+            </text>
+            <text
+              x={gx + 80} y={mid - 96} fill="#e2e8f0" fontSize="12"
+              fontFamily="var(--font-sans)"
+              className="label-appear" style={{ animationDelay: '0.7s' }}
+            >
+              {'depends on angle: '}
+              <tspan fontWeight="bold">{'d \u00B7 sin \u03B8'}</tspan>
             </text>
           </g>
         )}
