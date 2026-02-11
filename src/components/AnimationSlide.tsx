@@ -11,15 +11,15 @@ export function AnimationSlide({ slide, build = 0 }: AnimationSlideProps) {
     return (
       <SlideWrapper slide={slide}>
         <div className="flex flex-col items-center w-full">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 font-display text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-1 font-display text-white">
             {slide.title}
           </h2>
           {slide.content && (
-            <p className="text-lg md:text-xl text-slate-400 mb-4">{slide.content}</p>
+            <p className="text-base md:text-lg text-slate-400 mb-2">{slide.content}</p>
           )}
           <BrownEyeAnimation build={build} />
           <p
-            className={`text-xl md:text-2xl text-slate-200 mt-4 text-center max-w-3xl leading-relaxed transition-opacity duration-500 ${build >= 2 ? 'opacity-100' : 'opacity-0'}`}
+            className={`text-lg md:text-xl text-slate-200 mt-2 text-center max-w-3xl leading-relaxed transition-opacity duration-500 ${build >= 2 ? 'opacity-100' : 'opacity-0'}`}
           >
             Melanin absorbs short wavelengths (blue, green, violet).
             The remaining reflected light — red, orange, yellow — combines
@@ -34,15 +34,15 @@ export function AnimationSlide({ slide, build = 0 }: AnimationSlideProps) {
     return (
       <SlideWrapper slide={slide}>
         <div className="flex flex-col items-center w-full">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 font-display text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-1 font-display text-white">
             {slide.title}
           </h2>
           {slide.content && (
-            <p className="text-lg md:text-xl text-slate-400 mb-4">{slide.content}</p>
+            <p className="text-base md:text-lg text-slate-400 mb-2">{slide.content}</p>
           )}
           <BlueEyeAnimation build={build} />
           <p
-            className={`text-xl md:text-2xl text-slate-200 mt-4 text-center max-w-3xl leading-relaxed transition-opacity duration-500 ${build >= 2 ? 'opacity-100' : 'opacity-0'}`}
+            className={`text-lg md:text-xl text-slate-200 mt-2 text-center max-w-3xl leading-relaxed transition-opacity duration-500 ${build >= 2 ? 'opacity-100' : 'opacity-0'}`}
           >
             Collagen fibres in the iris scatter short wavelengths (blue, violet)
             back toward the observer. Long wavelengths pass straight through.
@@ -67,8 +67,8 @@ function BlueEyeAnimation({ build }: { build: number }) {
   const showScattering = build >= 2;
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <svg viewBox="0 0 960 480" className="w-full h-auto">
+    <div className="w-full h-full flex items-center justify-center">
+      <svg viewBox="-20 70 1000 350" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
         <defs>
           <filter id="blue-beam-glow">
             <feGaussianBlur stdDeviation="3" result="blur" />
@@ -84,6 +84,12 @@ function BlueEyeAnimation({ build }: { build: number }) {
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
+          <linearGradient id="blue-merge-grad" gradientUnits="userSpaceOnUse" x1="500" y1="0" x2="165" y2="0">
+            <stop offset="0%" stopColor="#3388ff" stopOpacity="0" />
+            <stop offset="65%" stopColor="#3388ff" stopOpacity="0" />
+            <stop offset="90%" stopColor="#3388ff" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#3388ff" stopOpacity="1" />
+          </linearGradient>
         </defs>
 
         {/* ===== EYE CROSS-SECTION ===== */}
@@ -266,13 +272,6 @@ function BlueEyeAnimation({ build }: { build: number }) {
               stroke="#9944ff" strokeWidth="2.5" filter="url(#blue-beam-glow)"
               className="beam-draw" style={{ animationDelay: '0.30s' }}
             />
-
-            {/* Faint white beam through pupil to retina */}
-            <line
-              x1="115" y1="240" x2="770" y2="240"
-              stroke="#ffffff" strokeWidth="1" opacity="0.12"
-              className="beam-draw" style={{ animationDelay: '0.35s' }}
-            />
           </g>
         )}
 
@@ -384,6 +383,22 @@ function BlueEyeAnimation({ build }: { build: number }) {
               stroke="#7744ff" strokeWidth="2.5" filter="url(#blue-beam-glow)"
               className="beam-reflect" style={{ animationDelay: '0.36s' }}
             />
+            {/* Blue overlay — colours merge into blue toward viewer */}
+            <line
+              x1="500" y1="290" x2="165" y2="340"
+              stroke="url(#blue-merge-grad)" strokeWidth="3.5" filter="url(#blue-beam-glow)"
+              className="beam-reflect" style={{ animationDelay: '0.2s' }}
+            />
+            <line
+              x1="500" y1="308" x2="165" y2="340"
+              stroke="url(#blue-merge-grad)" strokeWidth="3.5" filter="url(#blue-beam-glow)"
+              className="beam-reflect" style={{ animationDelay: '0.28s' }}
+            />
+            <line
+              x1="500" y1="325" x2="165" y2="340"
+              stroke="url(#blue-merge-grad)" strokeWidth="3.5" filter="url(#blue-beam-glow)"
+              className="beam-reflect" style={{ animationDelay: '0.36s' }}
+            />
 
             {/* Blue light label */}
             <text
@@ -429,8 +444,8 @@ function BrownEyeAnimation({ build }: { build: number }) {
   const showAbsorption = build >= 2;
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <svg viewBox="0 0 960 480" className="w-full h-auto">
+    <div className="w-full h-full flex items-center justify-center">
+      <svg viewBox="-20 70 1000 350" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
         <defs>
           <filter id="beam-glow">
             <feGaussianBlur stdDeviation="3" result="blur" />
@@ -446,6 +461,12 @@ function BrownEyeAnimation({ build }: { build: number }) {
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
+          <linearGradient id="brown-merge-grad" gradientUnits="userSpaceOnUse" x1="500" y1="0" x2="165" y2="0">
+            <stop offset="0%" stopColor="#8B5E3C" stopOpacity="0" />
+            <stop offset="65%" stopColor="#8B5E3C" stopOpacity="0" />
+            <stop offset="90%" stopColor="#8B5E3C" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#8B5E3C" stopOpacity="1" />
+          </linearGradient>
         </defs>
 
         {/* ===== EYE CROSS-SECTION ===== */}
@@ -626,13 +647,6 @@ function BrownEyeAnimation({ build }: { build: number }) {
               stroke="#9944ff" strokeWidth="2.5" filter="url(#beam-glow)"
               className="beam-draw" style={{ animationDelay: '0.30s' }}
             />
-
-            {/* Faint white beam through pupil to retina */}
-            <line
-              x1="115" y1="240" x2="770" y2="240"
-              stroke="#ffffff" strokeWidth="1" opacity="0.12"
-              className="beam-draw" style={{ animationDelay: '0.35s' }}
-            />
           </g>
         )}
 
@@ -679,20 +693,36 @@ function BrownEyeAnimation({ build }: { build: number }) {
               Absorbed
             </text>
 
-            {/* Reflected beams (red + orange + yellow → brown, converging to viewer) */}
+            {/* Reflected beams (red + orange + yellow, converging to viewer) */}
             <line
               x1="500" y1="155" x2="165" y2="148"
-              stroke="#C47030" strokeWidth="3" filter="url(#beam-glow)"
+              stroke="#ff3333" strokeWidth="3" filter="url(#beam-glow)"
               className="beam-reflect"
             />
             <line
               x1="500" y1="172" x2="165" y2="148"
-              stroke="#B86028" strokeWidth="3" filter="url(#beam-glow)"
+              stroke="#ff8833" strokeWidth="3" filter="url(#beam-glow)"
               className="beam-reflect" style={{ animationDelay: '0.08s' }}
             />
             <line
               x1="500" y1="190" x2="165" y2="148"
-              stroke="#A85520" strokeWidth="3" filter="url(#beam-glow)"
+              stroke="#ffcc00" strokeWidth="3" filter="url(#beam-glow)"
+              className="beam-reflect" style={{ animationDelay: '0.16s' }}
+            />
+            {/* Brown overlay — colours merge into brown toward viewer */}
+            <line
+              x1="500" y1="155" x2="165" y2="148"
+              stroke="url(#brown-merge-grad)" strokeWidth="4" filter="url(#beam-glow)"
+              className="beam-reflect"
+            />
+            <line
+              x1="500" y1="172" x2="165" y2="148"
+              stroke="url(#brown-merge-grad)" strokeWidth="4" filter="url(#beam-glow)"
+              className="beam-reflect" style={{ animationDelay: '0.08s' }}
+            />
+            <line
+              x1="500" y1="190" x2="165" y2="148"
+              stroke="url(#brown-merge-grad)" strokeWidth="4" filter="url(#beam-glow)"
               className="beam-reflect" style={{ animationDelay: '0.16s' }}
             />
 
