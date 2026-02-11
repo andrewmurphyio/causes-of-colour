@@ -13,7 +13,7 @@ export function TableSlide({ slide }: TableSlideProps) {
     <SlideWrapper slide={slide}>
       <div>
         {slide.title && (
-          <h2 className="text-2xl md:text-4xl font-bold mb-6 font-display text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display text-white">
             {slide.title}
           </h2>
         )}
@@ -26,7 +26,7 @@ export function TableSlide({ slide }: TableSlideProps) {
                     {slide.tableHeaders.map((header, index) => (
                       <th
                         key={index}
-                        className="py-3 px-3 text-xs md:text-sm font-semibold text-cyan-400 uppercase tracking-wide"
+                        className="py-5 px-5 text-xl md:text-2xl font-semibold text-cyan-400 uppercase tracking-wide"
                       >
                         {header}
                       </th>
@@ -42,7 +42,7 @@ export function TableSlide({ slide }: TableSlideProps) {
                       {row.map((cell, cellIndex) => (
                         <td
                           key={cellIndex}
-                          className={`py-3 px-3 text-xs md:text-sm ${
+                          className={`py-5 px-5 text-xl md:text-2xl ${
                             cellIndex === 0
                               ? 'text-white font-medium'
                               : 'text-slate-300'
@@ -58,7 +58,7 @@ export function TableSlide({ slide }: TableSlideProps) {
             </div>
           )}
           {hasImage && (
-            <div className="lg:w-80 relative flex-shrink-0 h-full">
+            <div className="lg:w-[34rem] relative flex-shrink-0 h-full">
               <img
                 src={assetUrl(slide.image!.url)}
                 alt={slide.image!.alt}

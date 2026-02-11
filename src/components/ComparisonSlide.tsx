@@ -11,7 +11,7 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
     <SlideWrapper slide={slide}>
       <div>
         {slide.title && (
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 font-display text-white text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-display text-white text-center">
             {slide.title}
           </h2>
         )}
@@ -23,7 +23,7 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
                   <img
                     src={assetUrl(slide.leftColumn.image.url)}
                     alt={slide.leftColumn.image.alt}
-                    className="w-full h-32 md:h-40 object-cover rounded-lg"
+                    className="w-full h-56 md:h-96 object-cover rounded-lg"
                     style={slide.leftColumn.image.objectPosition ? { objectPosition: slide.leftColumn.image.objectPosition } : undefined}
                   />
                   {slide.leftColumn.image.credit && (
@@ -33,14 +33,14 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
                   )}
                 </div>
               )}
-              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-amber-400 font-display">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-amber-400 font-display">
                 {slide.leftColumn.title}
               </h3>
               <ul className="space-y-3">
                 {slide.leftColumn.items.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-baseline gap-3 text-base md:text-lg text-slate-300"
+                    className="flex items-baseline gap-3 text-lg md:text-xl lg:text-2xl text-slate-300"
                   >
                     <span className="text-amber-400">→</span>
                     <span>{item}</span>
@@ -56,7 +56,7 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
                   <img
                     src={assetUrl(slide.rightColumn.image.url)}
                     alt={slide.rightColumn.image.alt}
-                    className="w-full h-32 md:h-40 object-cover rounded-lg"
+                    className="w-full h-56 md:h-96 object-cover rounded-lg"
                     style={slide.rightColumn.image.objectPosition ? { objectPosition: slide.rightColumn.image.objectPosition } : undefined}
                   />
                   {slide.rightColumn.image.credit && (
@@ -66,14 +66,14 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
                   )}
                 </div>
               )}
-              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-cyan-400 font-display">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-cyan-400 font-display">
                 {slide.rightColumn.title}
               </h3>
               <ul className="space-y-3">
                 {slide.rightColumn.items.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-baseline gap-3 text-base md:text-lg text-slate-300"
+                    className="flex items-baseline gap-3 text-lg md:text-xl lg:text-2xl text-slate-300"
                   >
                     <span className="text-cyan-400">→</span>
                     <span>{item}</span>

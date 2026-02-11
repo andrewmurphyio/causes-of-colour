@@ -28,7 +28,7 @@ export function QuoteSlide({ slide }: QuoteSlideProps) {
         </div>
         <div className="relative z-10 text-center">
           <div className="text-5xl md:text-6xl text-cyan-500/30 font-serif mb-2">"</div>
-          <blockquote className="text-2xl md:text-3xl lg:text-4xl text-white font-light leading-relaxed max-w-4xl mx-auto italic">
+          <blockquote className="text-3xl md:text-4xl lg:text-5xl text-white font-light leading-relaxed max-w-5xl mx-auto italic">
             {slide.quote}
           </blockquote>
           {slide.attribution && (
@@ -51,7 +51,7 @@ export function QuoteSlide({ slide }: QuoteSlideProps) {
       <div className={hasImage ? 'flex flex-col lg:flex-row gap-8 items-center' : 'text-center'}>
         <div className={hasImage ? 'flex-1 text-center' : ''}>
           <div className="text-5xl md:text-6xl text-cyan-500/30 font-serif mb-2">"</div>
-          <blockquote className={`${hasImage ? 'text-xl md:text-2xl lg:text-3xl' : 'text-2xl md:text-3xl lg:text-4xl'} text-white font-light leading-relaxed max-w-4xl mx-auto italic`}>
+          <blockquote className={`${hasImage ? 'text-2xl md:text-3xl lg:text-4xl' : 'text-3xl md:text-4xl lg:text-5xl'} text-white font-light leading-relaxed max-w-5xl mx-auto italic`}>
             {slide.quote}
           </blockquote>
           {slide.attribution && (
@@ -64,7 +64,7 @@ export function QuoteSlide({ slide }: QuoteSlideProps) {
             <img
               src={assetUrl(slide.image!.url)}
               alt={slide.image!.alt}
-              className="rounded-lg shadow-2xl max-h-[50vh] w-auto mx-auto object-contain"
+              className="rounded-lg shadow-2xl max-h-[65vh] w-auto mx-auto object-contain"
               style={slide.image!.objectPosition ? { objectPosition: slide.image!.objectPosition } : undefined}
             />
             {slide.image?.caption && (

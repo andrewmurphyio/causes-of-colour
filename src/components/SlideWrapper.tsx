@@ -18,9 +18,9 @@ export function SlideWrapper({ slide, children }: SlideWrapperProps) {
 
   return (
     <div
-      className={`min-h-screen w-full flex flex-col items-center justify-center p-8 md:p-16 ${bgClass} text-white transition-all duration-500`}
+      className={`min-h-screen w-full flex flex-col items-center justify-center p-4 md:p-8 ${bgClass} text-white transition-all duration-500`}
     >
-      <div className="max-w-5xl w-full">{children}</div>
+      <div className="w-full max-w-[90%]">{children}</div>
     </div>
   );
 }

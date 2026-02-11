@@ -117,12 +117,21 @@ export const slides: Slide[] = [
       'Eyes: collagen fibres in the iris scatter light',
     ],
     background: 'dark',
-    image: {
-      url: '/images/sunset-sky.jpg',
-      alt: 'Blue sky transitioning to sunset colours',
-      position: 'right',
-      credit: 'FTiare / iStock',
-    },
+    images: [
+      {
+        url: '/images/sunset-sky.jpg',
+        alt: 'Blue sky transitioning to sunset colours',
+        position: 'right',
+        credit: 'FTiare / iStock',
+      },
+      {
+        url: '/images/scattering.png',
+        alt: 'Diagram showing Rayleigh scattering physics',
+        position: 'right',
+        credit: 'FX Solver',
+        bgColor: 'white',
+      },
+    ],
   },
   {
     id: 'hook-insight',

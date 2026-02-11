@@ -43,12 +43,12 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
         <div className="relative z-10 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center w-full">
           <div className="lg:w-1/2">
             {slide.title && (
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 font-display text-white">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-display text-white">
                 {slide.title}
               </h2>
             )}
             {slide.content && (
-              <p className="text-xl md:text-2xl text-slate-200 mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl lg:text-3xl text-slate-200 mb-8 leading-relaxed">
                 {slide.content}
               </p>
             )}
@@ -57,7 +57,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
                 {slide.bullets.map((bullet, index) => (
                   <li
                     key={index}
-                    className="flex items-baseline gap-4 text-lg md:text-xl text-slate-300"
+                    className="flex items-baseline gap-4 text-lg md:text-xl lg:text-2xl text-slate-300"
                   >
                     <span className="text-cyan-400 text-sm">●</span>
                     <span>{bullet}</span>
@@ -72,7 +72,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
                 <img
                   src={assetUrl(overlayImage.url)}
                   alt={overlayImage.alt}
-                  className="rounded-lg shadow-2xl max-h-[50vh] w-auto object-contain"
+                  className="rounded-lg shadow-2xl max-h-[65vh] w-auto object-contain"
                   style={{ backgroundColor: overlayImage.bgColor || 'white' }}
                 />
                 <ImageCredit credit={overlayImage.credit} />
@@ -92,15 +92,15 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
 
     return (
       <SlideWrapper slide={slide}>
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center w-full">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center w-full">
           <div className={`flex-1 ${contentOrder}`}>
             {slide.title && (
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-display text-white">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display text-white">
                 {slide.title}
               </h2>
             )}
             {slide.content && (
-              <p className="text-lg md:text-xl lg:text-2xl text-slate-200 mb-6 leading-relaxed">
+              <p className="text-xl md:text-2xl lg:text-3xl text-slate-200 mb-6 leading-relaxed">
                 {slide.content}
               </p>
             )}
@@ -109,7 +109,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
                 {slide.bullets.map((bullet, index) => (
                   <li
                     key={index}
-                    className="flex items-baseline gap-3 text-base md:text-lg lg:text-xl text-slate-300"
+                    className="flex items-baseline gap-3 text-lg md:text-xl lg:text-2xl text-slate-300"
                   >
                     <span className="text-cyan-400 text-sm">●</span>
                     <span>{bullet}</span>
@@ -118,11 +118,11 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
               </ul>
             )}
           </div>
-          <div className={`flex-1 ${imageOrder} relative`}>
+          <div className={`flex-[1.2] ${imageOrder} relative`}>
             <img
               src={assetUrl(currentImage!.url)}
               alt={currentImage!.alt}
-              className="rounded-lg shadow-2xl max-h-[60vh] w-full object-cover"
+              className="rounded-lg shadow-2xl max-h-[90vh] w-full object-cover"
               style={{ backgroundColor: currentImage!.bgColor || 'transparent' }}
             />
             {currentImage?.caption && (
@@ -144,12 +144,12 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
         <div className="flex flex-col h-full">
           <div className="mb-6">
             {slide.title && (
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display text-white">
                 {slide.title}
               </h2>
             )}
             {slide.content && (
-              <p className="text-lg md:text-xl text-slate-200 mb-4 leading-relaxed max-w-4xl">
+              <p className="text-xl md:text-2xl lg:text-3xl text-slate-200 mb-4 leading-relaxed">
                 {slide.content}
               </p>
             )}
@@ -158,7 +158,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
                 {slide.bullets.map((bullet, index) => (
                   <li
                     key={index}
-                    className="flex items-baseline gap-3 text-base md:text-lg text-slate-300"
+                    className="flex items-baseline gap-3 text-lg md:text-xl lg:text-2xl text-slate-300"
                   >
                     <span className="text-cyan-400 text-sm">●</span>
                     <span>{bullet}</span>
@@ -171,7 +171,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
             <img
               src={assetUrl(currentImage!.url)}
               alt={currentImage!.alt}
-              className="rounded-lg shadow-2xl max-h-[40vh] w-auto object-contain"
+              className="rounded-lg shadow-2xl max-h-[50vh] w-auto object-contain"
             />
             {currentImage?.caption && (
               <p className="absolute -bottom-6 left-0 right-0 text-sm text-slate-400 text-center italic">
@@ -190,12 +190,12 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
     <SlideWrapper slide={slide}>
       <div>
         {slide.title && (
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 font-display text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-display text-white">
             {slide.title}
           </h2>
         )}
         {slide.content && (
-          <p className="text-xl md:text-2xl text-slate-200 mb-8 leading-relaxed max-w-4xl">
+          <p className="text-xl md:text-2xl lg:text-3xl text-slate-200 mb-8 leading-relaxed">
             {slide.content}
           </p>
         )}
@@ -204,7 +204,7 @@ export function ContentSlide({ slide, build = 0 }: ContentSlideProps) {
             {slide.bullets.map((bullet, index) => (
               <li
                 key={index}
-                className="flex items-baseline gap-4 text-lg md:text-xl text-slate-300"
+                className="flex items-baseline gap-4 text-lg md:text-xl lg:text-2xl text-slate-300"
               >
                 <span className="text-cyan-400 text-sm">●</span>
                 <span>{bullet}</span>

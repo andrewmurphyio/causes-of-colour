@@ -160,6 +160,7 @@ function App() {
       <Navigation
         currentSlide={currentSlide}
         totalSlides={slides.length}
+        slides={slides}
         onPrevious={goToPrevious}
         onNext={goToNext}
         onGoToSlide={goToSlide}
