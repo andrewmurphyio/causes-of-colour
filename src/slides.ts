@@ -103,6 +103,12 @@ export const slides: Slide[] = [
         alt: 'Visible light spectrum with wavelength labels',
         position: 'right',
       },
+      {
+        url: '/images/solar-radiation.png',
+        alt: 'Solar radiation spectrum',
+        position: 'right',
+        bgColor: 'white',
+      },
     ],
   },
   {
