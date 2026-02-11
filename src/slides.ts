@@ -131,7 +131,7 @@ export const slides: Slide[] = [
     id: 'hook-insight',
     type: 'quote',
     quote:
-      'We perceive colour as a single sensation, but it emerges from radically different physical processes.',
+      'We perceive colour as a single sensation, but it emerges from radically different electric, chemical, and physical processes.',
     background: 'gradient',
   },
 
