@@ -561,21 +561,12 @@ export const slides: Slide[] = [
       '→ Key: many repeating structures, spacing matters',
     ],
     background: 'dark',
-    images: [
-      {
-        url: '/images/spider.jpg',
-        alt: 'Peacock spider showing iridescent diffraction colours',
-        position: 'right',
-        credit: 'Maria Fernanda Cardoso / This Is Colossal',
-      },
-      {
-        url: '/images/diffraction.png',
-        alt: 'Comparison of refraction and diffraction spectra',
-        position: 'right',
-        credit: 'Wikimedia Commons',
-        bgColor: 'white',
-      },
-    ],
+    image: {
+      url: '/images/spider.jpg',
+      alt: 'Peacock spider showing iridescent diffraction colours',
+      position: 'right',
+      credit: 'Maria Fernanda Cardoso / This Is Colossal',
+    },
   },
   {
     id: 'diffraction-animation',

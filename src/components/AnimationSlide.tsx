@@ -207,7 +207,7 @@ export function AnimationSlide({ slide, build = 0 }: AnimationSlideProps) {
           )}
           <ThinFilmInterferenceAnimation build={build} />
           <p
-            className={`text-lg md:text-xl text-slate-200 mt-2 text-center max-w-3xl leading-relaxed transition-opacity duration-500 ${build >= 3 ? 'opacity-100' : 'opacity-0'}`}
+            className={`text-lg md:text-xl text-slate-200 -mt-8 text-center max-w-3xl leading-relaxed transition-opacity duration-500 ${build >= 1 ? 'opacity-100' : 'opacity-0'}`}
           >
             Light reflects from both the <span className="text-sky-400 font-semibold">top</span> and{' '}
             <span className="text-sky-400 font-semibold">bottom</span> of a thin film.
@@ -2493,6 +2493,30 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
   // Shift the whole diagram down to make room for waves above
   const diagramShift = 100;
 
+  // Helper: generate a wavy SVG path between two points
+  // phaseOffset shifts the wave by half-cycles (0 = starts with peak, 1 = starts with trough)
+  function wavePath(
+    x1: number, y1: number, x2: number, y2: number,
+    numWaves: number, amp: number, phaseOffset = 0
+  ): string {
+    const segs = numWaves * 2;
+    const sdx = (x2 - x1) / segs;
+    const sdy = (y2 - y1) / segs;
+    const len = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+    const nx = -(y2 - y1) / len;
+    const ny = (x2 - x1) / len;
+    let d = `M ${x1.toFixed(1)} ${y1.toFixed(1)}`;
+    for (let i = 0; i < segs; i++) {
+      const sign = (i + phaseOffset) % 2 === 0 ? 1 : -1;
+      const cx = x1 + sdx * (i + 0.5) + nx * amp * sign;
+      const cy = y1 + sdy * (i + 0.5) + ny * amp * sign;
+      const ex = x1 + sdx * (i + 1);
+      const ey = y1 + sdy * (i + 1);
+      d += ` Q ${cx.toFixed(1)} ${cy.toFixed(1)}, ${ex.toFixed(1)} ${ey.toFixed(1)}`;
+    }
+    return d;
+  }
+
   return (
     <div className="w-full h-full flex items-center justify-center">
       <svg viewBox="-20 30 1000 440" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
@@ -2701,54 +2725,60 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
             </text>
           </g>
 
-          {/* Incoming beam & reflections (build >= 1) */}
+          {/* Incoming beam & reflections as WAVES (build >= 1) */}
           {showBeams && (
             <g>
-              <line
-                x1="115" y1="145" x2={filmMidX - 20} y2={filmTop}
-                stroke="#fbbf24" strokeWidth="3" filter="url(#tf-beam-glow)"
+              {/* Incoming white-light wave → top surface */}
+              <path
+                d={wavePath(115, 145, filmMidX - 20, filmTop, 5, 5)}
+                fill="none" stroke="#fbbf24" strokeWidth="2.5" filter="url(#tf-beam-glow)"
                 className="beam-draw"
               />
-              <line
-                x1={filmMidX - 20} y1={filmTop}
-                x2={filmMidX - 100} y2={filmTop - 80}
-                stroke="#60a5fa" strokeWidth="2.5" filter="url(#tf-beam-glow)"
+
+              {/* REFLECTION 1 wave — from top surface (phase 0) */}
+              <path
+                d={wavePath(filmMidX - 20, filmTop, filmMidX - 100, filmTop - 80, 4, 6, 0)}
+                fill="none" stroke="#60a5fa" strokeWidth="2.5" filter="url(#tf-beam-glow)"
                 className="beam-reflect" style={{ animationDelay: '0.2s' }}
               />
               <text
-                x={filmMidX - 115} y={filmTop - 85} fill="#60a5fa" fontSize="11" fontWeight="600"
+                x={filmMidX - 130} y={filmTop - 85} fill="#60a5fa" fontSize="11" fontWeight="600"
                 fontFamily="var(--font-sans)" textAnchor="middle"
                 className="label-appear" style={{ animationDelay: '0.4s' }}
               >
                 Reflection 1
               </text>
-              <line
-                x1={filmMidX - 20} y1={filmTop}
-                x2={filmMidX + 10} y2={filmBottom}
-                stroke="#fbbf24" strokeWidth="2" opacity="0.6"
+
+              {/* Refracted wave enters film → bottom surface */}
+              <path
+                d={wavePath(filmMidX - 20, filmTop, filmMidX + 10, filmBottom, 3, 4)}
+                fill="none" stroke="#fbbf24" strokeWidth="2" opacity="0.5"
                 filter="url(#tf-beam-glow)"
                 className="beam-draw" style={{ animationDelay: '0.15s' }}
               />
-              <line
-                x1={filmMidX + 10} y1={filmBottom}
-                x2={filmMidX + 40} y2={filmTop}
-                stroke="#fbbf24" strokeWidth="2" opacity="0.6"
+
+              {/* Reflects off bottom surface → back up through film */}
+              <path
+                d={wavePath(filmMidX + 10, filmBottom, filmMidX + 40, filmTop, 3, 4)}
+                fill="none" stroke="#fbbf24" strokeWidth="2" opacity="0.5"
                 filter="url(#tf-beam-glow)"
                 className="beam-draw" style={{ animationDelay: '0.3s' }}
               />
-              <line
-                x1={filmMidX + 40} y1={filmTop}
-                x2={filmMidX - 40} y2={filmTop - 80}
-                stroke="#f472b6" strokeWidth="2.5" filter="url(#tf-beam-glow)"
+
+              {/* REFLECTION 2 wave — exits top (phase shifted by extra path) */}
+              <path
+                d={wavePath(filmMidX + 40, filmTop, filmMidX - 40, filmTop - 80, 4, 6, 1)}
+                fill="none" stroke="#f472b6" strokeWidth="2.5" filter="url(#tf-beam-glow)"
                 className="beam-reflect" style={{ animationDelay: '0.45s' }}
               />
               <text
-                x={filmMidX - 30} y={filmTop - 85} fill="#f472b6" fontSize="11" fontWeight="600"
-                fontFamily="var(--font-sans)" textAnchor="middle"
+                x={filmMidX - 40} y={filmTop - 85} fill="#f472b6" fontSize="11" fontWeight="600"
+                fontFamily="var(--font-sans)"
                 className="label-appear" style={{ animationDelay: '0.6s' }}
               >
-                Reflection 2
+                Reflection 2 (phase shifted)
               </text>
+
               <text
                 x={filmRight + 120} y={filmTop + (filmBottom - filmTop) / 2 + 4}
                 fill="#c4b5fd" fontSize="10" fontFamily="var(--font-sans)"
@@ -2756,10 +2786,11 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
               >
                 Extra path = 2d
               </text>
-              <line
-                x1={filmMidX + 10} y1={filmBottom}
-                x2={filmMidX + 40} y2={filmBottom + 60}
-                stroke="#fbbf24" strokeWidth="1.5" opacity="0.3"
+
+              {/* Transmitted wave below */}
+              <path
+                d={wavePath(filmMidX + 10, filmBottom, filmMidX + 40, filmBottom + 60, 2, 3)}
+                fill="none" stroke="#fbbf24" strokeWidth="1.5" opacity="0.25"
                 filter="url(#tf-beam-glow)"
                 className="beam-draw" style={{ animationDelay: '0.35s' }}
               />
