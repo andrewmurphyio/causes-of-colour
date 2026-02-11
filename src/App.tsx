@@ -42,8 +42,9 @@ function getMaxBuild(slideIndex: number): number {
   if (slide?.type === 'video') {
     return 1;
   }
-  // Animation slides: 2 builds (diagram → beams → absorption/reflection)
+  // Animation slides: 2 builds by default (diagram → beams → absorption/reflection)
   if (slide?.type === 'animation') {
+    if (slide.animationId === 'thin-film') return 3;
     return 2;
   }
   return 0;

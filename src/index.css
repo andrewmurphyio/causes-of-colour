@@ -151,3 +151,85 @@ body {
   opacity: 0;
   animation: label-appear 0.4s ease-out forwards;
 }
+
+/* Luminescence photon travel animations */
+@keyframes photon-in {
+  0% { transform: translate(0, 0); opacity: 1; }
+  85% { transform: translate(430px, 100px); opacity: 1; }
+  100% { transform: translate(430px, 100px); opacity: 0; }
+}
+
+@keyframes photon-out {
+  0% { transform: translateX(0); opacity: 0; }
+  12% { transform: translateX(10px); opacity: 1; }
+  100% { transform: translateX(300px); opacity: 1; }
+}
+
+@keyframes photon-burst {
+  0% { transform: scale(0.3); opacity: 0; }
+  30% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.photon-in {
+  animation: photon-in 0.7s ease-in forwards;
+}
+
+.photon-out {
+  animation: photon-out 0.8s ease-out forwards;
+}
+
+.photon-burst {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: photon-burst 0.5s ease-out both;
+}
+
+/* Heat dissipation: wavy lines rising from atom */
+@keyframes heat-rise {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 0.7; }
+  70% { opacity: 0.4; }
+  100% { transform: translateY(-40px); opacity: 0; }
+}
+
+.heat-rise {
+  animation: heat-rise 1.2s ease-out both;
+}
+
+/* Water animation: O-H bond vibration (stretch) */
+@keyframes oh-vibrate {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(3px, -2px); }
+  50% { transform: translate(-2px, 3px); }
+  75% { transform: translate(2px, 1px); }
+}
+
+.oh-vibrate {
+  animation: oh-vibrate 0.6s ease-in-out infinite;
+}
+
+/* Water animation: light ray traveling through water */
+@keyframes ray-travel {
+  0% { transform: translateX(-60px); opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { transform: translateX(600px); opacity: 0; }
+}
+
+.ray-travel {
+  animation: ray-travel 3s linear infinite;
+}
+
+/* Ray that fades out partway (absorbed) */
+@keyframes ray-travel-absorbed {
+  0% { transform: translateX(-60px); opacity: 0; }
+  8% { opacity: 0.8; }
+  40% { opacity: 0.3; }
+  60% { opacity: 0; }
+  100% { transform: translateX(600px); opacity: 0; }
+}
+
+.ray-travel-absorbed {
+  animation: ray-travel-absorbed 3s linear infinite;
+}

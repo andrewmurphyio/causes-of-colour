@@ -322,6 +322,14 @@ export const slides: Slide[] = [
     ],
   },
   {
+    id: 'transition-metal-animation',
+    type: 'animation',
+    animationId: 'transition-metal',
+    title: 'How Transition Metals Create Colour',
+    content: 'Partially filled d-orbitals absorb specific wavelengths of light.',
+    background: 'dark',
+  },
+  {
     id: 'transition-metals',
     type: 'content',
     title: 'The Twist: Neighbours Change Everything',
@@ -448,13 +456,14 @@ export const slides: Slide[] = [
       position: 'background',
       credit: 'Cristian Palmer / Unsplash',
     },
-    overlayImages: [
-      {
-        url: '/images/waterstretchingbonds.gif',
-        alt: 'Water molecule O-H bond stretching vibration',
-        credit: 'Dynamic Science',
-      },
-    ],
+  },
+  {
+    id: 'water-blue-animation',
+    type: 'animation',
+    animationId: 'water-blue',
+    title: 'How Water Gets Its Blue',
+    content: 'O‑H bond vibrations absorb red — leaving blue behind.',
+    background: 'dark',
   },
   {
     id: 'water-insight',
@@ -504,21 +513,20 @@ export const slides: Slide[] = [
       'All Rayleigh scattering: intensity ∝ 1/λ⁴',
     ],
     background: 'dark',
-    images: [
-      {
-        url: '/images/mandrill.jpg',
-        alt: 'Mandrill face showing structural blue colouring',
-        position: 'right',
-        credit: 'Michael Jerrard / Unsplash',
-      },
-      {
-        url: '/images/scattering.png',
-        alt: 'Diagram showing Rayleigh scattering physics',
-        position: 'right',
-        credit: 'FX Solver',
-        bgColor: 'white',
-      },
-    ],
+    image: {
+      url: '/images/mandrill.jpg',
+      alt: 'Mandrill face showing structural blue colouring',
+      position: 'right',
+      credit: 'Michael Jerrard / Unsplash',
+    },
+  },
+  {
+    id: 'blue-sky-mechanism',
+    type: 'animation',
+    title: 'Why Is the Sky Blue?',
+    content: 'Rayleigh scattering by atmospheric molecules',
+    background: 'dark',
+    animationId: 'blue-sky',
   },
   {
     id: 'interference',
@@ -549,6 +557,14 @@ export const slides: Slide[] = [
     ],
   },
   {
+    id: 'thin-film-animation',
+    type: 'animation',
+    animationId: 'thin-film',
+    title: 'How Thin-Film Interference Works',
+    content: 'Two reflections, one path difference — that picks the colour.',
+    background: 'dark',
+  },
+  {
     id: 'diffraction',
     type: 'content',
     title: 'Mechanism 15: Diffraction',
@@ -577,6 +593,14 @@ export const slides: Slide[] = [
         bgColor: 'white',
       },
     ],
+  },
+  {
+    id: 'diffraction-animation',
+    type: 'animation',
+    animationId: 'diffraction',
+    title: 'How Diffraction Creates Colour',
+    content: 'Periodic structures split white light into its component wavelengths.',
+    background: 'dark',
   },
   {
     id: 'morpho',
