@@ -1,7 +1,20 @@
 import { useState, useEffect, useCallback } from 'react';
 import { slides } from './slides';
+import type { Slide } from './types';
 import { SlideRenderer } from './components/SlideRenderer';
 import { Navigation } from './components/Navigation';
+
+function getAllImageUrls(allSlides: Slide[]): string[] {
+  const urls = new Set<string>();
+  for (const slide of allSlides) {
+    if (slide.image?.url) urls.add(slide.image.url);
+    if (slide.images) for (const img of slide.images) urls.add(img.url);
+    if (slide.overlayImages) for (const img of slide.overlayImages) urls.add(img.url);
+    if (slide.leftColumn?.image?.url) urls.add(slide.leftColumn.image.url);
+    if (slide.rightColumn?.image?.url) urls.add(slide.rightColumn.image.url);
+  }
+  return Array.from(urls);
+}
 
 function getSlideFromHash(): number {
   const hash = window.location.hash.slice(1);
@@ -53,6 +66,14 @@ function App() {
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Preload all images on mount so they're cached before slides are shown
+  useEffect(() => {
+    for (const url of getAllImageUrls(slides)) {
+      const img = new Image();
+      img.src = url;
+    }
   }, []);
 
   const goToNext = useCallback(() => {
