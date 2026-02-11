@@ -70,9 +70,10 @@ function App() {
 
   // Preload all images on mount so they're cached before slides are shown
   useEffect(() => {
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     for (const url of getAllImageUrls(slides)) {
       const img = new Image();
-      img.src = url;
+      img.src = `${base}${url}`;
     }
   }, []);
 
