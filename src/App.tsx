@@ -42,6 +42,10 @@ function getMaxBuild(slideIndex: number): number {
   if (slide?.type === 'video') {
     return 1;
   }
+  // Animation slides: 2 builds (diagram → beams → absorption/reflection)
+  if (slide?.type === 'animation') {
+    return 2;
+  }
   return 0;
 }
 

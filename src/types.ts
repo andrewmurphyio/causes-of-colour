@@ -6,7 +6,8 @@ export type SlideType =
   | 'table'
   | 'quote'
   | 'image-focus'
-  | 'video';
+  | 'video'
+  | 'animation';
 
 export interface SlideImage {
   url: string;
@@ -44,4 +45,6 @@ export interface Slide {
   textReveal?: boolean;
   // YouTube video ID for video slides
   videoId?: string;
+  // Animation ID for animation slides
+  animationId?: string;
 }

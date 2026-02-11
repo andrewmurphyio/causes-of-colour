@@ -81,3 +81,73 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+/* Eye animation: beam drawing effect */
+@keyframes beam-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes beam-reflect {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-absorb {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes label-appear {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.beam-draw {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: beam-draw 0.7s ease-out forwards;
+}
+
+.beam-reflect {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: beam-reflect 0.6s ease-out forwards;
+}
+
+.pulse-absorb {
+  animation: pulse-absorb 2s ease-in-out infinite;
+}
+
+@keyframes scatter-ray {
+  0% {
+    stroke-dashoffset: 60;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.35;
+  }
+}
+
+.scatter-ray {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: scatter-ray 0.5s ease-out forwards;
+}
+
+.label-appear {
+  opacity: 0;
+  animation: label-appear 0.4s ease-out forwards;
+}
