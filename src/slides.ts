@@ -179,21 +179,20 @@ export const slides: Slide[] = [
       '"Red hot" is actually cooler than "white hot"',
     ],
     background: 'dark',
-    images: [
-      {
-        url: '/images/incandescent-bulb.jpg',
-        alt: 'Glowing incandescent light bulb in a dark room',
-        position: 'right',
-        credit: 'Aditya Sethia / Unsplash',
-      },
-      {
-        url: '/images/spectrum.png',
-        alt: 'Black body radiation spectrum showing temperature vs colour',
-        position: 'right',
-        credit: 'Physics Stack Exchange',
-        bgColor: 'white',
-      },
-    ],
+    image: {
+      url: '/images/incandescent-bulb.jpg',
+      alt: 'Glowing incandescent light bulb in a dark room',
+      position: 'right',
+      credit: 'Aditya Sethia / Unsplash',
+    },
+  },
+  {
+    id: 'incandescence-animation',
+    type: 'animation',
+    animationId: 'incandescence',
+    title: 'How Incandescence Works',
+    content: 'Heat energy in, light out. Temperature determines colour.',
+    background: 'dark',
   },
   {
     id: 'incandescence-hook',
@@ -220,21 +219,20 @@ export const slides: Slide[] = [
       'LEDs - semiconductor band gaps determine colour (why they replaced hot bulbs)',
     ],
     background: 'dark',
-    images: [
-      {
-        url: '/images/aurora.jpg',
-        alt: 'Aurora borealis over Iceland',
-        position: 'right',
-        credit: 'v2osk / Unsplash',
-      },
-      {
-        url: '/images/luminescence.png',
-        alt: 'Schematic of photoluminescence energy levels',
-        position: 'right',
-        credit: 'ResearchGate',
-        bgColor: 'white',
-      },
-    ],
+    image: {
+      url: '/images/aurora.jpg',
+      alt: 'Aurora borealis over Iceland',
+      position: 'right',
+      credit: 'v2osk / Unsplash',
+    },
+  },
+  {
+    id: 'luminescence-mechanism',
+    type: 'animation',
+    animationId: 'luminescence',
+    title: 'How Luminescence Works',
+    content: 'Energy in, light out — but only at specific wavelengths.',
+    background: 'dark',
   },
   {
     id: 'bioluminescence',
