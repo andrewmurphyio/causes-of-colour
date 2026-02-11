@@ -296,6 +296,25 @@ export const slides: Slide[] = [
     accentColor: 'green',
   },
   {
+    id: 'organic-compounds',
+    type: 'content',
+    title: 'Organic Compounds',
+    content: 'Conjugation length determines colour - longer chains absorb longer wavelengths.',
+    bullets: [
+      'Chlorophyll - absorbs red & blue, reflects green',
+      'Hemoglobin - absorbs green, reflects red',
+      'Melanin - broad absorption, brown to black',
+      'Carotenoids - carrots, flamingos, autumn leaves',
+    ],
+    background: 'dark',
+    image: {
+      url: '/images/autumn-leaves.jpg',
+      alt: 'Colourful autumn leaves showing carotenoid pigments',
+      position: 'right',
+      credit: 'Omid Armin / Unsplash',
+    },
+  },
+  {
     id: 'transition-metals-intro',
     type: 'content',
     title: 'Transition Metals - The Basics',
@@ -381,25 +400,6 @@ export const slides: Slide[] = [
     type: 'quote',
     quote: 'Same impurity atom. Completely opposite colours. The host crystal changes everything.',
     background: 'dark',
-  },
-  {
-    id: 'organic-compounds',
-    type: 'content',
-    title: 'Organic Compounds',
-    content: 'Conjugation length determines colour - longer chains absorb longer wavelengths.',
-    bullets: [
-      'Chlorophyll - absorbs red & blue, reflects green',
-      'Hemoglobin - absorbs green, reflects red',
-      'Melanin - broad absorption, brown to black',
-      'Carotenoids - carrots, flamingos, autumn leaves',
-    ],
-    background: 'dark',
-    image: {
-      url: '/images/autumn-leaves.jpg',
-      alt: 'Colourful autumn leaves showing carotenoid pigments',
-      position: 'right',
-      credit: 'Omid Armin / Unsplash',
-    },
   },
   {
     id: 'gold-special',
