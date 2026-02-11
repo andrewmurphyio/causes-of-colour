@@ -2486,13 +2486,16 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
   const filmBottom = 250;
   const filmMidX = (filmLeft + filmRight) / 2;
 
-  // Centered wave position for interference displays
+  // Wave visualization positioned ABOVE the film diagram
   const waveCx = 480;
-  const waveY = 345;
+  const waveY = 75;
+
+  // Shift the whole diagram down to make room for waves above
+  const diagramShift = 100;
 
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <svg viewBox="-20 70 1000 360" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+      <svg viewBox="-20 30 1000 440" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
         <defs>
           <filter id="tf-beam-glow">
             <feGaussianBlur stdDeviation="3" result="blur" />
@@ -2515,180 +2518,7 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
           </linearGradient>
         </defs>
 
-        {/* ===== AIR LABELS ===== */}
-        <text
-          x={filmMidX} y="110" fill="#94a3b8" fontSize="12" textAnchor="middle"
-          fontFamily="var(--font-sans)"
-        >
-          Air (above)
-        </text>
-        <text
-          x={filmMidX} y="290" fill="#94a3b8" fontSize="12" textAnchor="middle"
-          fontFamily="var(--font-sans)"
-        >
-          Air (below)
-        </text>
-
-        {/* ===== THIN FILM ===== */}
-        <rect
-          x={filmLeft} y={filmTop} width={filmRight - filmLeft} height={filmBottom - filmTop}
-          fill="url(#tf-film-fill)" stroke="#818cf8" strokeWidth="2" rx="3"
-        />
-        <text
-          x={filmRight + 12} y={filmTop + 5} fill="#a5b4fc" fontSize="11"
-          fontFamily="var(--font-sans)"
-        >
-          Surface 1 (top)
-        </text>
-        <text
-          x={filmRight + 12} y={filmBottom + 5} fill="#a5b4fc" fontSize="11"
-          fontFamily="var(--font-sans)"
-        >
-          Surface 2 (bottom)
-        </text>
-
-        {/* Thickness annotation */}
-        <line
-          x1={filmLeft - 20} y1={filmTop} x2={filmLeft - 20} y2={filmBottom}
-          stroke="#94a3b8" strokeWidth="1"
-        />
-        <line
-          x1={filmLeft - 25} y1={filmTop} x2={filmLeft - 15} y2={filmTop}
-          stroke="#94a3b8" strokeWidth="1"
-        />
-        <line
-          x1={filmLeft - 25} y1={filmBottom} x2={filmLeft - 15} y2={filmBottom}
-          stroke="#94a3b8" strokeWidth="1"
-        />
-        <text
-          x={filmLeft - 30} y={filmTop + (filmBottom - filmTop) / 2 + 4}
-          fill="#94a3b8" fontSize="11" textAnchor="end"
-          fontFamily="var(--font-sans)"
-        >
-          thickness d
-        </text>
-
-        {/* Film label */}
-        <text
-          x={filmMidX} y={filmTop + (filmBottom - filmTop) / 2 + 4}
-          fill="#c4b5fd" fontSize="13" textAnchor="middle" fontWeight="600"
-          fontFamily="var(--font-sans)"
-        >
-          Thin film (oil, soap, etc.)
-        </text>
-
-        {/* ===== LIGHT SOURCE ===== */}
-        <g>
-          <circle
-            cx="80" cy="140" r="22" fill="#fbbf24"
-            opacity={showBeams ? 1 : 0.35}
-            style={{ transition: 'opacity 0.5s ease' }}
-          />
-          {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
-            <line
-              key={angle}
-              x1={80 + Math.cos((angle * Math.PI) / 180) * 26}
-              y1={140 + Math.sin((angle * Math.PI) / 180) * 26}
-              x2={80 + Math.cos((angle * Math.PI) / 180) * 35}
-              y2={140 + Math.sin((angle * Math.PI) / 180) * 35}
-              stroke="#fbbf24" strokeWidth="2" strokeLinecap="round"
-              opacity={showBeams ? 0.8 : 0.25}
-              style={{ transition: 'opacity 0.5s ease' }}
-            />
-          ))}
-          <text
-            x="80" y="185" fill="#94a3b8" fontSize="13" textAnchor="middle"
-            fontFamily="var(--font-sans)"
-          >
-            White Light
-          </text>
-        </g>
-
-        {/* ===== INCOMING BEAM & REFLECTIONS (build >= 1) ===== */}
-        {showBeams && (
-          <g>
-            {/* Incoming white beam → top surface */}
-            <line
-              x1="115" y1="145" x2={filmMidX - 20} y2={filmTop}
-              stroke="#fbbf24" strokeWidth="3" filter="url(#tf-beam-glow)"
-              className="beam-draw"
-            />
-
-            {/* REFLECTION 1: from top surface */}
-            <line
-              x1={filmMidX - 20} y1={filmTop}
-              x2={filmMidX - 100} y2={filmTop - 80}
-              stroke="#60a5fa" strokeWidth="2.5" filter="url(#tf-beam-glow)"
-              className="beam-reflect" style={{ animationDelay: '0.2s' }}
-            />
-            <text
-              x={filmMidX - 115} y={filmTop - 85} fill="#60a5fa" fontSize="11" fontWeight="600"
-              fontFamily="var(--font-sans)" textAnchor="middle"
-              className="label-appear" style={{ animationDelay: '0.4s' }}
-            >
-              Reflection 1
-            </text>
-
-            {/* Refracted beam enters film → bottom surface */}
-            <line
-              x1={filmMidX - 20} y1={filmTop}
-              x2={filmMidX + 10} y2={filmBottom}
-              stroke="#fbbf24" strokeWidth="2" opacity="0.6"
-              filter="url(#tf-beam-glow)"
-              className="beam-draw" style={{ animationDelay: '0.15s' }}
-            />
-
-            {/* Reflects off bottom surface → back up */}
-            <line
-              x1={filmMidX + 10} y1={filmBottom}
-              x2={filmMidX + 40} y2={filmTop}
-              stroke="#fbbf24" strokeWidth="2" opacity="0.6"
-              filter="url(#tf-beam-glow)"
-              className="beam-draw" style={{ animationDelay: '0.3s' }}
-            />
-            {/* Exits top surface as reflection 2 */}
-            <line
-              x1={filmMidX + 40} y1={filmTop}
-              x2={filmMidX - 40} y2={filmTop - 80}
-              stroke="#f472b6" strokeWidth="2.5" filter="url(#tf-beam-glow)"
-              className="beam-reflect" style={{ animationDelay: '0.45s' }}
-            />
-            <text
-              x={filmMidX - 30} y={filmTop - 85} fill="#f472b6" fontSize="11" fontWeight="600"
-              fontFamily="var(--font-sans)" textAnchor="middle"
-              className="label-appear" style={{ animationDelay: '0.6s' }}
-            >
-              Reflection 2
-            </text>
-
-            {/* Extra path annotation */}
-            <text
-              x={filmMidX + 60} y={filmTop + (filmBottom - filmTop) / 2 + 4}
-              fill="#c4b5fd" fontSize="10" fontFamily="var(--font-sans)"
-              className="label-appear" style={{ animationDelay: '0.5s' }}
-            >
-              Extra path = 2d
-            </text>
-
-            {/* Transmitted beam below */}
-            <line
-              x1={filmMidX + 10} y1={filmBottom}
-              x2={filmMidX + 40} y2={filmBottom + 60}
-              stroke="#fbbf24" strokeWidth="1.5" opacity="0.3"
-              filter="url(#tf-beam-glow)"
-              className="beam-draw" style={{ animationDelay: '0.35s' }}
-            />
-            <text
-              x={filmMidX + 55} y={filmBottom + 70} fill="#64748b" fontSize="10"
-              fontFamily="var(--font-sans)"
-              className="label-appear" style={{ animationDelay: '0.5s' }}
-            >
-              (transmitted)
-            </text>
-          </g>
-        )}
-
-        {/* ===== CONSTRUCTIVE INTERFERENCE (build 2) ===== */}
+        {/* ===== CONSTRUCTIVE INTERFERENCE — above film (build 2) ===== */}
         <g
           opacity={showConstructive && !showDestructive ? 1 : 0}
           style={{ transition: 'opacity 0.5s ease' }}
@@ -2705,7 +2535,6 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
             strokeDasharray="4 3"
             className="label-appear" style={{ animationDelay: '0.15s' }}
           />
-          {/* Equals sign */}
           <text
             x={waveCx + 14} y={waveY + 5} fill="#94a3b8" fontSize="18" fontWeight="bold"
             fontFamily="var(--font-sans)"
@@ -2719,7 +2548,6 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
             fill="none" stroke="#4ade80" strokeWidth="3" filter="url(#tf-glow-strong)"
             className="label-appear" style={{ animationDelay: '0.25s' }}
           />
-          {/* Labels */}
           <text
             x={waveCx} y={waveY + 40} fill="#4ade80" fontSize="15" fontWeight="bold"
             fontFamily="var(--font-sans)" textAnchor="middle"
@@ -2728,22 +2556,15 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
             Constructive Interference
           </text>
           <text
-            x={waveCx} y={waveY + 58} fill="#4ade80" fontSize="12"
+            x={waveCx} y={waveY + 56} fill="#4ade80" fontSize="12"
             fontFamily="var(--font-sans)" textAnchor="middle"
             className="label-appear" style={{ animationDelay: '0.4s' }}
           >
-            {'\u2714 Waves in phase \u2192 bright colour'}
-          </text>
-          <text
-            x={waveCx} y={waveY + 74} fill="#64748b" fontSize="11"
-            fontFamily="var(--font-sans)" textAnchor="middle"
-            className="label-appear" style={{ animationDelay: '0.45s' }}
-          >
-            {'Condition: 2d = m\u03BB'}
+            {'\u2714 Waves in phase \u2192 bright colour    (2d = m\u03BB)'}
           </text>
         </g>
 
-        {/* ===== DESTRUCTIVE INTERFERENCE (build 3) ===== */}
+        {/* ===== DESTRUCTIVE INTERFERENCE — above film (build 3) ===== */}
         <g
           opacity={showDestructive ? 1 : 0}
           style={{ transition: 'opacity 0.5s ease' }}
@@ -2754,14 +2575,12 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
             fill="none" stroke="#60a5fa" strokeWidth="2" opacity="0.7"
             className="label-appear" style={{ animationDelay: '0.1s' }}
           />
-          {/* Inverted wave (out of phase) */}
           <path
             d={`M ${waveCx - 120} ${waveY} Q ${waveCx - 105} ${waveY + 18}, ${waveCx - 90} ${waveY} Q ${waveCx - 75} ${waveY - 18}, ${waveCx - 60} ${waveY} Q ${waveCx - 45} ${waveY + 18}, ${waveCx - 30} ${waveY} Q ${waveCx - 15} ${waveY - 18}, ${waveCx} ${waveY}`}
             fill="none" stroke="#f472b6" strokeWidth="2" opacity="0.7"
             strokeDasharray="4 3"
             className="label-appear" style={{ animationDelay: '0.15s' }}
           />
-          {/* Equals sign */}
           <text
             x={waveCx + 14} y={waveY + 5} fill="#94a3b8" fontSize="18" fontWeight="bold"
             fontFamily="var(--font-sans)"
@@ -2775,7 +2594,6 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
             stroke="#ef4444" strokeWidth="2.5" opacity="0.6"
             className="label-appear" style={{ animationDelay: '0.25s' }}
           />
-          {/* Labels */}
           <text
             x={waveCx} y={waveY + 40} fill="#ef4444" fontSize="15" fontWeight="bold"
             fontFamily="var(--font-sans)" textAnchor="middle"
@@ -2784,30 +2602,177 @@ function ThinFilmInterferenceAnimation({ build }: { build: number }) {
             Destructive Interference
           </text>
           <text
-            x={waveCx} y={waveY + 58} fill="#ef4444" fontSize="12"
+            x={waveCx} y={waveY + 56} fill="#ef4444" fontSize="12"
             fontFamily="var(--font-sans)" textAnchor="middle"
             className="label-appear" style={{ animationDelay: '0.4s' }}
           >
-            {'\u2718 Waves out of phase \u2192 colour cancelled'}
-          </text>
-          <text
-            x={waveCx} y={waveY + 74} fill="#64748b" fontSize="11"
-            fontFamily="var(--font-sans)" textAnchor="middle"
-            className="label-appear" style={{ animationDelay: '0.45s' }}
-          >
-            {'Condition: 2d = (m+\u00BD)\u03BB'}
+            {'\u2718 Waves out of phase \u2192 cancelled    (2d = (m+\u00BD)\u03BB)'}
           </text>
         </g>
 
-        {/* Key insight — shown on final build */}
-        <text
-          x={waveCx} y="425" fill="#fbbf24" fontSize="13" fontWeight="600"
-          textAnchor="middle" fontFamily="var(--font-sans)"
-          opacity={showDestructive ? 1 : 0}
-          style={{ transition: 'opacity 0.5s ease' }}
-        >
-          {'Different thicknesses \u2192 different colours reinforced \u2192 rainbow patterns'}
-        </text>
+        {/* ===== FILM DIAGRAM (shifted down to make room for waves above) ===== */}
+        <g transform={`translate(0, ${diagramShift})`}>
+          {/* Air labels */}
+          <text
+            x={filmRight + 120} y={filmTop - 10} fill="#94a3b8" fontSize="12"
+            fontFamily="var(--font-sans)"
+          >
+            Air (above)
+          </text>
+          <text
+            x={filmRight + 120} y={filmBottom + 20} fill="#94a3b8" fontSize="12"
+            fontFamily="var(--font-sans)"
+          >
+            Air (below)
+          </text>
+
+          {/* Thin Film */}
+          <rect
+            x={filmLeft} y={filmTop} width={filmRight - filmLeft} height={filmBottom - filmTop}
+            fill="url(#tf-film-fill)" stroke="#818cf8" strokeWidth="2" rx="3"
+          />
+          <text
+            x={filmRight + 12} y={filmTop + 5} fill="#a5b4fc" fontSize="11"
+            fontFamily="var(--font-sans)"
+          >
+            Surface 1 (top)
+          </text>
+          <text
+            x={filmRight + 12} y={filmBottom + 5} fill="#a5b4fc" fontSize="11"
+            fontFamily="var(--font-sans)"
+          >
+            Surface 2 (bottom)
+          </text>
+
+          {/* Thickness annotation */}
+          <line
+            x1={filmLeft - 20} y1={filmTop} x2={filmLeft - 20} y2={filmBottom}
+            stroke="#94a3b8" strokeWidth="1"
+          />
+          <line
+            x1={filmLeft - 25} y1={filmTop} x2={filmLeft - 15} y2={filmTop}
+            stroke="#94a3b8" strokeWidth="1"
+          />
+          <line
+            x1={filmLeft - 25} y1={filmBottom} x2={filmLeft - 15} y2={filmBottom}
+            stroke="#94a3b8" strokeWidth="1"
+          />
+          <text
+            x={filmLeft - 30} y={filmTop + (filmBottom - filmTop) / 2 + 4}
+            fill="#94a3b8" fontSize="11" textAnchor="end"
+            fontFamily="var(--font-sans)"
+          >
+            thickness d
+          </text>
+
+          {/* Film label */}
+          <text
+            x={filmMidX} y={filmTop + (filmBottom - filmTop) / 2 + 4}
+            fill="#c4b5fd" fontSize="13" textAnchor="middle" fontWeight="600"
+            fontFamily="var(--font-sans)"
+          >
+            Thin film (oil, soap, etc.)
+          </text>
+
+          {/* Light Source */}
+          <g>
+            <circle
+              cx="80" cy="140" r="22" fill="#fbbf24"
+              opacity={showBeams ? 1 : 0.35}
+              style={{ transition: 'opacity 0.5s ease' }}
+            />
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
+              <line
+                key={angle}
+                x1={80 + Math.cos((angle * Math.PI) / 180) * 26}
+                y1={140 + Math.sin((angle * Math.PI) / 180) * 26}
+                x2={80 + Math.cos((angle * Math.PI) / 180) * 35}
+                y2={140 + Math.sin((angle * Math.PI) / 180) * 35}
+                stroke="#fbbf24" strokeWidth="2" strokeLinecap="round"
+                opacity={showBeams ? 0.8 : 0.25}
+                style={{ transition: 'opacity 0.5s ease' }}
+              />
+            ))}
+            <text
+              x="80" y="185" fill="#94a3b8" fontSize="13" textAnchor="middle"
+              fontFamily="var(--font-sans)"
+            >
+              White Light
+            </text>
+          </g>
+
+          {/* Incoming beam & reflections (build >= 1) */}
+          {showBeams && (
+            <g>
+              <line
+                x1="115" y1="145" x2={filmMidX - 20} y2={filmTop}
+                stroke="#fbbf24" strokeWidth="3" filter="url(#tf-beam-glow)"
+                className="beam-draw"
+              />
+              <line
+                x1={filmMidX - 20} y1={filmTop}
+                x2={filmMidX - 100} y2={filmTop - 80}
+                stroke="#60a5fa" strokeWidth="2.5" filter="url(#tf-beam-glow)"
+                className="beam-reflect" style={{ animationDelay: '0.2s' }}
+              />
+              <text
+                x={filmMidX - 115} y={filmTop - 85} fill="#60a5fa" fontSize="11" fontWeight="600"
+                fontFamily="var(--font-sans)" textAnchor="middle"
+                className="label-appear" style={{ animationDelay: '0.4s' }}
+              >
+                Reflection 1
+              </text>
+              <line
+                x1={filmMidX - 20} y1={filmTop}
+                x2={filmMidX + 10} y2={filmBottom}
+                stroke="#fbbf24" strokeWidth="2" opacity="0.6"
+                filter="url(#tf-beam-glow)"
+                className="beam-draw" style={{ animationDelay: '0.15s' }}
+              />
+              <line
+                x1={filmMidX + 10} y1={filmBottom}
+                x2={filmMidX + 40} y2={filmTop}
+                stroke="#fbbf24" strokeWidth="2" opacity="0.6"
+                filter="url(#tf-beam-glow)"
+                className="beam-draw" style={{ animationDelay: '0.3s' }}
+              />
+              <line
+                x1={filmMidX + 40} y1={filmTop}
+                x2={filmMidX - 40} y2={filmTop - 80}
+                stroke="#f472b6" strokeWidth="2.5" filter="url(#tf-beam-glow)"
+                className="beam-reflect" style={{ animationDelay: '0.45s' }}
+              />
+              <text
+                x={filmMidX - 30} y={filmTop - 85} fill="#f472b6" fontSize="11" fontWeight="600"
+                fontFamily="var(--font-sans)" textAnchor="middle"
+                className="label-appear" style={{ animationDelay: '0.6s' }}
+              >
+                Reflection 2
+              </text>
+              <text
+                x={filmRight + 120} y={filmTop + (filmBottom - filmTop) / 2 + 4}
+                fill="#c4b5fd" fontSize="10" fontFamily="var(--font-sans)"
+                className="label-appear" style={{ animationDelay: '0.5s' }}
+              >
+                Extra path = 2d
+              </text>
+              <line
+                x1={filmMidX + 10} y1={filmBottom}
+                x2={filmMidX + 40} y2={filmBottom + 60}
+                stroke="#fbbf24" strokeWidth="1.5" opacity="0.3"
+                filter="url(#tf-beam-glow)"
+                className="beam-draw" style={{ animationDelay: '0.35s' }}
+              />
+              <text
+                x={filmMidX + 55} y={filmBottom + 70} fill="#64748b" fontSize="10"
+                fontFamily="var(--font-sans)"
+                className="label-appear" style={{ animationDelay: '0.5s' }}
+              >
+                (transmitted)
+              </text>
+            </g>
+          )}
+        </g>
       </svg>
     </div>
   );

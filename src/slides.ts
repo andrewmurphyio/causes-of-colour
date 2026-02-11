@@ -306,20 +306,12 @@ export const slides: Slide[] = [
       'What remains (reflects back) is the colour you see',
     ],
     background: 'dark',
-    images: [
-      {
-        url: '/images/assorted-transition-metals.jpg',
-        alt: 'Assorted colourful transition metal samples',
-        position: 'right',
-        credit: 'Science Photo Library',
-      },
-      {
-        url: '/images/energy-levels.jpg',
-        alt: 'Electron energy level diagram',
-        position: 'right',
-        credit: 'animatedphysics.com',
-      },
-    ],
+    image: {
+      url: '/images/assorted-transition-metals.jpg',
+      alt: 'Assorted colourful transition metal samples',
+      position: 'right',
+      credit: 'Science Photo Library',
+    },
   },
   {
     id: 'transition-metal-animation',
@@ -540,21 +532,12 @@ export const slides: Slide[] = [
       '→ Key: 2 surfaces, thickness matters',
     ],
     background: 'dark',
-    images: [
-      {
-        url: '/images/soap-bubbles.jpg',
-        alt: 'Iridescent soap bubbles showing thin-film interference',
-        position: 'right',
-        credit: 'Unsplash',
-      },
-      {
-        url: '/images/interference.png',
-        alt: 'Diagram showing thin-film interference physics',
-        position: 'right',
-        credit: 'Wikimedia Commons',
-        bgColor: 'white',
-      },
-    ],
+    image: {
+      url: '/images/soap-bubbles.jpg',
+      alt: 'Iridescent soap bubbles showing thin-film interference',
+      position: 'right',
+      credit: 'Unsplash',
+    },
   },
   {
     id: 'thin-film-animation',
